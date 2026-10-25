@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="slate">
+<html lang="en" data-theme="cream">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,72 +11,51 @@
   /* =========================================================================
      DESIGN TOKENS — MONSOON SLATE (UI_UPGRADE_README.md Section 3)
      ========================================================================= */
-  :root, :root[data-theme="slate"] {
-    --bg-0: #111A23;            /* Deep background behind map */
-    --bg-1: #16212C;            /* Docked panels & inspector */
-    --bg-2: #1C2935;            /* Raised cards, inputs, buttons */
-    --bg-3: #243443;            /* Hover, active item */
-    --hairline: #2A3947;        /* 1px dividers */
-    --hairline-strong: #3A4D5F; /* Focused dividers, inputs */
-    --text-1: #E6EDF3;          /* Primary text */
-    --text-2: #9AABBA;          /* Secondary text */
-    --text-3: #6C7E8E;          /* Muted metadata, provenance glyphs */
-    --tide: #5CC8D6;            /* Interactive accent, time cursor, front */
-    --tide-dim: #2C6F79;        /* Uncertainty cone, forecast fill */
+    :root, :root[data-theme="cream"], :root[data-theme="slate"], :root[data-theme="fog"] {
+    --bg-0: #F7F2EC;            /* Warm rich cream terrain & ground */
+    --bg-1: #FFFDFB;            /* Pure dusty white docked panels & inspector */
+    --bg-2: #FAF5EF;            /* Soft warm cream cards, inputs, buttons */
+    --bg-3: #F0E6DC;            /* Hover state, active buttons */
+    --hairline: #E5D6CB;        /* Crisp, elegant outline of boxes */
+    --hairline-strong: #D4BEB0; /* Focused border, inputs */
+    --text-1: #2B1F24;          /* Deep espresso charcoal - high contrast & readable */
+    --text-2: #6B5960;          /* Warm muted secondary text */
+    --text-3: #9C8990;          /* Subtle metadata */
     
-    /* Semantic Risk Ramp: Color + Shape + Text (Never color alone, never green for normal) */
-    --normal: #6B8F95;          /* NORMAL: slate-teal (●) */
-    --normal-bg: rgba(107, 143, 149, 0.16);
-    --watch: #E3B341;           /* WATCH: amber (▲) */
-    --watch-bg: rgba(227, 179, 65, 0.18);
-    --high: #EE7B45;            /* HIGH RISK: orange-coral (◆) */
-    --high-bg: rgba(238, 123, 69, 0.20);
-    --critical: #D8305A;        /* CRITICAL: crimson-magenta (■) */
-    --critical-bg: rgba(216, 48, 90, 0.22);
+    /* Baby Pink & Warm Peach Accents */
+    --tide: #E58784;            /* Primary Baby Pink / Soft Coral accent */
+    --tide-dim: #FAD2CF;        /* Soft baby pink fill */
+    --accent-pink: #F8ABA8;
+    --accent-peach: #FFBFA3;
+    --accent-glow: rgba(229, 135, 132, 0.25);
     
-    /* Map & 3D Lighting */
-    --map-ground: #101922;
-    --map-water: #264350;
-    --map-water-glow: #3DA8BC;
-    --map-bldg-top: #223240;
-    --map-bldg-side: #18232D;
+    /* Semantic Risk Ramp (Warm & Harmonious) */
+    --normal: #488B8F;          /* NORMAL: Soft Sage Slate */
+    --normal-bg: rgba(72, 139, 143, 0.12);
+    --watch: #D9822B;           /* WATCH: Warm Honey Amber */
+    --watch-bg: rgba(217, 130, 43, 0.14);
+    --high: #DB5A42;            /* HIGH RISK: Soft Coral */
+    --high-bg: rgba(219, 90, 66, 0.15);
+    --critical: #C92A4B;        /* CRITICAL: Deep Berry Crimson */
+    --critical-bg: rgba(201, 42, 75, 0.16);
     
-    /* Elevation & Typography */
-    --shadow: 0 12px 36px rgba(0, 0, 0, 0.50);
-    --radius-sm: 4px;
-    --radius-md: 6px;
-    --radius-lg: 12px;
+    /* Gamified Map & 3D Materials */
+    --map-ground: #ECE4D8;
+    --map-water: #5B8DA6;
+    --map-water-glow: #87AFC2;
+    --map-bldg-top: #E6DDD2;
+    --map-bldg-side: #C8BDAF;
+    --map-park: #D8E3DC;
+    --map-road: #564F4D;
+    
+    /* Elevation & Outlines */
+    --shadow: 0 4px 20px rgba(60, 40, 35, 0.06);
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
     --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --font-display: "Bricolage Grotesque", -apple-system, sans-serif;
     --font-mono: "IBM Plex Mono", "JetBrains Mono", Consolas, monospace;
-  }
-
-  :root[data-theme="fog"] {
-    --bg-0: #E8EDF1;
-    --bg-1: #F3F6F8;
-    --bg-2: #FFFFFF;
-    --bg-3: #DCE4EA;
-    --hairline: #CBD6DE;
-    --hairline-strong: #9AABBA;
-    --text-1: #14202B;
-    --text-2: #4A5C6B;
-    --text-3: #7A8C9A;
-    --tide: #0E7F8E;
-    --tide-dim: #5CC8D6;
-    --normal: #4F7279;
-    --normal-bg: rgba(79, 114, 121, 0.15);
-    --watch: #B8860B;
-    --watch-bg: rgba(184, 134, 11, 0.15);
-    --high: #C95A24;
-    --high-bg: rgba(201, 90, 36, 0.18);
-    --critical: #B01E45;
-    --critical-bg: rgba(176, 30, 69, 0.20);
-    --map-ground: #DFE5EA;
-    --map-water: #7A98A6;
-    --map-water-glow: #0E7F8E;
-    --map-bldg-top: #CBD4DC;
-    --map-bldg-side: #B2BFC9;
-    --shadow: 0 4px 20px rgba(20, 32, 43, 0.08);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -946,6 +925,49 @@
     z-index: 90;
     display: none;
   }
+/* EXTRA CREAM STYLES */
+  .card, .status-pill, .selection-card, .top-bar, .left-rail, .inspector-dock, .timeline-dock {
+    border: 1px solid var(--hairline) !important;
+    box-shadow: 0 4px 18px rgba(60, 40, 35, 0.05) !important;
+  }
+  .status-pill {
+    background: rgba(255, 253, 251, 0.94) !important;
+    backdrop-filter: blur(12px) !important;
+  }
+  .top-bar {
+    background: #FFFDFB !important;
+    border-bottom: 1px solid var(--hairline) !important;
+  }
+  .left-rail {
+    background: #FAF6F0 !important;
+    border-right: 1px solid var(--hairline) !important;
+  }
+  .left-rail .rail-btn {
+    color: var(--text-2) !important;
+  }
+  .left-rail .rail-btn.active {
+    color: var(--tide) !important;
+    background: rgba(229, 135, 132, 0.16) !important;
+    border-right: 3px solid var(--tide) !important;
+  }
+  .inspector-dock {
+    background: #FFFDFB !important;
+    border-left: 1px solid var(--hairline) !important;
+  }
+  .timeline-dock {
+    background: #FFFDFB !important;
+    border-top: 1px solid var(--hairline) !important;
+  }
+  .tab-btn.active {
+    color: var(--tide) !important;
+    border-bottom: 2px solid var(--tide) !important;
+  }
+  .brand-badge {
+    background: rgba(229, 135, 132, 0.14) !important;
+    color: var(--tide) !important;
+    border: 1px solid rgba(229, 135, 132, 0.3) !important;
+  }
+
 </style>
 </head>
 <body>
@@ -961,8 +983,13 @@
         </svg>
         <span>The 72-Hour Warning</span>
       </div>
-      <span class="brand-badge">MONSOON SLATE</span>
+      <span class="brand-badge" style="background:rgba(255,159,117,0.15);color:#FF9F75;border:1px solid rgba(255,159,117,0.3);">CASCADE COMMAND v2.2</span>
     </div>
+      <a href="landing.html" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#FFBFA3;background:rgba(255,159,117,0.12);padding:5px 12px;border-radius:6px;border:1px solid rgba(255,159,117,0.3);font-weight:600;font-size:12px;margin-left:8px;transition:all 0.2s ease;" onmouseover="this.style.background='rgba(255,159,117,0.25)'" onmouseout="this.style.background='rgba(255,159,117,0.12)'">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        Home / Landing
+      </a>
+
 
     <div class="nav-controls">
       <select id="sel-scenario" class="select-input" title="Select Hazard Scenario">
@@ -1058,15 +1085,15 @@
       <div class="status-pill" id="main-status-pill">
         <div class="status-metric-group">
           <span class="status-metric-label">P(CASCADE ≤24H) <span class="prov-glyph" title="Modelled via Hawkes point process">m</span></span>
-          <span class="status-metric-val" id="pill-p24-val">0.78</span>
+          <span class="status-metric-val" id="pill-p24-val">0.50</span>
         </div>
         <div class="status-badge-col">
           <div id="pill-risk-badge"><span class="risk-badge CRITICAL">■ Critical</span></div>
           <div id="pill-conf-badge"><span class="conf-badge">● High confidence</span></div>
         </div>
         <div class="status-info-col">
-          <div class="status-eta-text" id="pill-eta-line">Time to critical: in ~11 h</div>
-          <div class="status-eta-sub" id="pill-eta-range">Range: 6 to 17 h · ρ = 1.42 ▲</div>
+          <div class="status-eta-text" id="pill-eta-line">Time to critical: in ~24 h</div>
+          <div class="status-eta-sub" id="pill-eta-range">Range: 1 to 72 h · ρ = 0.85</div>
         </div>
         <button type="button" class="btn-briefing" id="btn-walkthrough" title="Step through cascade sequence (Briefing Mode)">Walk me through it</button>
       </div>
@@ -1352,22 +1379,24 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
     const genMitigation = planActive ? (STATE.labResources.generators / 20) * 0.25 : 0;
     const totalMitigation = Math.min(0.55, pumpMitigation + crewMitigation + genMitigation);
 
-    // City-wide reproduction number rho and cascade probability P24
-    let baseRho = 0.65;
-    if (elapsed > 4) baseRho = 1.05;
-    if (elapsed > 12) baseRho = 1.42;
-    if (elapsed > 28) baseRho = 1.78;
-    if (elapsed > 60) baseRho = 1.25;
-    const rho = Math.max(0.42, Number((baseRho * (1 - totalMitigation * 0.6)).toFixed(2)));
+    // REAL MODEL BINDING: LightGBM Multi-Horizon Risk & Hawkes Point Process
+    let rho = 0.85;
+    let pCascade24 = 0.50;
+    let cityState = 'HIGH_RISK';
+    let cityConf = 'HIGH';
 
-    let baseP24 = 0.18;
-    if (elapsed > 6) baseP24 = 0.45;
-    if (elapsed > 14) baseP24 = 0.78;
-    if (elapsed > 32) baseP24 = 0.92;
-    const pCascade24 = Math.max(0.10, Number((baseP24 - totalMitigation).toFixed(2)));
-
-    const cityState = pCascade24 >= 0.85 ? 'CRITICAL' : pCascade24 >= 0.58 ? 'HIGH_RISK' : pCascade24 >= 0.32 ? 'WATCH' : 'NORMAL';
-    const cityConf = fp.dropPct >= 40 ? 'LOW' : 'HIGH';
+    if (STATE.liveCitySummary) {
+      pCascade24 = Number((STATE.liveCitySummary.p_cascade_24h || 0.50).toFixed(2));
+      rho = Number((STATE.liveCitySummary.rho || 0.85).toFixed(2));
+      cityState = STATE.liveCitySummary.state || 'HIGH_RISK';
+      cityConf = STATE.liveCitySummary.confidence || 'HIGH';
+    } else {
+      const dynP = 0.15 + (elapsed * 0.018);
+      pCascade24 = Math.min(0.95, Math.max(0.08, Number((dynP - totalMitigation * 0.3).toFixed(2))));
+      rho = Math.min(2.1, Math.max(0.35, Number((0.65 + elapsed * 0.02).toFixed(2))));
+      cityState = pCascade24 >= 0.80 ? 'CRITICAL' : pCascade24 >= 0.45 ? 'HIGH_RISK' : pCascade24 >= 0.25 ? 'WATCH' : 'NORMAL';
+      cityConf = fp.dropPct >= 40 ? 'LOW' : 'HIGH';
+    }
 
     // Compute zone states (with live LightGBM API binding & monotonic fallback)
     const zones = CITY.zones.features.map(zf => {
@@ -1464,7 +1493,19 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
         p_cascade_24h: pCascade24,
         rho,
         act_by_hours_left: actByHoursLeft,
-        time_to_critical_h: 11
+        time_to_critical_h: (function() {
+          let minQ = 72;
+          let found = false;
+          zones.forEach(z => {
+            if (z.t_critical && z.t_critical.q50 !== null && z.t_critical.q50 < minQ) {
+              minQ = z.t_critical.q50;
+              found = true;
+            }
+          });
+          return found ? minQ : 24;
+        })(),
+        q10: 1,
+        q90: 72
       },
       zones
     };
@@ -1558,7 +1599,7 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
     interactiveHitBoxes = [];
 
     // 1. Sky & Ground plane
-    ctx.fillStyle = isSlate ? '#111A23' : '#E8EDF1';
+    ctx.fillStyle = '#F5ECE3'; /* Warm Gamified Parchment Ground */
     ctx.fillRect(0, 0, W, H);
 
     // Subtle isometric city ground grid
@@ -1659,8 +1700,8 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
     });
 
     // 4. Waterways (Mithi River Channel & tributaries)
-    const waterColor = isSlate ? '#264350' : '#7A98A6';
-    const waterGlow = isSlate ? '#3DA8BC' : '#0E7F8E';
+    const waterColor = '#54829A'; /* Natural Watercolor River Flow */
+    const waterGlow = '#8BB4C7'; /* Natural Sunlight Reflection */
     CITY.water.features.forEach(wf => {
       const isRiver = wf.properties.type === 'river';
       ctx.strokeStyle = waterColor;
@@ -1688,7 +1729,7 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
     const roadZ = STATE.explodeView ? 44 : 0;
     CITY.roads.features.forEach(rf => {
       const isSelected = rf.properties.asset_id === STATE.selectedAssetId;
-      ctx.strokeStyle = isSelected ? '#5CC8D6' : isSlate ? '#2C3E4F' : '#9AABBA';
+      ctx.strokeStyle = isSelected ? '#E58784' : '#5E5654'; /* Realistic Asphalt Avenue */
       ctx.lineWidth = isSelected ? 3.5 : 1.6;
       ctx.beginPath();
       rf.geometry.coordinates.forEach((pt, i) => {
@@ -1721,8 +1762,8 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
     });
 
     // 7. Depth-sorted 3D Buildings
-    const bldgTop = isSlate ? '#223240' : '#CBD4DC';
-    const bldgSide = isSlate ? '#18232D' : '#B2BFC9';
+    const bldgTop = '#E5DDD2'; /* Warm Sandstone Roof */
+    const bldgSide = '#C8BEB0'; /* Shaded Architectural Facade */
     const sortedBuildings = [...CITY.buildings.features].sort((a, b) => {
       // Sort back-to-front by latitude
       return b.geometry.coordinates[0][0][1] - a.geometry.coordinates[0][0][1];
@@ -1866,6 +1907,410 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
     ctx.fillText(`FRONT: T+${STATE.simHour}h (q10-q90)`, pFront2[0] - 54, pFront2[1] + 3);
     ctx.restore();
 
+    // =======================================================================
+    // 12. DYNAMIC INFRASTRUCTURE LAYER VISUALIZATION OVERLAYS
+    // Responds to Left-Rail Buttons: ALL, WX, HYD, TRF, PWR, EMS, HOS, COM
+    // =======================================================================
+    const activeL = (STATE.activeLayer || 'ALL').toUpperCase();
+    const isAll = (activeL === 'ALL' || activeL === 'RISK');
+
+    // --- (A) On-Screen Canvas Layer HUD (Top-Left of 3D Viewport) ---
+    ctx.save();
+    const hudColors = {
+      'ALL': '#5CC8D6', 'RISK': '#5CC8D6', 'WX': '#38BDF8', 'HYD': '#2DD4BF',
+      'TRF': '#FB923C', 'PWR': '#FACC15', 'EMS': '#F87171', 'HOS': '#E11D48', 'COM': '#A855F7'
+    };
+    const hudTitles = {
+      'ALL': 'COMPOSITE MULTI-HAZARD CASCADE',
+      'RISK': 'COMPOSITE MULTI-HAZARD CASCADE',
+      'WX': 'METEOROLOGY & DOPPLER PRECIPITATION RADAR',
+      'HYD': 'HYDROLOGY, MITHI RIVER & SURCHARGE GAUGES',
+      'TRF': 'TRAFFIC FLOW & SUBMERGED ROAD CLOSURES',
+      'PWR': '220kV / 110kV GRID & BLACKOUT ISOLATION',
+      'EMS': 'EMERGENCY SQUADS & CIVIL DEFENSE BOATS',
+      'HOS': 'TRAUMA CENTERS & HOSPITAL SATURATION',
+      'COM': 'TELECOM TOWERS & CITIZEN SOS FEEDS'
+    };
+    const col = hudColors[activeL] || '#5CC8D6';
+    const title = hudTitles[activeL] || activeL;
+
+    ctx.fillStyle = isSlate ? 'rgba(15, 23, 33, 0.92)' : 'rgba(255, 255, 255, 0.92)';
+    ctx.strokeStyle = col;
+    ctx.lineWidth = 1.5;
+    ctx.shadowColor = col;
+    ctx.shadowBlur = 10;
+    ctx.beginPath();
+    if (ctx.roundRect) ctx.roundRect(16, 16, 330, 52, 6);
+    else ctx.rect(16, 16, 330, 52);
+    ctx.fill();
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+
+    // Glowing indicator circle
+    ctx.fillStyle = col;
+    ctx.beginPath();
+    ctx.arc(32, 34, 5, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillStyle = col;
+    ctx.font = '700 11px "IBM Plex Mono", monospace';
+    ctx.fillText(`ACTIVE LAYER: ${activeL}`, 44, 38);
+
+    ctx.fillStyle = isSlate ? '#F1F5F9' : '#0F172A';
+    ctx.font = '600 10px "IBM Plex Sans", sans-serif';
+    ctx.fillText(title, 32, 56);
+    ctx.restore();
+
+    // --- (B) LAYER-SPECIFIC 3D GRAPHICAL OVERLAYS ---
+
+    if (activeL === 'WX') {
+      // 1. WEATHER RADAR: Doppler Reflectivity Bands across Mithi & Airport
+      ctx.save();
+      const tNow = performance.now() * 0.001;
+      const stormCenters = [
+        { lon: 72.868, lat: 19.074, r: 0.024, name: 'Convective Cell Alpha (Santacruz)' },
+        { lon: 72.880, lat: 19.082, r: 0.018, name: 'Cell Beta (Powai Surcharge)' },
+        { lon: 72.852, lat: 19.055, r: 0.015, name: 'Cell Gamma (Bandra Creek)' }
+      ];
+
+      stormCenters.forEach((cell, idx) => {
+        const [cx, cy] = projectIso(cell.lon, cell.lat, 60, W, H, cam);
+        const radPix = cell.r * 1800 * cam.zoom;
+
+        const grad = ctx.createRadialGradient(cx, cy, radPix * 0.1, cx, cy, radPix);
+        grad.addColorStop(0, 'rgba(239, 68, 68, 0.55)');
+        grad.addColorStop(0.35, 'rgba(245, 158, 11, 0.40)');
+        grad.addColorStop(0.7, 'rgba(16, 185, 129, 0.25)');
+        grad.addColorStop(1, 'rgba(56, 189, 248, 0.0)');
+
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(cx, cy, radPix, 0, Math.PI * 2);
+        ctx.fill();
+
+        const angle = tNow * 1.5 + idx * 2.1;
+        ctx.strokeStyle = '#38BDF8';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.lineTo(cx + Math.cos(angle) * radPix, cy + Math.sin(angle) * radPix);
+        ctx.stroke();
+
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = '700 10px "IBM Plex Mono", monospace';
+        ctx.fillText(`${cell.name} [96 mm/h]`, cx - 50, cy - radPix - 6);
+      });
+
+      // Animated Falling Rain Streaks
+      ctx.strokeStyle = 'rgba(56, 189, 248, 0.35)';
+      ctx.lineWidth = 1;
+      for (let i = 0; i < 40; i++) {
+        const rx = ((i * 37 + tNow * 140) % W);
+        const ry = ((i * 53 + tNow * 220) % H);
+        ctx.beginPath();
+        ctx.moveTo(rx, ry);
+        ctx.lineTo(rx - 8, ry + 16);
+        ctx.stroke();
+      }
+
+      // Wind Vector Arrows
+      const windCoords = [[72.846, 19.048], [72.862, 19.062], [72.876, 19.076], [72.855, 19.078]];
+      windCoords.forEach(wc => {
+        const [wx, wy] = projectIso(wc[0], wc[1], 80, W, H, cam);
+        ctx.strokeStyle = '#FACC15';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(wx, wy);
+        ctx.lineTo(wx + 22, wy - 14);
+        ctx.stroke();
+        ctx.fillStyle = '#FACC15';
+        ctx.beginPath();
+        ctx.arc(wx + 22, wy - 14, 3, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.font = '600 9px "IBM Plex Mono"';
+        ctx.fillText('68 km/h', wx + 26, wy - 12);
+      });
+      ctx.restore();
+    }
+
+    else if (activeL === 'HYD') {
+      // 2. HYDROLOGY: Surging Mithi River, Ponding Inundation Polygons & Pumps
+      ctx.save();
+      const tNow = performance.now() * 0.002;
+
+      ctx.shadowColor = '#00FFFF';
+      ctx.shadowBlur = 18;
+      CITY.water.features.forEach(wf => {
+        ctx.strokeStyle = '#00FFFF';
+        ctx.lineWidth = 16 * cam.zoom;
+        ctx.lineCap = 'round';
+        ctx.beginPath();
+        wf.geometry.coordinates.forEach((pt, i) => {
+          const [x, y] = projectIso(pt[0], pt[1], 4, W, H, cam);
+          if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+
+        ctx.strokeStyle = '#FFFFFF';
+        ctx.lineWidth = 3;
+        ctx.setLineDash([12, 16]);
+        ctx.lineDashOffset = -tNow * 40;
+        ctx.stroke();
+        ctx.setLineDash([]);
+      });
+      ctx.shadowBlur = 0;
+
+      const floodZones = ['Z04', 'Z08', 'Z10', 'Z12', 'Z18'];
+      CITY.zones.features.filter(zf => floodZones.includes(zf.properties.zone_code)).forEach(zf => {
+        const ring = zf.geometry.coordinates[0];
+        ctx.fillStyle = 'rgba(0, 229, 255, 0.32)';
+        ctx.strokeStyle = '#00E5FF';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ring.forEach((pt, i) => {
+          const [x, y] = projectIso(pt[0], pt[1], 6, W, H, cam);
+          if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        });
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        const [cx, cy] = projectIso(zf.properties.center[0], zf.properties.center[1], 12, W, H, cam);
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = '700 10.5px "IBM Plex Mono", monospace';
+        ctx.fillText('WATERLOGGED: +1.6m', cx - 40, cy);
+      });
+
+      const pumpLocs = [
+        { lon: 72.868, lat: 19.068, name: 'KURLA PUMP #1', status: 'DISCHARGE 100%' },
+        { lon: 72.860, lat: 19.060, name: 'KALINA PUMP #3', status: 'SILTED 40%' }
+      ];
+      pumpLocs.forEach(p => {
+        const [px, py] = projectIso(p.lon, p.lat, 14, W, H, cam);
+        ctx.fillStyle = p.status.includes('SILTED') ? '#EF4444' : '#10B981';
+        ctx.beginPath(); ctx.arc(px, py, 7, 0, Math.PI * 2); ctx.fill();
+        ctx.strokeStyle = '#FFFFFF'; ctx.lineWidth = 2; ctx.stroke();
+        ctx.fillStyle = '#FFFFFF'; ctx.font = '700 10px "IBM Plex Sans"';
+        ctx.fillText(p.name, px + 10, py - 2);
+        ctx.font = '600 9px "IBM Plex Mono"';
+        ctx.fillStyle = p.status.includes('SILTED') ? '#EF4444' : '#10B981';
+        ctx.fillText(p.status, px + 10, py + 10);
+      });
+      ctx.restore();
+    }
+
+    else if (activeL === 'TRF') {
+      // 3. TRAFFIC: Color-coded Arterial Corridors, Submerged Roads & Headlights
+      ctx.save();
+      const tNow = performance.now() * 0.001;
+
+      CITY.roads.features.forEach((rf, idx) => {
+        const isClosed = (idx % 3 === 0);
+        const isCongested = (idx % 3 === 1);
+        const col = isClosed ? '#EF4444' : isCongested ? '#F59E0B' : '#10B981';
+
+        ctx.strokeStyle = col;
+        ctx.lineWidth = (isClosed ? 4.5 : 3.5) * cam.zoom;
+        ctx.lineCap = 'round';
+        ctx.beginPath();
+        rf.geometry.coordinates.forEach((pt, i) => {
+          const [x, y] = projectIso(pt[0], pt[1], 2, W, H, cam);
+          if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+
+        if (isClosed) {
+          const midPt = rf.geometry.coordinates[Math.floor(rf.geometry.coordinates.length / 2)];
+          const [mx, my] = projectIso(midPt[0], midPt[1], 8, W, H, cam);
+          ctx.fillStyle = '#EF4444';
+          ctx.fillRect(mx - 32, my - 8, 64, 16);
+          ctx.strokeStyle = '#FFFFFF'; ctx.lineWidth = 1; ctx.strokeRect(mx - 32, my - 8, 64, 16);
+          ctx.fillStyle = '#FFFFFF'; ctx.font = '700 8.5px "IBM Plex Mono"';
+          ctx.fillText('SUBMERGED', mx - 28, my + 4);
+        } else {
+          const pts = rf.geometry.coordinates;
+          if (pts.length >= 2) {
+            const frac = (tNow * 0.5 + idx * 0.25) % 1.0;
+            const pIdx = Math.floor(frac * (pts.length - 1));
+            const [vx, vy] = projectIso(pts[pIdx][0], pts[pIdx][1], 4, W, H, cam);
+            ctx.fillStyle = '#FFFFFF';
+            ctx.beginPath(); ctx.arc(vx, vy, 3, 0, Math.PI * 2); ctx.fill();
+          }
+        }
+      });
+      ctx.restore();
+    }
+
+    else if (activeL === 'PWR') {
+      // 4. POWER GRID: High-Voltage Substations, Arcs, Catenary Energy & Outages
+      ctx.save();
+      const tNow = performance.now() * 0.003;
+      const substations = [
+        { lon: 72.8555, lat: 19.0522, name: 'DHARAVI 220kV', status: 'RISK 88% - WATER AT PERIMETER', tripped: false },
+        { lon: 72.8665, lat: 19.0608, name: 'BKC 110kV GIS', status: 'ONLINE (LOAD 94%)', tripped: false },
+        { lon: 72.8768, lat: 19.0665, name: 'KURLA SWITCHING', status: 'TRIPPED (TRANSFORMER 2)', tripped: true },
+        { lon: 72.8788, lat: 19.0792, name: 'TROMBAY FEEDER', status: '220kV BACKBONE ONLINE', tripped: false }
+      ];
+
+      substations.forEach(s => {
+        const [sx, sy] = projectIso(s.lon, s.lat, 20, W, H, cam);
+        const col = s.tripped ? '#EF4444' : '#FACC15';
+
+        ctx.strokeStyle = col;
+        ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        ctx.arc(sx, sy, 14 + Math.sin(tNow * 3) * 3, 0, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.fillStyle = col;
+        ctx.beginPath(); ctx.arc(sx, sy, 7, 0, Math.PI * 2); ctx.fill();
+
+        ctx.fillStyle = '#0F172A';
+        ctx.fillRect(sx + 16, sy - 14, 180, 26);
+        ctx.strokeStyle = col; ctx.lineWidth = 1;
+        ctx.strokeRect(sx + 16, sy - 14, 180, 26);
+        ctx.fillStyle = col; ctx.font = '700 9.5px "IBM Plex Mono"';
+        ctx.fillText(s.name, sx + 22, sy - 2);
+        ctx.fillStyle = s.tripped ? '#EF4444' : '#E2E8F0'; ctx.font = '600 8.5px "IBM Plex Sans"';
+        ctx.fillText(s.status, sx + 22, sy + 8);
+      });
+
+      for (let i = 0; i < substations.length - 1; i++) {
+        const [p1x, p1y] = projectIso(substations[i].lon, substations[i].lat, 24, W, H, cam);
+        const [p2x, p2y] = projectIso(substations[i+1].lon, substations[i+1].lat, 24, W, H, cam);
+        ctx.strokeStyle = '#FACC15';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(p1x, p1y);
+        ctx.quadraticCurveTo((p1x+p2x)/2, (p1y+p2y)/2 + 15, p2x, p2y);
+        ctx.stroke();
+
+        const frac = (tNow * 0.6 + i * 0.3) % 1.0;
+        const spkX = (1 - frac) * (1 - frac) * p1x + 2 * (1 - frac) * frac * ((p1x+p2x)/2) + frac * frac * p2x;
+        const spkY = (1 - frac) * (1 - frac) * p1y + 2 * (1 - frac) * frac * ((p1y+p2y)/2 + 15) + frac * frac * p2y;
+        ctx.fillStyle = '#FFFFFF';
+        ctx.beginPath(); ctx.arc(spkX, spkY, 4, 0, Math.PI * 2); ctx.fill();
+      }
+      ctx.restore();
+    }
+
+    else if (activeL === 'EMS') {
+      // 5. EMERGENCY SERVICES: Beacons, Ambulances, NDRF Boats & Transit Corridors
+      ctx.save();
+      const tNow = performance.now() * 0.003;
+      const emsUnits = [
+        { lon: 72.868, lat: 19.068, name: 'NDRF RESCUE BOAT 02', status: 'IN WATER - KURLA BASIN' },
+        { lon: 72.856, lat: 19.054, name: 'AMBULANCE 09 (108)', status: 'EN ROUTE SION HOSPITAL' },
+        { lon: 72.875, lat: 19.076, name: 'FIRE RESCUE SQUAD 14', status: 'SEARCH & RESCUE ACTIVE' }
+      ];
+
+      emsUnits.forEach(u => {
+        const [ux, uy] = projectIso(u.lon, u.lat, 20, W, H, cam);
+        ctx.strokeStyle = '#F87171'; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.arc(ux, uy, 12 + Math.sin(tNow * 4) * 4, 0, Math.PI * 2); ctx.stroke();
+        ctx.fillStyle = '#EF4444';
+        ctx.beginPath(); ctx.arc(ux, uy, 6, 0, Math.PI * 2); ctx.fill();
+
+        ctx.fillStyle = '#0F172A';
+        ctx.fillRect(ux + 14, uy - 12, 160, 24);
+        ctx.strokeStyle = '#F87171'; ctx.lineWidth = 1;
+        ctx.strokeRect(ux + 14, uy - 12, 160, 24);
+        ctx.fillStyle = '#F87171'; ctx.font = '700 9px "IBM Plex Mono"';
+        ctx.fillText(u.name, ux + 18, uy);
+        ctx.fillStyle = '#E2E8F0'; ctx.font = '600 8px "IBM Plex Sans"';
+        ctx.fillText(u.status, ux + 18, uy + 9);
+      });
+      ctx.restore();
+    }
+
+    else if (activeL === 'HOS') {
+      // 6. HOSPITALS: Elevated Glowing 3D Crosses & Live Bed Occupancy HUDs
+      ctx.save();
+      const hospitals = [
+        { lon: 72.860, lat: 19.040, name: 'SION HOSPITAL', occ: '98% BED SATURATION [CRITICAL]', col: '#EF4444' },
+        { lon: 72.842, lat: 19.006, name: 'KEM GENERAL HOSPITAL', occ: '84% CAPACITY [SURGE TRIAGE]', col: '#F59E0B' },
+        { lon: 72.874, lat: 19.068, name: 'BHABHA HOSPITAL KURLA', occ: 'ENTRANCE FLOODED (0.7m)', col: '#EF4444' },
+        { lon: 72.840, lat: 19.032, name: 'P.D. HINDUJA CLINIC', occ: '62% OCCUPANCY (POWER OK)', col: '#10B981' }
+      ];
+
+      hospitals.forEach(h => {
+        const [hx, hy] = projectIso(h.lon, h.lat, 22, W, H, cam);
+        const isHovered = (STATE.selectedAssetId === h.name);
+
+        // Sleek Gamified 3D Circular Pin (Non-overlapping)
+        ctx.fillStyle = '#FFFDFB';
+        ctx.strokeStyle = h.col;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.arc(hx, hy, isHovered ? 12 : 9, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+
+        // Medical Cross symbol inside pin
+        ctx.fillStyle = h.col;
+        ctx.fillRect(hx - 1.5, hy - 5, 3, 10);
+        ctx.fillRect(hx - 5, hy - 1.5, 10, 3);
+
+        // Clean, compact label (neatly positioned, subtle and non-overlapping)
+        ctx.fillStyle = '#FFFDFB';
+        const labelW = ctx.measureText ? ctx.measureText(h.name).width + 16 : 80;
+        ctx.fillStyle = 'rgba(255, 253, 251, 0.92)';
+        ctx.strokeStyle = 'var(--hairline-strong)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        if (ctx.roundRect) ctx.roundRect(hx + 12, hy - 10, labelW, 20, 4);
+        else ctx.rect(hx + 12, hy - 10, labelW, 20);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = 'var(--text-1)';
+        ctx.font = '700 9.5px "IBM Plex Sans", sans-serif';
+        ctx.fillText(h.name, hx + 18, hy + 3);
+
+        interactiveHitBoxes.push({ type: 'asset', id: h.name, name: h.name, layer: 'HOS', x: hx, y: hy, radius: 14 });
+      });
+      ctx.restore();
+    }
+
+    else if (activeL === 'COM') {
+      // 7. TELECOM: Concentric Radio Waves & Citizen Distress SOS Clusters
+      ctx.save();
+      const tNow = performance.now() * 0.002;
+      const towers = [
+        { lon: 72.868, lat: 19.068, name: 'KURLA CELL TOWER #4', status: 'BATTERY BACKUP (1.8h)', online: true },
+        { lon: 72.855, lat: 19.055, name: 'BKC FIBER BACKBONE', status: 'ONLINE (GRID OK)', online: true },
+        { lon: 72.875, lat: 19.080, name: 'DHARAVI COMMS MAST', status: 'OPTICAL FIBER CUT', online: false }
+      ];
+
+      towers.forEach(tw => {
+        const [tx, ty] = projectIso(tw.lon, tw.lat, 22, W, H, cam);
+        const col = tw.online ? '#A855F7' : '#EF4444';
+
+        for (let r = 1; r <= 3; r++) {
+          const rad = ((tNow * 18 + r * 12) % 36);
+          ctx.strokeStyle = col;
+          ctx.lineWidth = 1.2;
+          ctx.beginPath();
+          ctx.arc(tx, ty, rad, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+
+        ctx.fillStyle = col;
+        ctx.beginPath(); ctx.arc(tx, ty, 5, 0, Math.PI * 2); ctx.fill();
+
+        ctx.fillStyle = '#0F172A';
+        ctx.fillRect(tx + 14, ty - 12, 170, 24);
+        ctx.strokeStyle = col; ctx.lineWidth = 1;
+        ctx.strokeRect(tx + 14, ty - 12, 170, 24);
+        ctx.fillStyle = col; ctx.font = '700 9px "IBM Plex Mono"';
+        ctx.fillText(tw.name, tx + 18, ty);
+        ctx.fillStyle = '#E2E8F0'; ctx.font = '600 8px "IBM Plex Sans"';
+        ctx.fillText(tw.status, tx + 18, ty + 9);
+      });
+      ctx.restore();
+    }
+
+
     // 11. Compare Curtain clipping if active (Section 9.4)
     if (STATE.compareCurtain) {
       const splitX = W * STATE.curtainX;
@@ -1900,6 +2345,251 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
   // =========================================================================
   // INSPECTOR TAB RENDERERS (4 TABS: FORECAST, CASCADE, ACT, TRUST)
   // =========================================================================
+
+  // =========================================================================
+  // DYNAMIC INFRASTRUCTURE LAYER COCKPIT (Left-rail filter response)
+  // =========================================================================
+  const INFRASTRUCTURE_LAYERS = {
+    'ALL': {
+      code: 'ALL',
+      name: 'All-Layer Multi-Hazard Cascade',
+      badge: 'COMPOSITE OVERLAY',
+      color: 'var(--tide)',
+      bg: 'rgba(92, 200, 214, 0.12)',
+      desc: 'Holistic multi-hazard state synthesizing cross-layer physical interdependencies across all 7 urban sectors.',
+      kpis: [
+        { label: 'Cascade Reproduction (rho)', val: '1.42', status: 'CRITICAL (rho > 1)', col: 'var(--critical)' },
+        { label: '24h Cascade Probability', val: '78%', status: 'HIGH RISK', col: 'var(--high)' },
+        { label: 'Cross-Sector Links', val: '14 Active', status: 'CASCADING', col: 'var(--watch)' },
+        { label: 'Population Exposed', val: '840,000', status: 'MONSOON BASIN', col: 'var(--normal)' }
+      ],
+      assets: [
+        { name: 'Mithi River Drainage Basin', type: 'River Corridor', status: 'SURGING (2.85m)', cam: { x: 0, y: 10, z: 1.15 } },
+        { name: 'Western Express Highway (WEH)', type: 'Primary Evacuation', status: 'CONGESTED (14 km/h)', cam: { x: -14, y: 0, z: 1.25 } },
+        { name: 'Dharavi 220kV Substation', type: 'Grid Backbone', status: 'RISK 88% (FLOOD THREAT)', cam: { x: -8, y: 16, z: 1.35 } },
+        { name: 'Lokmanya Tilak Sion Hospital', type: 'Level 1 Trauma', status: '98% BED SATURATION', cam: { x: 14, y: 22, z: 1.4 } }
+      ]
+    },
+    'RISK': {
+      code: 'RISK',
+      name: 'All-Layer Multi-Hazard Cascade',
+      badge: 'COMPOSITE OVERLAY',
+      color: 'var(--tide)',
+      bg: 'rgba(92, 200, 214, 0.12)',
+      desc: 'Holistic multi-hazard state synthesizing cross-layer physical interdependencies across all 7 urban sectors.',
+      kpis: [
+        { label: 'Cascade Reproduction (rho)', val: '1.42', status: 'CRITICAL (rho > 1)', col: 'var(--critical)' },
+        { label: '24h Cascade Probability', val: '78%', status: 'HIGH RISK', col: 'var(--high)' },
+        { label: 'Cross-Sector Links', val: '14 Active', status: 'CASCADING', col: 'var(--watch)' },
+        { label: 'Population Exposed', val: '840,000', status: 'MONSOON BASIN', col: 'var(--normal)' }
+      ],
+      assets: [
+        { name: 'Mithi River Drainage Basin', type: 'River Corridor', status: 'SURGING (2.85m)', cam: { x: 0, y: 10, z: 1.15 } },
+        { name: 'Western Express Highway (WEH)', type: 'Primary Evacuation', status: 'CONGESTED (14 km/h)', cam: { x: -14, y: 0, z: 1.25 } },
+        { name: 'Dharavi 220kV Substation', type: 'Grid Backbone', status: 'RISK 88% (FLOOD THREAT)', cam: { x: -8, y: 16, z: 1.35 } },
+        { name: 'Lokmanya Tilak Sion Hospital', type: 'Level 1 Trauma', status: '98% BED SATURATION', cam: { x: 14, y: 22, z: 1.4 } }
+      ]
+    },
+    'WX': {
+      code: 'WX',
+      name: 'Meteorology & Atmospheric Radar',
+      badge: 'RADAR BURST ALERT',
+      color: '#38BDF8',
+      bg: 'rgba(56, 189, 248, 0.12)',
+      desc: 'Real-time Doppler precipitation reflectivity, convective cloud cell burst tracking, and isobaric barometric pressure gradient.',
+      kpis: [
+        { label: 'Santacruz AWS Rainfall', val: '96 mm/h', status: 'EXTREME BURST', col: '#EF4444' },
+        { label: 'Barometric Pressure', val: '992 hPa', status: 'RAPID DROP (-4 hPa/3h)', col: '#F59E0B' },
+        { label: 'Peak Wind Gusts', val: '68 km/h SSW', status: 'GALE SQUALL', col: '#F59E0B' },
+        { label: '24h Projected Rain', val: '342 mm', status: 'RED WATCH', col: '#EF4444' }
+      ],
+      assets: [
+        { name: 'Santacruz Automatic Weather Station', type: 'AWS Sensor', status: '96 mm/h (LIVE)', cam: { x: 6, y: -12, z: 1.4 } },
+        { name: 'Colaba Meteorological Observatory', type: 'Coastal Barometer', status: '58 mm/h (LIVE)', cam: { x: -18, y: 24, z: 1.3 } },
+        { name: 'Powai Doppler Radar Station', type: 'Doppler Radar', status: 'SWEEPING (CELL 4A)', cam: { x: 16, y: -24, z: 1.3 } },
+        { name: 'Mithi Estuary Anemometer Mast', type: 'Wind Vector', status: '68 km/h GUSTS', cam: { x: -6, y: 10, z: 1.4 } }
+      ]
+    },
+    'HYD': {
+      code: 'HYD',
+      name: 'Hydrology, Mithi River & Sump Pumps',
+      badge: 'SURGE ALERT',
+      color: '#2DD4BF',
+      bg: 'rgba(45, 212, 191, 0.12)',
+      desc: 'River stage gauge levels, storm culvert backwater surcharges, drainage gravity discharge, and municipal sump pump telemetry.',
+      kpis: [
+        { label: 'Mithi River Canal Gauge', val: '2.85 m / 3.0 m', status: 'SURGE THRESHOLD BREACH', col: '#EF4444' },
+        { label: 'Drain Surcharge Ratio', val: '94% Surcharged', status: 'BACKFLOW ACTIVE', col: '#EF4444' },
+        { label: 'Sump Pumps Running', val: '18 / 24 Online', status: '6 SILTED / SUBMERGED', col: '#F59E0B' },
+        { label: 'Ponding Inundation Area', val: '4.8 sq km', status: 'LOW-LYING BASIN', col: '#F59E0B' }
+      ],
+      assets: [
+        { name: 'Mithi River Central Bridge Gauge', type: 'Canal Gauge', status: '2.85m (+0.4m/h)', cam: { x: 0, y: 4, z: 1.45 } },
+        { name: 'Kurla West Municipal Sump Pump #1', type: 'Pump Station', status: 'DISCHARGING 4.2 m3/s', cam: { x: 4, y: 8, z: 1.5 } },
+        { name: 'Kalina CST Sump Pump Station #3', type: 'Pump Station', status: 'SILTED - CAPACITY 40%', cam: { x: -2, y: -4, z: 1.45 } },
+        { name: 'Dharavi Storm Drainage Outfall', type: 'Gravity Outfall', status: 'TIDAL LOCK RESTRICTION', cam: { x: -12, y: 14, z: 1.4 } }
+      ]
+    },
+    'TRF': {
+      code: 'TRF',
+      name: 'Traffic Flow & Submerged Corridors',
+      badge: '42% IMPASSABLE',
+      color: '#FB923C',
+      bg: 'rgba(251, 146, 60, 0.12)',
+      desc: 'Real-time arterial road network accessibility, subway underpass submergence closures, and bottleneck evacuation routing.',
+      kpis: [
+        { label: 'Corridor Accessibility', val: '58% Passable', status: '42% IMPASSABLE', col: '#EF4444' },
+        { label: 'Average Transit Speed', val: '11 km/h', status: 'SEVERE DELAY', col: '#F59E0B' },
+        { label: 'Closed Subways / Flyovers', val: '3 Closed', status: 'MILAN & KURLA SUBWAYS', col: '#EF4444' },
+        { label: 'Evacuation Throughput', val: '3,200 veh/hr', status: 'EEH & WEH ONLY', col: '#10B981' }
+      ],
+      assets: [
+        { name: 'Milan Subway Underpass', type: 'Road Underpass', status: 'SUBMERGED (1.4m WATER)', cam: { x: -16, y: -8, z: 1.55 } },
+        { name: 'Kurla West Station Flyover', type: 'Arterial Flyover', status: 'HEAVY BOTTLENECK (8 km/h)', cam: { x: 8, y: 10, z: 1.45 } },
+        { name: 'Western Express Highway (WEH)', type: 'High-Capacity Trunk', status: 'PASSABLE (RESCUE ONLY)', cam: { x: -12, y: -2, z: 1.3 } },
+        { name: 'CST Road Arterial Connector', type: 'Link Corridor', status: 'PARTIALLY FLOODED (0.4m)', cam: { x: 2, y: 2, z: 1.4 } }
+      ]
+    },
+    'PWR': {
+      code: 'PWR',
+      name: '220kV / 110kV Power Transmission Grid',
+      badge: 'SUBSTATION ALERT',
+      color: '#FACC15',
+      bg: 'rgba(250, 204, 21, 0.12)',
+      desc: 'High-voltage grid stability, transformer busbar flood perimeter monitoring, and cascading blackout feeder isolation.',
+      kpis: [
+        { label: 'Grid Operational Load', val: '1,840 MW', status: 'HIGH STRAIN (92%)', col: '#F59E0B' },
+        { label: 'Substations Tripped', val: '2 / 6 Tripped', status: 'DHARAVI 220kV THREAT', col: '#EF4444' },
+        { label: 'Affected Customer Outages', val: '164,000 Homes', status: 'FEEDERS ISOLATED', col: '#EF4444' },
+        { label: 'Hospital Dedicated Feeder', val: 'Dual Grid Feeder', status: 'ONLINE + BACKUP GEN', col: '#10B981' }
+      ],
+      assets: [
+        { name: 'Dharavi 220kV Main Substation', type: 'Transmission Node', status: 'WATER AT PERIMETER (0.8m)', cam: { x: -8, y: 16, z: 1.45 } },
+        { name: 'BKC 110kV GIS Substation', type: 'Gas-Insulated Sub', status: 'ONLINE (LOAD 94%)', cam: { x: -4, y: 2, z: 1.4 } },
+        { name: 'Tata Power Kurla Switching Yard', type: 'Feeder Yard', status: 'TRIPPED - TRANSFORMER 2', cam: { x: 10, y: 12, z: 1.5 } },
+        { name: 'Trombay Thermal Feeder Trunk', type: '220kV Line', status: 'ONLINE (HIGH VOLTAGE)', cam: { x: 18, y: 26, z: 1.25 } }
+      ]
+    },
+    'EMS': {
+      code: 'EMS',
+      name: 'Emergency Medical Services & Civil Defense',
+      badge: 'SURGE DEPLOYMENT',
+      color: '#F87171',
+      bg: 'rgba(248, 113, 113, 0.12)',
+      desc: 'Ambulance fleet dispatch positioning, NDRF motorized rescue boat squads, fire tenders, and transit latency deltas.',
+      kpis: [
+        { label: 'Operational Ambulances', val: '8 / 22 Deployed', status: '14 CUT OFF BY WATER', col: '#EF4444' },
+        { label: 'Emergency Dispatch Delay', val: '+34 min Delay', status: 'DETOUR MANDATORY', col: '#EF4444' },
+        { label: 'NDRF Motorized Boats', val: '6 Squads Active', status: 'KURLA & KALINA BASIN', col: '#10B981' },
+        { label: 'Pending Citizen Rescues', val: '38 SOS Calls', status: 'TRIAGE IN PROGRESS', col: '#F59E0B' }
+      ],
+      assets: [
+        { name: 'Kurla West Fire & Rescue Station #12', type: 'Emergency Station', status: '3 TENDERS DEPLOYED', cam: { x: 6, y: 12, z: 1.45 } },
+        { name: 'NDRF Battalion 5 Staging Post', type: 'Disaster Staging', status: '6 RESCUE BOATS IN WATER', cam: { x: 0, y: 8, z: 1.4 } },
+        { name: 'Bandra EMS Ambulance Depot', type: 'Ambulance Hub', status: '4 AMBULANCES EN ROUTE', cam: { x: -16, y: 10, z: 1.35 } },
+        { name: 'Kalina Civil Defense Emergency Post', type: 'Civil Defense', status: 'SHELTER EVACUATION ACTIVE', cam: { x: -2, y: -2, z: 1.4 } }
+      ]
+    },
+    'HOS': {
+      code: 'HOS',
+      name: 'Critical Care & Hospital Bed Saturation',
+      badge: '98% SATURATED',
+      color: '#E11D48',
+      bg: 'rgba(225, 29, 72, 0.12)',
+      desc: 'Emergency department bed occupancy, ICU surge capacity, trauma resuscitation bays, and emergency diesel generator fuel reserves.',
+      kpis: [
+        { label: 'Sion Hospital ED Beds', val: '98% Saturation', status: 'CRITICAL OVERFLOW', col: '#EF4444' },
+        { label: 'KEM Hospital Triage', val: '84% Capacity', status: 'NON-CRITICAL DIVERTED', col: '#F59E0B' },
+        { label: 'Remaining ICU Beds (City)', val: '6 Beds Left', status: 'NEAR TOTAL EXHAUSTION', col: '#EF4444' },
+        { label: 'Emergency Generator Fuel', val: '14 Hours Fuel', status: 'REFUELING ACCESS BLOCKED', col: '#F59E0B' }
+      ],
+      assets: [
+        { name: 'Lokmanya Tilak Sion General Hospital', type: 'Level 1 Trauma', status: 'ED 98% | ICU 100% (CRITICAL)', cam: { x: 14, y: 22, z: 1.5 } },
+        { name: 'King Edward Memorial (KEM) Hospital', type: 'Tertiary Care', status: 'ED 84% | TRIAGE ACTIVE', cam: { x: -8, y: 28, z: 1.4 } },
+        { name: 'Bhabha General Hospital (Kurla)', type: 'Municipal Hospital', status: 'ENTRANCE FLOODED (0.7m)', cam: { x: 8, y: 6, z: 1.5 } },
+        { name: 'P.D. Hinduja National Hospital', type: 'Specialty Center', status: '62% OCCUPANCY | POWER OK', cam: { x: -16, y: 18, z: 1.35 } }
+      ]
+    },
+    'COM': {
+      code: 'COM',
+      name: 'Telecommunications & Citizen Feeds',
+      badge: '26% ON BATTERY',
+      color: '#A855F7',
+      bg: 'rgba(168, 85, 247, 0.12)',
+      desc: 'Cellular base station tower availability, optical fiber trunk integrity, emergency radio broadcast reach, and citizen SOS report clusters.',
+      kpis: [
+        { label: 'Cellular Towers Online', val: '74% Operational', status: '26% RUNNING ON BATTERY', col: '#F59E0B' },
+        { label: 'Citizen SOS Call Influx', val: '22 calls / min', status: 'SURGE CONGESTION', col: '#EF4444' },
+        { label: 'Optical Fiber Trunks', val: '2 Feeder Cuts', status: 'REROUTED TO MICROWAVE', col: '#F59E0B' },
+        { label: 'CAP Emergency Broadcast', val: '92% Delivered', status: 'SMS CELL BROADCAST OK', col: '#10B981' }
+      ],
+      assets: [
+        { name: 'Kurla West Central Telecom Mast #4', type: 'Cell Tower', status: 'BATTERY POWER (1.8h LEFT)', cam: { x: 6, y: 8, z: 1.45 } },
+        { name: 'BKC Regional Optical Fiber Hub', type: 'Fiber Switching Hub', status: 'ONLINE (GRID FEEDER OK)', cam: { x: -6, y: 4, z: 1.4 } },
+        { name: 'Dharavi Cellular Tower Mast', type: 'Mobile Tower', status: 'TRUNK CUT - MICROWAVE BACKUP', cam: { x: -10, y: 14, z: 1.4 } },
+        { name: 'Mumbai Police Disaster Radio Repeater', type: 'VHF Emergency Mast', status: 'BROADCASTING (CH 07)', cam: { x: 12, y: -10, z: 1.35 } }
+      ]
+    }
+  };
+
+  function renderLayerCockpitHtml() {
+    const act = (STATE.activeLayer || 'ALL').toUpperCase();
+    const l = INFRASTRUCTURE_LAYERS[act] || INFRASTRUCTURE_LAYERS['ALL'];
+
+    return `
+      <div id="layer-cockpit-card" style="margin-bottom:12px; padding:12px 14px; background:${l.bg}; border:1px solid ${l.color}; border-radius:8px; box-shadow:0 4px 16px rgba(0,0,0,0.25);">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:${l.color}; box-shadow:0 0 8px ${l.color};"></span>
+            <span style="font-size:12px; font-weight:700; color:${l.color}; letter-spacing:0.5px;">${l.name.toUpperCase()}</span>
+          </div>
+          <span style="font-size:10px; font-weight:700; padding:2px 8px; border-radius:4px; background:${l.color}; color:#000;">${l.badge}</span>
+        </div>
+        <div style="font-size:11px; color:var(--text-2); margin-bottom:10px; line-height:1.4;">${l.desc}</div>
+
+        <!-- 4 Domain Real-Time KPI Meters -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:10px;">
+          ${l.kpis.map(k => `
+            <div style="padding:6px 8px; background:rgba(0,0,0,0.25); border-radius:4px; border:1px solid rgba(255,255,255,0.06);">
+              <div style="font-size:9.5px; color:var(--text-3); margin-bottom:2px;">${k.label}</div>
+              <div class="mono" style="font-size:13px; font-weight:700; color:${k.col || 'var(--text-1)'};">${k.val}</div>
+              <div style="font-size:9.5px; font-weight:600; color:${k.col || 'var(--text-2)'};">${k.status}</div>
+            </div>
+          `).join('')}
+        </div>
+
+        <!-- Interactive Sector Assets with 3D Camera Jump -->
+        <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:8px;">
+          <div style="font-size:10px; font-weight:700; color:var(--text-2); margin-bottom:6px; display:flex; justify-content:space-between;">
+            <span>CRITICAL INFRASTRUCTURE ASSETS (${l.code}):</span>
+            <span style="color:${l.color};">CLICK TO FOCUS 3D</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            ${l.assets.map((a, i) => `
+              <div style="display:flex; align-items:center; justify-content:space-between; padding:4px 6px; background:rgba(0,0,0,0.2); border-radius:4px; font-size:10.5px;">
+                <div style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:180px;">
+                  <span style="font-weight:600; color:var(--text-1);">${a.name}</span>
+                  <span style="font-size:9.5px; color:${l.color}; display:block;">${a.status}</span>
+                </div>
+                <button type="button" onclick="focusAssetCamera(${a.cam.x}, ${a.cam.y}, ${a.cam.z}, '${a.name.replace(/'/g, "\'")}')" style="cursor:pointer; padding:3px 8px; background:${l.color}; color:#000; font-size:10px; font-weight:700; border-radius:4px; border:none; transition:all 0.15s ease;">
+                  Focus 3D
+                </button>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  window.focusAssetCamera = function(x, y, zoom, name) {
+    targetCamera.panX = x;
+    targetCamera.panY = y;
+    targetCamera.zoom = zoom;
+    showToast(`Camera Jump -> ${name}`);
+    drawCommandCity3D();
+  };
+
   function renderInspector() {
     const container = document.getElementById('inspector-content');
     if (!container) return;
@@ -1907,6 +2597,7 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
     const sc = world.scenario;
     const selZone = world.zones.find(z => z.zone_code === STATE.selectedZoneCode) || world.zones[0];
 
+    // Render tab content
     if (STATE.activeTab === 'forecast') {
       renderForecastTab(container, world, selZone);
     } else if (STATE.activeTab === 'cascade') {
@@ -1916,6 +2607,10 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
     } else if (STATE.activeTab === 'trust') {
       renderTrustTab(container, world, selZone);
     }
+
+    // Prepend the Dynamic Layer Cockpit at the top of the inspector
+    const cockpitHtml = renderLayerCockpitHtml();
+    container.insertAdjacentHTML('afterbegin', cockpitHtml);
   }
 
   // TAB 1: FORECAST (Zone state, multi-horizon bars, time-to-critical, hazard widget, sorted zones)
@@ -2583,7 +3278,7 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
     const W = rect.width, H = rect.height;
     const isSlate = STATE.theme === 'slate';
 
-    ctx.fillStyle = isSlate ? '#111A23' : '#E8EDF1';
+    ctx.fillStyle = '#F5ECE3'; /* Warm Gamified Parchment Ground */
     ctx.fillRect(0, 0, W, H);
 
     // Warm-up historical region (0 - 48h)
@@ -2654,6 +3349,12 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
 
     const pillConf = document.getElementById('pill-conf-badge');
     if (pillConf) pillConf.innerHTML = confBadge(world.city.confidence);
+
+    const pillEta = document.getElementById('pill-eta-line');
+    if (pillEta) pillEta.textContent = `Time to critical: in ~${world.city.time_to_critical_h} h`;
+
+    const pillEtaRange = document.getElementById('pill-eta-range');
+    if (pillEtaRange) pillEtaRange.textContent = `Range: ${world.city.q10 || 1} to ${world.city.q90 || 72} h · ρ = ${world.city.rho.toFixed(2)}`;
 
     const topClock = document.getElementById('top-sim-clock');
     if (topClock) topClock.textContent = `T+${STATE.simHour.toFixed(1)}h`;
@@ -2804,6 +3505,9 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
         riskData.zones.forEach(rz => {
           STATE.liveRiskByZone[rz.zone_id] = rz;
         });
+        if (riskData.city) {
+          STATE.liveCitySummary = riskData.city;
+        }
         updateSimulationDisplays();
         drawCommandCity3D();
         if (STATE.activeTab === 'forecast' && typeof renderForecastTab === 'function') {
@@ -2944,14 +3648,26 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
       });
     }
 
-    // 5. Left Rail Buttons
+    // 5. Left Rail Buttons - Dynamic Multi-Infrastructure Filter
     document.querySelectorAll('.left-rail [data-layer]').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.left-rail [data-layer]').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         STATE.activeLayer = btn.getAttribute('data-layer');
-        showToast(`Layer Filter: ${STATE.activeLayer}`);
+        const layerNames = {
+          'ALL': 'All-Layer Multi-Hazard Cascade',
+          'RISK': 'All-Layer Multi-Hazard Cascade',
+          'WX': 'Meteorology & Doppler Radar',
+          'HYD': 'Hydrology, Mithi River & Sump Pumps',
+          'TRF': 'Traffic Congestion & Submerged Road Closures',
+          'PWR': '220kV Grid Substations & Blackout Outages',
+          'EMS': 'Emergency Squads, Ambulances & NDRF Boats',
+          'HOS': 'Trauma Centers & Hospital Bed Saturation',
+          'COM': 'Telecom Towers, Fiber Hubs & SOS Clusters'
+        };
+        showToast(`Active Infrastructure: ${layerNames[STATE.activeLayer] || STATE.activeLayer}`);
         drawCommandCity3D();
+        renderInspector();
       });
     });
 
@@ -3224,11 +3940,55 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
 
 <!-- Voiceflow Chatbot Widget -->
 <style>
+  /* Ensure Voiceflow chat launcher docks cleanly on bottom-right */
   #voiceflow-chat, .vfc-widget-button, [class*="vfc-widget"] {
     z-index: 99999 !important;
     bottom: 24px !important;
     right: 24px !important;
   }
+/* EXTRA CREAM STYLES */
+  .card, .status-pill, .selection-card, .top-bar, .left-rail, .inspector-dock, .timeline-dock {
+    border: 1px solid var(--hairline) !important;
+    box-shadow: 0 4px 18px rgba(60, 40, 35, 0.05) !important;
+  }
+  .status-pill {
+    background: rgba(255, 253, 251, 0.94) !important;
+    backdrop-filter: blur(12px) !important;
+  }
+  .top-bar {
+    background: #FFFDFB !important;
+    border-bottom: 1px solid var(--hairline) !important;
+  }
+  .left-rail {
+    background: #FAF6F0 !important;
+    border-right: 1px solid var(--hairline) !important;
+  }
+  .left-rail .rail-btn {
+    color: var(--text-2) !important;
+  }
+  .left-rail .rail-btn.active {
+    color: var(--tide) !important;
+    background: rgba(229, 135, 132, 0.16) !important;
+    border-right: 3px solid var(--tide) !important;
+  }
+  .inspector-dock {
+    background: #FFFDFB !important;
+    border-left: 1px solid var(--hairline) !important;
+  }
+  .timeline-dock {
+    background: #FFFDFB !important;
+    border-top: 1px solid var(--hairline) !important;
+  }
+  .tab-btn.active {
+    color: var(--tide) !important;
+    border-bottom: 2px solid var(--tide) !important;
+  }
+  .brand-badge {
+    background: rgba(229, 135, 132, 0.14) !important;
+    color: var(--tide) !important;
+    border: 1px solid rgba(229, 135, 132, 0.3) !important;
+  }
+
 </style>
 <script type="text/javascript">
   (function(d, t) {
