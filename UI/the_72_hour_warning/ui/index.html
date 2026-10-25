@@ -3221,5 +3221,30 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
 })();
 </script>
 
+
+<!-- Voiceflow Chatbot Widget -->
+<style>
+  #voiceflow-chat, .vfc-widget-button, [class*="vfc-widget"] {
+    z-index: 99999 !important;
+    bottom: 24px !important;
+    right: 24px !important;
+  }
+</style>
+<script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '6ade8030920c8fabe7896293' },
+          url: 'https://general-runtime.voiceflow.com',
+          voice: {
+            url: 'https://runtime-api.voiceflow.com'
+          }
+        });
+      }
+      v.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs'; v.type = 'text/javascript';
+      s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
 </body>
 </html>

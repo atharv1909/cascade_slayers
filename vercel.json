@@ -4,8 +4,32 @@
   "trailingSlash": false,
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/dashboard",
       "dest": "/UI/index.html"
+    },
+    {
+      "src": "/landing",
+      "dest": "/UI/landing.html"
+    },
+    {
+      "src": "/UI/(.*)",
+      "dest": "/UI/"
+    },
+    {
+      "src": "/index.html",
+      "dest": "/UI/index.html"
+    },
+    {
+      "src": "/landing.html",
+      "dest": "/UI/landing.html"
+    },
+    {
+      "src": "/",
+      "dest": "/UI/landing.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/UI/"
     }
   ]
 }

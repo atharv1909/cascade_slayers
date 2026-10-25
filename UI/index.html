@@ -961,8 +961,13 @@
         </svg>
         <span>The 72-Hour Warning</span>
       </div>
-      <span class="brand-badge">MONSOON SLATE</span>
+      <span class="brand-badge" style="background:rgba(255,159,117,0.15);color:#FF9F75;border:1px solid rgba(255,159,117,0.3);">CASCADE COMMAND v2.2</span>
     </div>
+      <a href="landing.html" style="display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:#FFBFA3;background:rgba(255,159,117,0.12);padding:5px 12px;border-radius:6px;border:1px solid rgba(255,159,117,0.3);font-weight:600;font-size:12px;margin-left:8px;transition:all 0.2s ease;" onmouseover="this.style.background='rgba(255,159,117,0.25)'" onmouseout="this.style.background='rgba(255,159,117,0.12)'">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        Home / Landing
+      </a>
+
 
     <div class="nav-controls">
       <select id="sel-scenario" class="select-input" title="Select Hazard Scenario">
@@ -3221,5 +3226,31 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
 })();
 </script>
 
+
+<!-- Voiceflow Chatbot Widget -->
+<style>
+  /* Ensure Voiceflow chat launcher docks cleanly on bottom-right */
+  #voiceflow-chat, .vfc-widget-button, [class*="vfc-widget"] {
+    z-index: 99999 !important;
+    bottom: 24px !important;
+    right: 24px !important;
+  }
+</style>
+<script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '6ade8030920c8fabe7896293' },
+          url: 'https://general-runtime.voiceflow.com',
+          voice: {
+            url: 'https://runtime-api.voiceflow.com'
+          }
+        });
+      }
+      v.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs'; v.type = 'text/javascript';
+      s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
 </body>
 </html>

@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 72-Hour Warning — Urban Cascade Early-Warning System</title>
+<meta name="description" content="Multi-hazard cascading infrastructure failure prediction, 72 hours before the first domino falls. Real-time decision support for urban emergency management.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght,wdth@12..96,400..700,75..100&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ── Reset ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --peach-50: #FFF8F5;
+    --peach-100: #FFEEE5;
+    --peach-200: #FFD9C7;
+    --peach-300: #FFBFA3;
+    --peach-400: #FF9F75;
+    --peach-500: #E8845A;
+    --peach-600: #D06A3F;
+    --skin-50: #FFFAF7;
+    --skin-100: #FFF0E8;
+    --skin-200: #FFE0D0;
+    --skin-300: #FCCBB5;
+    --skin-400: #F0AD8D;
+    --skin-500: #D4906E;
+    --dark-900: #1A1118;
+    --dark-800: #2B1F24;
+    --dark-700: #3D2E33;
+    --dark-600: #5A4650;
+    --text-primary: #2B1F24;
+    --text-secondary: #6B5A60;
+    --text-muted: #9A8B90;
+    --glass-bg: rgba(255, 248, 245, 0.72);
+    --glass-border: rgba(255, 191, 163, 0.35);
+    --shadow-soft: 0 8px 32px rgba(43, 31, 36, 0.08);
+    --shadow-medium: 0 16px 48px rgba(43, 31, 36, 0.12);
+    --shadow-heavy: 0 24px 64px rgba(43, 31, 36, 0.18);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --radius-xs: 6px;
+    --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+    --font-body: "IBM Plex Sans", system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", "Consolas", monospace;
+    --transition: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    font-family: var(--font-body);
+    color: var(--text-primary);
+    background: var(--peach-50);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* ── Animated Background ── */
+  .bg-mesh {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .bg-mesh::before, .bg-mesh::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.5;
+    animation: float 20s ease-in-out infinite;
+  }
+  .bg-mesh::before {
+    width: 600px; height: 600px;
+    background: var(--peach-200);
+    top: -100px; right: -100px;
+    animation-delay: -5s;
+  }
+  .bg-mesh::after {
+    width: 500px; height: 500px;
+    background: var(--skin-200);
+    bottom: -50px; left: -50px;
+    animation-delay: -10s;
+  }
+  .bg-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    animation: float 25s ease-in-out infinite reverse;
+  }
+  .bg-orb--1 { width: 400px; height: 400px; background: var(--peach-300); top: 40%; left: 30%; animation-delay: -7s; }
+  .bg-orb--2 { width: 300px; height: 300px; background: var(--skin-300); top: 60%; right: 20%; animation-delay: -15s; }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(30px, -40px) scale(1.05); }
+    50% { transform: translate(-20px, 20px) scale(0.95); }
+    75% { transform: translate(40px, 30px) scale(1.02); }
+  }
+
+  /* ── Grid Texture ── */
+  .grid-texture {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(43, 31, 36, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(43, 31, 36, 0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* ── Navigation ── */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 16px 40px;
+    transition: all 0.4s var(--transition);
+  }
+  .nav.scrolled {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-soft);
+  }
+  .nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text-primary);
+  }
+  .nav-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--peach-400), var(--peach-500));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(232, 132, 90, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  .nav-logo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.2));
+    border-radius: inherit;
+  }
+  .nav-logo svg { position: relative; z-index: 1; }
+  .nav-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-link {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: all 0.25s var(--transition);
+  }
+  .nav-link:hover {
+    color: var(--text-primary);
+    background: rgba(255, 191, 163, 0.18);
+  }
+  .nav-cta {
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, var(--peach-500), var(--peach-600));
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s var(--transition);
+    box-shadow: 0 4px 16px rgba(232, 132, 90, 0.25);
+  }
+  .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(232, 132, 90, 0.35);
+  }
+
+  /* ── Hero ── */
+  .hero {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 40px 80px;
+  }
+  .hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .hero-content {
+    max-width: 600px;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px 6px 8px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--peach-600);
+    margin-bottom: 24px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    animation: fadeInUp 0.6s var(--transition) both;
+  }
+  .hero-badge .dot {
+    width: 8px; height: 8px;
+    background: var(--peach-400);
+    border-radius: 50%;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--dark-800);
+    margin-bottom: 20px;
+    animation: fadeInUp 0.6s var(--transition) 0.1s both;
+  }
+  .hero h1 .accent {
+    background: linear-gradient(135deg, var(--peach-500), var(--peach-600));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    max-width: 480px;
+    margin-bottom: 36px;
+    animation: fadeInUp 0.6s var(--transition) 0.2s both;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.6s var(--transition) 0.3s both;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, var(--peach-500), var(--peach-600));
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s var(--transition);
+    box-shadow: 0 8px 24px rgba(232, 132, 90, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(232, 132, 90, 0.4); }
+  .btn-primary:hover::before { opacity: 1; }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s var(--transition);
+  }
+  .btn-secondary:hover {
+    background: rgba(255, 248, 245, 0.9);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* ── Hero Visual (3D-ish Dashboard Preview) ── */
+  .hero-visual {
+    position: relative;
+    perspective: 1200px;
+    animation: fadeInUp 0.8s var(--transition) 0.35s both;
+  }
+  .hero-card {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: var(--dark-900);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-heavy);
+    transform: rotateY(-8deg) rotateX(4deg);
+    transition: transform 0.6s var(--transition);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .hero-card:hover { transform: rotateY(-2deg) rotateX(1deg); }
+  .hero-card-header {
+    height: 36px;
+    background: linear-gradient(180deg, #2B1F24, #1A1118);
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    gap: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .hero-card-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .hero-card-dot:nth-child(1) { background: #D8305A; }
+  .hero-card-dot:nth-child(2) { background: #E3B341; }
+  .hero-card-dot:nth-child(3) { background: #6B8F95; }
+  .hero-card-inner {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 12px;
+    height: calc(100% - 36px);
+  }
+  .dash-tile {
+    background: rgba(255,255,255,0.04);
+    border-radius: var(--radius-sm);
+    padding: 14px;
+    border: 1px solid rgba(255,255,255,0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .dash-tile-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+  .dash-tile-value {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .val-critical { color: #D8305A; }
+  .val-watch { color: #E3B341; }
+  .val-tide { color: #5CC8D6; }
+  .val-normal { color: #6B8F95; }
+  .dash-tile.map-tile {
+    grid-column: 1 / -1;
+    min-height: 120px;
+    background:
+      radial-gradient(ellipse at 30% 60%, rgba(92, 200, 214, 0.12) 0%, transparent 70%),
+      radial-gradient(ellipse at 70% 40%, rgba(216, 48, 90, 0.08) 0%, transparent 60%),
+      rgba(16, 25, 34, 0.8);
+  }
+  .map-grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(92,200,214,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(92,200,214,0.07) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .map-dot {
+    position: absolute;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    animation: blink 2.5s ease-in-out infinite;
+  }
+  .map-dot:nth-child(2) { top: 35%; left: 25%; background: #D8305A; animation-delay: 0s; }
+  .map-dot:nth-child(3) { top: 55%; left: 45%; background: #E3B341; animation-delay: 0.5s; }
+  .map-dot:nth-child(4) { top: 40%; left: 65%; background: #EE7B45; animation-delay: 1s; }
+  .map-dot:nth-child(5) { top: 70%; left: 35%; background: #5CC8D6; animation-delay: 1.5s; }
+  .map-dot:nth-child(6) { top: 30%; left: 80%; background: #6B8F95; animation-delay: 2s; }
+  @keyframes blink {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+  }
+  .hero-card-glow {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 120px;
+    background: radial-gradient(ellipse, rgba(232, 132, 90, 0.15), transparent 70%);
+    filter: blur(40px);
+    pointer-events: none;
+  }
+
+  /* ── Stats Strip ── */
+  .stats-strip {
+    position: relative;
+    z-index: 1;
+    padding: 40px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+  }
+  .stats-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    text-align: center;
+  }
+  .stat-item .stat-num {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--peach-500);
+    letter-spacing: -0.02em;
+  }
+  .stat-item .stat-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  /* ── Section Commons ── */
+  .section {
+    position: relative;
+    z-index: 1;
+    padding: 100px 40px;
+  }
+  .section-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .section-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--peach-500);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    color: var(--dark-800);
+    margin-bottom: 16px;
+  }
+  .section-desc {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 560px;
+    line-height: 1.7;
+  }
+
+  /* ── Features Grid ── */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+  }
+  .feature-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    transition: all 0.4s var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--peach-400), var(--skin-400));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--peach-300);
+  }
+  .feature-card:hover::before { opacity: 1; }
+  .feature-icon {
+    width: 48px; height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .feature-icon.fi-peach { background: linear-gradient(135deg, var(--peach-100), var(--peach-200)); color: var(--peach-600); }
+  .feature-icon.fi-skin { background: linear-gradient(135deg, var(--skin-100), var(--skin-200)); color: var(--skin-500); }
+  .feature-icon.fi-dark { background: linear-gradient(135deg, var(--dark-800), var(--dark-700)); color: var(--peach-300); }
+  .feature-card h3 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+  .feature-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  /* ── Pipeline Section ── */
+  .pipeline-flow {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-top: 56px;
+    position: relative;
+  }
+  .pipeline-flow::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--peach-200), var(--peach-400), var(--peach-200));
+    z-index: 0;
+  }
+  .pipe-step {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .pipe-num {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, var(--peach-400), var(--peach-500));
+    box-shadow: 0 4px 16px rgba(232, 132, 90, 0.3);
+  }
+  .pipe-step h4 {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--dark-800);
+  }
+  .pipe-step p {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    text-align: center;
+    padding: 100px 40px;
+    position: relative;
+    z-index: 1;
+  }
+  .cta-card {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 48px;
+    background: linear-gradient(135deg, var(--dark-800), var(--dark-900));
+    border-radius: 24px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-heavy);
+  }
+  .cta-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(232, 132, 90, 0.15), transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+  }
+  .cta-card h2 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+    position: relative;
+  }
+  .cta-card p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 32px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+  .cta-card .btn-primary {
+    font-size: 16px;
+    padding: 16px 40px;
+    position: relative;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    position: relative;
+    z-index: 1;
+    padding: 40px;
+    text-align: center;
+    border-top: 1px solid var(--glass-border);
+  }
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-copy {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .footer-links {
+    display: flex;
+    gap: 24px;
+  }
+  .footer-links a {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.25s;
+  }
+  .footer-links a:hover { color: var(--peach-500); }
+
+  /* ── Animations ── */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s var(--transition), transform 0.7s var(--transition);
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 1024px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero-visual { max-width: 600px; margin: 0 auto; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .pipeline-flow { grid-template-columns: repeat(3, 1fr); }
+    .pipe-step:nth-child(n+4) { grid-column: span 1; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  }
+  @media (max-width: 640px) {
+    .nav { padding: 12px 20px; }
+    .nav-links .nav-link { display: none; }
+    .hero { padding: 100px 20px 60px; }
+    .section { padding: 64px 20px; }
+    .features-grid { grid-template-columns: 1fr; }
+    .pipeline-flow { grid-template-columns: 1fr; }
+    .pipeline-flow::before { display: none; }
+    .stats-inner { grid-template-columns: 1fr; }
+    .hero-card { transform: none; }
+    .footer-inner { flex-direction: column; gap: 16px; }
+    .cta-card { padding: 40px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Animated background -->
+<div class="bg-mesh">
+  <div class="bg-orb bg-orb--1"></div>
+  <div class="bg-orb bg-orb--2"></div>
+</div>
+<div class="grid-texture"></div>
+
+<!-- Navigation -->
+<nav class="nav" id="main-nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <div class="nav-logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+          <polygon points="12 2 21 7 21 17 12 22 3 17 3 7 12 2"></polygon>
+          <circle cx="12" cy="12" r="3" fill="rgba(255,255,255,0.7)"></circle>
+        </svg>
+      </div>
+      <span class="nav-title">The 72-Hour Warning</span>
+    </a>
+    <div class="nav-links">
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#pipeline" class="nav-link">Pipeline</a>
+      <a href="#architecture" class="nav-link">Architecture</a>
+      <a href="index.html" class="nav-cta">Open Dashboard →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Cascade Slayers — SIH 2026
+      </div>
+      <h1>Know <span class="accent">72 hours</span> before it cascades.</h1>
+      <p class="hero-sub">Multi-hazard cascading infrastructure failure prediction and decision support. Real-time early warning for urban emergency management — before the first domino falls.</p>
+      <div class="hero-actions">
+        <a href="index.html" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 21 7 21 17 12 22 3 17 3 7 12 2"></polygon></svg>
+          Launch Command View
+        </a>
+        <a href="#features" class="btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg>
+          Explore Features
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <span class="hero-card-dot"></span>
+          <span class="hero-card-dot"></span>
+          <span class="hero-card-dot"></span>
+        </div>
+        <div class="hero-card-inner">
+          <div class="dash-tile">
+            <div class="dash-tile-label">Cascade Risk</div>
+            <div class="dash-tile-value val-critical">89%</div>
+          </div>
+          <div class="dash-tile">
+            <div class="dash-tile-label">Branching ρ</div>
+            <div class="dash-tile-value val-watch">1.47</div>
+          </div>
+          <div class="dash-tile">
+            <div class="dash-tile-label">First Breach ETA</div>
+            <div class="dash-tile-value val-tide">T−11h</div>
+          </div>
+          <div class="dash-tile">
+            <div class="dash-tile-label">Sectors Exposed</div>
+            <div class="dash-tile-value val-normal">6 / 8</div>
+          </div>
+          <div class="dash-tile map-tile">
+            <div class="map-grid-lines"></div>
+            <span class="map-dot"></span>
+            <span class="map-dot"></span>
+            <span class="map-dot"></span>
+            <span class="map-dot"></span>
+            <span class="map-dot"></span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-card-glow"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-item fade-in">
+      <div class="stat-num">8</div>
+      <div class="stat-label">Infrastructure Layers Modeled</div>
+    </div>
+    <div class="stat-item fade-in">
+      <div class="stat-num">72h</div>
+      <div class="stat-label">Forecast Horizon</div>
+    </div>
+    <div class="stat-item fade-in">
+      <div class="stat-num">46M</div>
+      <div class="stat-label">Chronos-2 Parameters</div>
+    </div>
+    <div class="stat-item fade-in">
+      <div class="stat-num">94%</div>
+      <div class="stat-label">Cascade Detection Rate</div>
+    </div>
+  </div>
+</div>
+
+<!-- Features -->
+<section class="section" id="features">
+  <div class="section-inner">
+    <div class="section-eyebrow">Core Capabilities</div>
+    <h2 class="section-title">Every second counts.<br>Every prediction is signed.</h2>
+    <p class="section-desc">A multi-model ensemble that forecasts, explains, and audits cascading failures — with provenance you can trace.</p>
+
+    <div class="features-grid">
+      <div class="feature-card fade-in">
+        <div class="feature-icon fi-peach">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+        </div>
+        <h3>Hawkes Point Process</h3>
+        <p>Multi-variate self-exciting process discovers cross-sector contagion edges. Empirical Bayes shrinkage per hazard archetype.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon fi-skin">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+        </div>
+        <h3>Chronos-2 Foundation</h3>
+        <p>46M-parameter probabilistic time-series forecaster (T5-Small backbone) generates quantile predictions across all sensor channels.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon fi-dark">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18M9 21V9"></path></svg>
+        </div>
+        <h3>LightGBM Risk Head</h3>
+        <p>Gradient-boosted multi-horizon classifier with Venn-ABERS calibration and conformal prediction bands. 54-feature operational vectors.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon fi-peach">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+        </div>
+        <h3>ETAS Seismic Model</h3>
+        <p>Epidemic-Type Aftershock Sequence model for seismic hazard chains. Omori-Utsu decay with spatial KDE kernels.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon fi-skin">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h3>Cryptographic Ledger</h3>
+        <p>SHA-256 hash-chained audit trail. Every forecast, every ingested event, every decision — signed before it's tested.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon fi-dark">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        </div>
+        <h3>Online Adversarial Learning</h3>
+        <p>River-based online boosting with adversarial fault injection. Detects and adapts to distribution drift in real-time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pipeline -->
+<section class="section" id="pipeline" style="background: rgba(255,238,229,0.3);">
+  <div class="section-inner">
+    <div class="section-eyebrow">Model Pipeline</div>
+    <h2 class="section-title">From raw sensors to actionable warnings.</h2>
+    <p class="section-desc">Six notebooks. One continuous pipeline. Every stage produces auditable artifacts.</p>
+
+    <div class="pipeline-flow">
+      <div class="pipe-step fade-in">
+        <div class="pipe-num">0</div>
+        <h4>Simulator Dataset</h4>
+        <p>Synthetic multi-hazard episodes with configurable city topology</p>
+      </div>
+      <div class="pipe-step fade-in">
+        <div class="pipe-num">1</div>
+        <h4>Chronos-2 Features</h4>
+        <p>GPU-accelerated probabilistic time-series embedding</p>
+      </div>
+      <div class="pipe-step fade-in">
+        <div class="pipe-num">2</div>
+        <h4>Hawkes Discovery</h4>
+        <p>Cross-sector dependency graph via point-process inference</p>
+      </div>
+      <div class="pipe-step fade-in">
+        <div class="pipe-num">3</div>
+        <h4>ETAS Seismic</h4>
+        <p>Aftershock cascade propagation with spatial decay</p>
+      </div>
+      <div class="pipe-step fade-in">
+        <div class="pipe-num">4</div>
+        <h4>LightGBM Risk</h4>
+        <p>Multi-horizon calibrated risk classification</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Architecture -->
+<section class="section" id="architecture">
+  <div class="section-inner">
+    <div class="section-eyebrow">System Architecture</div>
+    <h2 class="section-title">Built for real-time. Designed for trust.</h2>
+    <p class="section-desc">A FastAPI backend with 14 verified routes, WebSocket streaming, and a command-view dashboard that runs offline.</p>
+
+    <div class="features-grid" style="grid-template-columns: repeat(2, 1fr); margin-top: 56px;">
+      <div class="feature-card fade-in">
+        <h3 style="font-size: 16px;">Backend Engine</h3>
+        <p>FastAPI with lifespan-managed simulation ticker, multi-model ensemble orchestration, and Prometheus-compatible /metrics endpoint.</p>
+        <div style="margin-top: 16px; padding: 12px; background: rgba(26,17,24,0.04); border-radius: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); line-height: 1.8;">
+          /v1/risk · /v1/cascade · /v1/graph · /v1/explain<br>
+          /v1/intervene · /v1/recommend · /v1/sources<br>
+          /v1/ledger · /v1/canary · /v1/metrics/eval
+        </div>
+      </div>
+      <div class="feature-card fade-in">
+        <h3 style="font-size: 16px;">Command View UI</h3>
+        <p>3D isometric city canvas, 4-tab inspector (Forecast, Cascade, Act, Trust), timeline-as-heatmap, and a built-in briefing mode.</p>
+        <div style="margin-top: 16px; padding: 12px; background: rgba(26,17,24,0.04); border-radius: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); line-height: 1.8;">
+          Canvas 2.5D · Inspector tabs · Timeline heatmap<br>
+          Keyboard shortcuts · Theme toggle · Offline mode<br>
+          WebSocket live stream · Selection & provenance
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-card fade-in">
+    <h2>See your corridor.<br>Change the outcome.</h2>
+    <p>Open the command view to explore real-time cascade forecasts, intervene before critical thresholds, and trace every prediction to its source.</p>
+    <a href="index.html" class="btn-primary">
+      Open the Command View
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-copy">© 2026 Cascade Slayers — Smart India Hackathon</div>
+    <div class="footer-links">
+      <a href="index.html">Dashboard</a>
+      <a href="https://github.com/atharv1909/cascade_slayers" target="_blank">GitHub</a>
+      <a href="#features">Features</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Voiceflow Chatbot Widget -->
+<script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '6ade8030920c8fabe7896293' },
+          url: 'https://general-runtime.voiceflow.com',
+          voice: {
+            url: 'https://runtime-api.voiceflow.com'
+          },
+          versionID: 'production'
+        });
+      }
+      v.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs'; v.type = 'text/javascript';
+      s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+
+<!-- Scroll Animations & Nav -->
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Intersection Observer for fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+
+</body>
+</html>

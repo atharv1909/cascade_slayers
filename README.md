@@ -12,6 +12,9 @@ When extreme weather or compound disasters strike a modern metropolis, failure d
 **The 72-Hour Warning** provides emergency managers, municipal civil defense authorities, and critical utility operators with an integrated early-warning dashboard and predictive physical AI backend.
 
 ### Core Capabilities
+- **Landing Showcase & Live Command Center**: Interactive luxury peach/obsidian landing page (UI/landing.html) and live operations cockpit (UI/index.html) with real-time multi-hazard telemetry, 3D orthographic projection, and dynamic timeline playback.
+- **Embedded Voiceflow AI Assistant**: Intelligent multi-hazard incident advisory copilot integrated seamlessly at the bottom-right of both the landing page and dashboard.
+
 - **Monotone Multi-Horizon Risk Estimation**: Predicts cumulative failure probabilities across $[1\text{h}, 3\text{h}, 6\text{h}, 12\text{h}, 24\text{h}, 48\text{h}, 72\text{h}]$ using LightGBM with monotonic constraints ($P(1) \le P(3) \le \dots \le P(72)$) calibrated with isotonic regression.
 - **Cross-Layer Hawkes Cascading Process**: Computes mutual excitation intensity between infrastructure domains (Weather $\to$ Hydrology $\to$ Traffic $\to$ Power $\to$ EMS $\to$ Hospitals $\to$ Comms), estimating the dynamic reproduction number $\rho$ (super-critical cascade flag $\rho > 1$).
 - **Conformal Time-to-Critical Quantiles**: Inverts the cumulative failure CDF to provide honest $[q_{10}, q_{50}, q_{90}]$ interval forecasts. If $P(72\text{h}) < 0.5$, it outputs `"Beyond 72h"` rather than fabricating misleading timestamps (Rule Zero).
