@@ -13,7 +13,15 @@ def get_risk_router(engine: EngineState) -> APIRouter:
         as_of: Optional[str] = Query(None, description="ISO timestamp for strict as-of isolation"),
         zone: Optional[str] = Query(None, description="Optional zone ID filter")
     ):
-        as_of_dt = datetime.fromisoformat(as_of) if as_of else None
+        as_of_dt = None
+        if as_of:
+            clean_as_of = as_of.strip().replace(" ", "+")
+            if clean_as_of.endswith("Z"):
+                clean_as_of = clean_as_of[:-1] + "+00:00"
+            try:
+                as_of_dt = datetime.fromisoformat(clean_as_of)
+            except Exception:
+                as_of_dt = None
         return engine.get_risk_state(as_of=as_of_dt, zone_id=zone)
 
     return router

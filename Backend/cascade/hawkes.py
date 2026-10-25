@@ -122,7 +122,7 @@ class DiscreteHawkesGLM(nn.Module):
         with torch.no_grad():
             A_curr = self.A.cpu().numpy()
             tau = self.lag_bases.cpu().numpy()
-            K = np.sum(A_curr * tau[np.newaxis, np.newaxis, :], axis=2)
+            K = np.sum(A_curr, axis=2)
             return K
 
     def compute_branching_ratio(self) -> Tuple[float, np.ndarray]:

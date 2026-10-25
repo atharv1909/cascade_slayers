@@ -968,7 +968,168 @@
     border: 1px solid rgba(229, 135, 132, 0.3) !important;
   }
 
+
+  /* =========================================================================
+     REAL GIS MAP & GAMIFIED SIMULATION CONTROLS
+     ========================================================================= */
+  .map-view-switcher {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 5px;
+    background: rgba(255, 253, 251, 0.94);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--hairline-strong);
+    border-radius: 99px;
+    box-shadow: 0 4px 18px rgba(60, 40, 35, 0.08);
+  }
+  .view-switch-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    height: 26px;
+    padding: 0 11px;
+    border-radius: 99px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-2);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .view-switch-btn:hover {
+    color: var(--text-1);
+    background: var(--bg-2);
+  }
+  .view-switch-btn.active {
+    background: var(--tide);
+    color: #FFFDFB;
+    box-shadow: 0 2px 8px rgba(229, 135, 132, 0.35);
+  }
+  .tile-switch-group {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    border-left: 1px solid var(--hairline);
+    padding-left: 6px;
+    margin-left: 2px;
+  }
+  .tile-pill {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 99px;
+    color: var(--text-3);
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.15s ease;
+  }
+  .tile-pill:hover {
+    color: var(--text-1);
+    background: var(--bg-3);
+  }
+  .tile-pill.active {
+    background: var(--bg-3);
+    color: var(--text-1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+
+  /* Custom Leaflet Marker Badges (Zero Clutter, No Overlapping Giant Boxes) */
+  .gis-marker-badge {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .gis-marker-badge:hover {
+    transform: scale(1.18);
+    z-index: 9999 !important;
+  }
+  .gis-badge-ring {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1.5px solid currentColor;
+    opacity: 0.4;
+    animation: markerPulse 2.4s infinite ease-out;
+  }
+  @keyframes markerPulse {
+    0% { transform: scale(0.9); opacity: 0.7; }
+    50% { transform: scale(1.4); opacity: 0; }
+    100% { transform: scale(0.9); opacity: 0; }
+  }
+  .gis-badge-pill {
+    position: absolute;
+    left: calc(100% + 8px);
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    background: rgba(255, 253, 251, 0.94);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--hairline-strong);
+    box-shadow: 0 2px 10px rgba(60, 40, 35, 0.1);
+    border-radius: 6px;
+    padding: 2px 7px;
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--text-1);
+    pointer-events: none;
+    letter-spacing: 0.02em;
+  }
+  .gis-badge-pill span.sub {
+    font-weight: 400;
+    color: var(--text-3);
+    margin-left: 4px;
+  }
+
+  /* Custom Leaflet Popups in Cream & Dusty White Theme */
+  .leaflet-popup-content-wrapper {
+    background: #FFFDFB !important;
+    border: 1px solid var(--hairline-strong) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 30px rgba(60, 40, 35, 0.12) !important;
+    padding: 12px !important;
+    color: var(--text-1) !important;
+    font-family: var(--font-sans) !important;
+  }
+  .leaflet-popup-tip {
+    background: #FFFDFB !important;
+    border: 1px solid var(--hairline-strong) !important;
+  }
+  .leaflet-popup-content {
+    margin: 0 !important;
+    line-height: 1.4 !important;
+  }
+  .popup-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-1);
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .popup-card-body {
+    font-size: 11px;
+    color: var(--text-2);
+  }
+  .popup-metric-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 0;
+  }
 </style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
 <div id="app-root">
@@ -993,15 +1154,15 @@
 
     <div class="nav-controls">
       <select id="sel-scenario" class="select-input" title="Select Hazard Scenario">
-        <option value="flood_mithi">Monsoon Inundation · Mithi River</option>
-        <option value="heat_mumbai">Wet-Bulb 35°C Heatwave</option>
-        <option value="grid_tripping">220kV Substation Tripping</option>
-        <option value="epidemic_water">Waterborne Epidemic Outbreak</option>
-        <option value="quake_subduction">M6.4 Coastal Earthquake</option>
-        <option value="chem_corridor">Industrial Chlorine Gas Plume</option>
-        <option value="compound_monsoon_blackout">Compound: Monsoon + Blackout</option>
-        <option value="compound_heat_grid">Compound: Heatwave + Peak Grid</option>
-        <option value="heldout_city">Held-out Evaluation City</option>
+        <option value="flood" selected>Monsoon Flood · Mithi River Basin</option>
+        <option value="heat">Wet-Bulb 35°C Extreme Heatwave</option>
+        <option value="grid">220kV Grid Substation Tripping</option>
+        <option value="quake">M6.4 Coastal Earthquake</option>
+        <option value="chem">Industrial Chlorine Gas Plume</option>
+        <option value="compound_a">Compound: Monsoon + Blackout</option>
+        <option value="compound_b">Compound: Heatwave + Peak Grid</option>
+        <option value="epidemic">Waterborne Epidemic Outbreak</option>
+        <option value="heldout_city">Held-Out Evaluation City</option>
       </select>
 
       <select id="sel-city" class="select-input" title="City Corridor">
@@ -1079,7 +1240,28 @@
 
     <!-- CENTER 3D MAP CANVAS -->
     <main class="map-stage" id="map-stage-container">
-      <canvas id="city3d-canvas"></canvas>
+      <!-- REAL CARTOGRAPHIC GIS MAP (Leaflet.js + Carto Voyager / Satellite) -->
+      <div id="real-gis-map" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1;"></div>
+
+      <!-- CENTER 3D MAP CANVAS (Gamified Simulation Mode) -->
+      <canvas id="city3d-canvas" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; display: none;"></canvas>
+
+      <!-- MAP VIEW SWITCHER (Real GIS Map vs 3D Simulation) -->
+      <div class="map-view-switcher" id="map-view-switcher">
+        <button type="button" class="view-switch-btn active" id="btn-view-gis" title="Real Cartographic GIS Map">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+          Real GIS Map
+        </button>
+        <button type="button" class="view-switch-btn" id="btn-view-3d" title="Gamified 3D Isometric Simulation View">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          3D Simulation
+        </button>
+        <div class="tile-switch-group" id="tile-switch-group">
+          <button type="button" class="tile-pill active" data-tile="voyager" title="Cream & Dusty White Carto Voyager Tiles">Cream</button>
+          <button type="button" class="tile-pill" data-tile="satellite" title="High-Res Real Satellite Imagery">Satellite</button>
+          <button type="button" class="tile-pill" data-tile="osm" title="OpenStreetMap Vector Street Map">Streets</button>
+        </div>
+      </div>
 
       <!-- FLOATING STATUS PILL (Top-Left of Map) -->
       <div class="status-pill" id="main-status-pill">
@@ -1886,25 +2068,25 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
     ctx.lineTo(pFront2[0], pFront2[1]);
     ctx.stroke();
 
-    // Sharp luminous front leading edge
-    ctx.strokeStyle = '#5CC8D6';
-    ctx.lineWidth = 2.5;
-    ctx.shadowColor = '#5CC8D6';
-    ctx.shadowBlur = 12;
+    // Soft rose front leading edge (Cream & Baby Pink Theme)
+    ctx.strokeStyle = '#E58784';
+    ctx.lineWidth = 2.2;
+    ctx.shadowColor = 'rgba(229, 135, 132, 0.4)';
+    ctx.shadowBlur = 8;
     ctx.beginPath();
     ctx.moveTo(pFront1[0], pFront1[1]);
     ctx.lineTo(pFront2[0], pFront2[1]);
     ctx.stroke();
 
-    // Front annotation badge
-    ctx.fillStyle = '#111A23';
-    ctx.fillRect(pFront2[0] - 60, pFront2[1] - 12, 120, 22);
-    ctx.strokeStyle = '#5CC8D6';
-    ctx.lineWidth = 1;
-    ctx.strokeRect(pFront2[0] - 60, pFront2[1] - 12, 120, 22);
-    ctx.fillStyle = '#5CC8D6';
+    // Front annotation badge (Dusty White card with Baby Pink border)
+    ctx.fillStyle = 'rgba(255, 253, 251, 0.94)';
+    ctx.fillRect(pFront2[0] - 64, pFront2[1] - 12, 128, 22);
+    ctx.strokeStyle = '#E58784';
+    ctx.lineWidth = 1.2;
+    ctx.strokeRect(pFront2[0] - 64, pFront2[1] - 12, 128, 22);
+    ctx.fillStyle = '#C92A4B';
     ctx.font = '600 10px "IBM Plex Mono", monospace';
-    ctx.fillText(`FRONT: T+${STATE.simHour}h (q10-q90)`, pFront2[0] - 54, pFront2[1] + 3);
+    ctx.fillText(`FRONT: T+${Math.round(STATE.simHour)}h (q10-q90)`, pFront2[0] - 58, pFront2[1] + 3);
     ctx.restore();
 
     // =======================================================================
@@ -3341,8 +3523,28 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
       syncBackendRisk();
     }
     const world = computeCurrentWorld();
+    const activeH = String(STATE.horizon || 24);
+
+    // Real Model Probability for currently selected Horizon (1h, 3h, 6h, 12h, 24h, 48h, 72h)
+    let displayP = world.city.p_cascade_24h;
+    if (STATE.liveRiskByZone) {
+      const zKeys = Object.keys(STATE.liveRiskByZone);
+      if (zKeys.length > 0) {
+        const zoneProbs = zKeys.map(k => {
+          const zp = STATE.liveRiskByZone[k].p;
+          return (zp && typeof zp[activeH] !== 'undefined') ? zp[activeH] : 0.50;
+        });
+        displayP = Number((zoneProbs.reduce((a, b) => a + b, 0) / zoneProbs.length).toFixed(2));
+      }
+    }
+
+    const pillLabel = document.querySelector('.status-metric-label');
+    if (pillLabel) {
+      pillLabel.innerHTML = `P(CASCADE ≤${activeH}H) <span class="prov-glyph" title="Modelled via trained LightGBM & Hawkes">m</span>`;
+    }
+
     const pillP24 = document.getElementById('pill-p24-val');
-    if (pillP24) pillP24.textContent = world.city.p_cascade_24h.toFixed(2);
+    if (pillP24) pillP24.textContent = displayP.toFixed(2);
 
     const pillRisk = document.getElementById('pill-risk-badge');
     if (pillRisk) pillRisk.innerHTML = riskBadge(world.city.state);
@@ -3366,6 +3568,9 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
     if (cursorCoords) cursorCoords.textContent = `Cursor: T+${STATE.simHour.toFixed(1)}h`;
 
     drawTimelineTrack();
+    if (typeof updateRealMapLayers === 'function') {
+      updateRealMapLayers();
+    }
   }
 
   // Briefing Mode: Step-by-step automated cascade sequence
@@ -3499,7 +3704,15 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
     isFetchingRisk = true;
 
     try {
-      const riskData = await API.getRisk();
+      // Calculate real simulation timestamp from episode start: 2026-07-26T00:00:00Z
+      const epStart = new Date("2026-07-26T00:00:00Z").getTime();
+      const asOfDt = new Date(epStart + (STATE.simHour * 3600 * 1000));
+      const asOfIso = asOfDt.toISOString();
+
+      // Tell backend to seek simulation hour
+      API.seek(currentH).catch(() => {});
+
+      const riskData = await API.getRisk(asOfIso);
       if (riskData && Array.isArray(riskData.zones)) {
         if (!STATE.liveRiskByZone) STATE.liveRiskByZone = {};
         riskData.zones.forEach(rz => {
@@ -3510,6 +3723,9 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
         }
         updateSimulationDisplays();
         drawCommandCity3D();
+        if (typeof updateRealMapLayers === 'function') {
+          updateRealMapLayers();
+        }
         if (STATE.activeTab === 'forecast' && typeof renderForecastTab === 'function') {
           renderForecastTab();
         }
@@ -3560,19 +3776,312 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
     animFrameId = requestAnimationFrame(renderLoop);
   }
 
+  // =========================================================================
+  // REAL GIS MAP ENGINE (Leaflet.js + CartoDB Voyager / Satellite)
+  // =========================================================================
+  let realMap = null;
+  let mapTileLayers = {};
+  let currentTileName = 'voyager';
+  let gisRiverPoly = null;
+  let gisFloodLayers = {};
+  let gisAssetMarkers = [];
+  let gisPowerLines = [];
+
+  function initRealGisMap() {
+    const mapDiv = document.getElementById('real-gis-map');
+    if (!mapDiv || realMap) return;
+
+    // Center on Mumbai Mithi River Basin (Kurla, BKC, Sion, Dharavi)
+    realMap = L.map('real-gis-map', {
+      center: [19.0620, 72.8680],
+      zoom: 13.5,
+      zoomControl: false,
+      attributionControl: false
+    });
+
+    // Sleek Zoom Control (Bottom Right)
+    L.control.zoom({ position: 'bottomright' }).addTo(realMap);
+
+    // Tile Layers
+    mapTileLayers.voyager = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 16,
+      attribution: 'Esri, HERE, Garmin'
+    });
+    mapTileLayers.satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 19
+    });
+    mapTileLayers.osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19
+    });
+
+    mapTileLayers.voyager.addTo(realMap);
+
+    // 1. Draw Real Mithi River Watercourse
+    const mithiCoords = [
+      [19.1280, 72.8990], [19.1210, 72.8940], [19.1130, 72.8880], [19.1020, 72.8820],
+      [19.0910, 72.8780], [19.0820, 72.8750], [19.0740, 72.8710], [19.0680, 72.8670],
+      [19.0620, 72.8590], [19.0550, 72.8520], [19.0480, 72.8460], [19.0420, 72.8360]
+    ];
+    gisRiverPoly = L.polyline(mithiCoords, {
+      color: '#4A8FA8',
+      weight: 6,
+      opacity: 0.85,
+      lineCap: 'round',
+      lineJoin: 'round'
+    }).addTo(realMap);
+
+    gisRiverPoly.bindTooltip('🌊 Mithi River Watercourse', { sticky: true });
+
+    // 2. Inundation Flood Polygons
+    const floodPolys = [
+      {
+        id: 'Z09', name: 'Kurla West / Kranti Nagar Basin',
+        coords: [[19.066, 72.869], [19.076, 72.876], [19.072, 72.884], [19.062, 72.876]]
+      },
+      {
+        id: 'Z04', name: 'Sion Circle / Gandhi Market Sump',
+        coords: [[19.032, 72.856], [19.042, 72.859], [19.039, 72.868], [19.031, 72.864]]
+      },
+      {
+        id: 'Z11', name: 'BKC Lowland Retention Basin',
+        coords: [[19.061, 72.859], [19.068, 72.863], [19.065, 72.872], [19.058, 72.867]]
+      }
+    ];
+
+    floodPolys.forEach(fp => {
+      const poly = L.polygon(fp.coords, {
+        color: '#D8305A',
+        weight: 1.5,
+        fillColor: '#EE7B45',
+        fillOpacity: 0.22,
+        dashArray: '4, 4'
+      }).addTo(realMap);
+      poly.bindTooltip(`⚠️ ${fp.name}`, { sticky: true });
+      gisFloodLayers[fp.id] = poly;
+    });
+
+    // 3. Power Grid Interconnect Lines
+    const powerLines = [
+      [[19.0435, 72.8550], [19.0680, 72.8640]],
+      [[19.0680, 72.8640], [19.0630, 72.8820]]
+    ];
+    powerLines.forEach(pl => {
+      const line = L.polyline(pl, {
+        color: '#D9822B',
+        weight: 2,
+        dashArray: '6, 6',
+        opacity: 0.75
+      }).addTo(realMap);
+      gisPowerLines.push(line);
+    });
+
+    // 4. Populate Real Infrastructure Markers
+    populateGisMarkers();
+
+    // 5. Wire up Map View Switcher and Tile Buttons
+    setupMapSwitcherEvents();
+  }
+
+  function populateGisMarkers() {
+    if (!realMap) return;
+    gisAssetMarkers.forEach(m => realMap.removeLayer(m));
+    gisAssetMarkers = [];
+
+    const activeL = STATE.activeLayer || 'ALL';
+
+    const assets = [
+      {
+        type: 'HOS', name: 'Bhabha Hospital Kurla', lat: 19.0682, lng: 72.8777,
+        status: 'Surge: 88% Bed Saturation · Entrance 0.5m', col: '#DB5A42', icon: '✚',
+        details: 'Emergency DG fuel at 72%. Sump pump running. Trauma wing operational.'
+      },
+      {
+        type: 'HOS', name: 'Sion Hospital (LTMMG)', lat: 19.0372, lng: 72.8598,
+        status: 'Surge: 94% Bed Saturation · Grid Online', col: '#C92A4B', icon: '✚',
+        details: 'Level 1 Trauma Center. Flood ingress prevented by perimeter sandbags.'
+      },
+      {
+        type: 'HOS', name: 'P.D. Hinduja Clinic', lat: 19.0330, lng: 72.8395,
+        status: 'Normal: 62% Occupancy · Access Clear', col: '#488B8F', icon: '✚',
+        details: 'Primary diversion facility. Power grid 100% stable.'
+      },
+      {
+        type: 'HOS', name: 'Lilavati Hospital Bandra', lat: 19.0515, lng: 72.8290,
+        status: 'Normal: 74% Occupancy · Clear Corridor', col: '#488B8F', icon: '✚',
+        details: 'Specialty ICU ready. Receiving mutual-aid transfers.'
+      },
+      {
+        type: 'HOS', name: 'Asian Heart Institute BKC', lat: 19.0650, lng: 72.8680,
+        status: 'Watch: 81% Occupancy · Ground Berm Active', col: '#D9822B', icon: '✚',
+        details: 'Cardiac critical care. Secondary substation connection active.'
+      },
+      {
+        type: 'PWR', name: 'Dharavi 220kV Receiving Station', lat: 19.0435, lng: 72.8550,
+        status: 'Load: 142 MW · Busbar Nominal', col: '#D9822B', icon: '⚡',
+        details: 'Feeds Central & Harbour line traction and Sion Hospital.'
+      },
+      {
+        type: 'PWR', name: 'Kurla 110kV Substation', lat: 19.0630, lng: 72.8820,
+        status: 'Watch: 0.35m Yard Freeboard', col: '#DB5A42', icon: '⚡',
+        details: 'Transformer bays protected by flood berms. Sump pump #2 operating.'
+      },
+      {
+        type: 'PWR', name: 'BKC GIS 220kV Substation', lat: 19.0680, lng: 72.8640,
+        status: 'Nominal: Gas-Insulated · Sealed', col: '#488B8F', icon: '⚡',
+        details: 'Commercial hub supply. 100% water-tight design.'
+      },
+      {
+        type: 'HYD', name: 'Gazdarbandh Pumping Station', lat: 19.0830, lng: 72.8310,
+        status: 'Active: 6/6 Pumps (48 m³/s discharge)', col: '#488B8F', icon: '⚓',
+        details: 'Outfall gates clear. Diesel generators on standby.'
+      },
+      {
+        type: 'HYD', name: 'Irla Pumping Station', lat: 19.1060, lng: 72.8350,
+        status: 'Tide Lock Warning: Flap Gates 80%', col: '#D9822B', icon: '⚓',
+        details: 'High tide peak approaching at T+68h. Gravity flow restricted.'
+      },
+      {
+        type: 'HYD', name: 'Lovegrove Bunder Pump', lat: 19.0060, lng: 72.8150,
+        status: 'Nominal: Sluice Discharging', col: '#488B8F', icon: '⚓',
+        details: 'Discharging Southern Mumbai runoff to Arabian Sea.'
+      }
+    ];
+
+    assets.forEach(a => {
+      if (activeL !== 'ALL') {
+        if (activeL === 'HOS' && a.type !== 'HOS') return;
+        if (activeL === 'PWR' && a.type !== 'PWR') return;
+        if (activeL === 'HYD' && a.type !== 'HYD') return;
+        if (activeL === 'TRF' && a.type !== 'TRF') return;
+      }
+
+      const iconHtml = `
+        <div class="gis-marker-badge" style="width:26px; height:26px; background:#FFFDFB; border:2px solid ${a.col}; color:${a.col}; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+          <div class="gis-badge-ring" style="color:${a.col}"></div>
+          <span style="font-size:12px; font-weight:800; line-height:1;">${a.icon}</span>
+          <div class="gis-badge-pill">
+            ${a.name} <span class="sub" style="color:${a.col}; font-weight:600;">${a.type}</span>
+          </div>
+        </div>
+      `;
+
+      const customIcon = L.divIcon({
+        className: 'custom-gis-pin',
+        html: iconHtml,
+        iconSize: [26, 26],
+        iconAnchor: [13, 13]
+      });
+
+      const marker = L.marker([a.lat, a.lng], { icon: customIcon }).addTo(realMap);
+
+      const popupHtml = `
+        <div class="popup-card-header">
+          <span style="color:${a.col}; font-size:14px;">${a.icon}</span>
+          <div>${a.name}</div>
+        </div>
+        <div class="popup-card-body">
+          <div class="popup-metric-row"><strong>Status:</strong> <span style="color:${a.col}; font-weight:600;">${a.status}</span></div>
+          <div class="popup-metric-row"><strong>Details:</strong> <span>${a.details}</span></div>
+          <div style="margin-top:8px; display:flex; justify-content:flex-end;">
+            <button type="button" class="sim-btn" style="height:22px; font-size:10px; padding:0 8px;" onclick="STATE.selectedZoneCode='Z09'; renderInspector();">Inspect Asset →</button>
+          </div>
+        </div>
+      `;
+
+      marker.bindPopup(popupHtml, { maxWidth: 300 });
+      marker.on('click', () => {
+        STATE.selectedAssetId = a.name;
+        renderInspector();
+      });
+
+      gisAssetMarkers.push(marker);
+    });
+  }
+
+  function updateRealMapLayers() {
+    if (!realMap) return;
+    const t = STATE.simHour;
+    const elapsed = Math.max(0, t - 48);
+
+    Object.keys(gisFloodLayers).forEach(zid => {
+      const poly = gisFloodLayers[zid];
+      if (!poly) return;
+      const op = Math.min(0.55, 0.12 + (elapsed * 0.015));
+      const col = t >= 64 ? '#C92A4B' : (t >= 52 ? '#DB5A42' : '#D9822B');
+      poly.setStyle({
+        fillColor: col,
+        color: col,
+        fillOpacity: op
+      });
+    });
+
+    populateGisMarkers();
+  }
+
+  function setupMapSwitcherEvents() {
+    const btnGis = document.getElementById('btn-view-gis');
+    const btn3d = document.getElementById('btn-view-3d');
+    const mapGis = document.getElementById('real-gis-map');
+    const canvas3d = document.getElementById('city3d-canvas');
+
+    if (btnGis && btn3d) {
+      btnGis.addEventListener('click', () => {
+        btnGis.classList.add('active');
+        btn3d.classList.remove('active');
+        if (mapGis) mapGis.style.display = 'block';
+        if (canvas3d) canvas3d.style.display = 'none';
+        if (realMap) realMap.invalidateSize();
+        showToast('Switched to Real Cartographic GIS Map');
+      });
+
+      btn3d.addEventListener('click', () => {
+        btn3d.classList.add('active');
+        btnGis.classList.remove('active');
+        if (mapGis) mapGis.style.display = 'none';
+        if (canvas3d) canvas3d.style.display = 'block';
+        drawCommandCity3D();
+        showToast('Switched to Gamified 3D Simulation Mode');
+      });
+    }
+
+    document.querySelectorAll('.tile-pill').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const tile = e.target.getAttribute('data-tile');
+        if (!tile || !mapTileLayers[tile] || !realMap) return;
+        document.querySelectorAll('.tile-pill').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+
+        Object.values(mapTileLayers).forEach(ly => realMap.removeLayer(ly));
+        mapTileLayers[tile].addTo(realMap);
+        mapTileLayers[tile].bringToBack();
+        currentTileName = tile;
+        showToast(`Map tile layer: ${tile.toUpperCase()}`);
+      });
+    });
+  }
+
   function initApp() {
     // 1. Initialize Backend Connection
     initBackendConnection();
+    initRealGisMap();
 
     // 2. Scenario & City Dropdowns
     const selScen = document.getElementById('sel-scenario');
     if (selScen) {
-      selScen.addEventListener('change', (e) => {
+      selScen.addEventListener('change', async (e) => {
         STATE.scenarioId = e.target.value;
         showToast(`Loaded scenario: ${selScen.options[selScen.selectedIndex].text}`);
-        if (STATE.apiConnected) API.setScenario(STATE.scenarioId, STATE.cityId, STATE.faultProfile).catch(() => {});
+        if (STATE.apiConnected) {
+          try {
+            await API.setScenario(STATE.scenarioId, STATE.cityId, STATE.faultProfile);
+            await syncBackendRisk(true);
+          } catch(err) {
+            console.warn('Backend scenario switch error:', err);
+          }
+        }
         renderInspector();
         drawCommandCity3D();
+        if (typeof updateRealMapLayers === 'function') updateRealMapLayers();
       });
     }
 
@@ -3667,6 +4176,7 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
         };
         showToast(`Active Infrastructure: ${layerNames[STATE.activeLayer] || STATE.activeLayer}`);
         drawCommandCity3D();
+        if (typeof updateRealMapLayers === 'function') updateRealMapLayers();
         renderInspector();
       });
     });
@@ -3699,6 +4209,7 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
         chip.classList.add('active');
         STATE.horizon = parseInt(chip.getAttribute('data-h'), 10);
         showToast(`Forecast Horizon: ${STATE.horizon} hours`);
+        updateSimulationDisplays();
         renderInspector();
         drawCommandCity3D();
         drawTimelineTrack();
@@ -3989,6 +4500,165 @@ window.MOCK_BUNDLE = {"scenarios":{"scenarios":[{"id":"flood_mithi","hazard":"fl
     border: 1px solid rgba(229, 135, 132, 0.3) !important;
   }
 
+
+  /* =========================================================================
+     REAL GIS MAP & GAMIFIED SIMULATION CONTROLS
+     ========================================================================= */
+  .map-view-switcher {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 5px;
+    background: rgba(255, 253, 251, 0.94);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--hairline-strong);
+    border-radius: 99px;
+    box-shadow: 0 4px 18px rgba(60, 40, 35, 0.08);
+  }
+  .view-switch-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    height: 26px;
+    padding: 0 11px;
+    border-radius: 99px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-2);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .view-switch-btn:hover {
+    color: var(--text-1);
+    background: var(--bg-2);
+  }
+  .view-switch-btn.active {
+    background: var(--tide);
+    color: #FFFDFB;
+    box-shadow: 0 2px 8px rgba(229, 135, 132, 0.35);
+  }
+  .tile-switch-group {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    border-left: 1px solid var(--hairline);
+    padding-left: 6px;
+    margin-left: 2px;
+  }
+  .tile-pill {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 99px;
+    color: var(--text-3);
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.15s ease;
+  }
+  .tile-pill:hover {
+    color: var(--text-1);
+    background: var(--bg-3);
+  }
+  .tile-pill.active {
+    background: var(--bg-3);
+    color: var(--text-1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+
+  /* Custom Leaflet Marker Badges (Zero Clutter, No Overlapping Giant Boxes) */
+  .gis-marker-badge {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .gis-marker-badge:hover {
+    transform: scale(1.18);
+    z-index: 9999 !important;
+  }
+  .gis-badge-ring {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1.5px solid currentColor;
+    opacity: 0.4;
+    animation: markerPulse 2.4s infinite ease-out;
+  }
+  @keyframes markerPulse {
+    0% { transform: scale(0.9); opacity: 0.7; }
+    50% { transform: scale(1.4); opacity: 0; }
+    100% { transform: scale(0.9); opacity: 0; }
+  }
+  .gis-badge-pill {
+    position: absolute;
+    left: calc(100% + 8px);
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    background: rgba(255, 253, 251, 0.94);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--hairline-strong);
+    box-shadow: 0 2px 10px rgba(60, 40, 35, 0.1);
+    border-radius: 6px;
+    padding: 2px 7px;
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--text-1);
+    pointer-events: none;
+    letter-spacing: 0.02em;
+  }
+  .gis-badge-pill span.sub {
+    font-weight: 400;
+    color: var(--text-3);
+    margin-left: 4px;
+  }
+
+  /* Custom Leaflet Popups in Cream & Dusty White Theme */
+  .leaflet-popup-content-wrapper {
+    background: #FFFDFB !important;
+    border: 1px solid var(--hairline-strong) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 30px rgba(60, 40, 35, 0.12) !important;
+    padding: 12px !important;
+    color: var(--text-1) !important;
+    font-family: var(--font-sans) !important;
+  }
+  .leaflet-popup-tip {
+    background: #FFFDFB !important;
+    border: 1px solid var(--hairline-strong) !important;
+  }
+  .leaflet-popup-content {
+    margin: 0 !important;
+    line-height: 1.4 !important;
+  }
+  .popup-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-1);
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .popup-card-body {
+    font-size: 11px;
+    color: var(--text-2);
+  }
+  .popup-metric-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 0;
+  }
 </style>
 <script type="text/javascript">
   (function(d, t) {
