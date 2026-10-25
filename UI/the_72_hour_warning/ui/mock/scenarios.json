@@ -1,0 +1,223 @@
+{
+  "scenarios": [
+    {
+      "id": "flood_mithi",
+      "hazard": "flood",
+      "name": "Monsoon Extreme + High Tide (Mithi Basin)",
+      "city": "mumbai_mithi",
+      "city_name": "Mithi River Corridor, Mumbai",
+      "lead_banner": "Real lead: 24–72 h from rain forecast + saturation + drainage state",
+      "clock_semantics": "FORECAST_DRIVEN",
+      "default_overlay": "HYD",
+      "rho_peak": 1.38,
+      "p_cascade_24h": 0.89,
+      "trigger_zones": [
+        "Z18",
+        "Z14",
+        "Z10",
+        "Z09",
+        "Z04"
+      ],
+      "trigger_assets": [
+        "DRN-01",
+        "DRN-03",
+        "DRN-06",
+        "DRN-07",
+        "DRN-08"
+      ]
+    },
+    {
+      "id": "heat_dome",
+      "hazard": "heatwave",
+      "name": "Coastal Humid Heat Dome + Peak AC Grid Strain",
+      "city": "mumbai_mithi",
+      "city_name": "Mithi River Corridor, Mumbai",
+      "lead_banner": "Real lead: 3–5 days from temperature/humidity forecast; load and hospital effects lag",
+      "clock_semantics": "FORECAST_DRIVEN",
+      "default_overlay": "WX",
+      "rho_peak": 1.21,
+      "p_cascade_24h": 0.78,
+      "trigger_zones": [
+        "Z04",
+        "Z10",
+        "Z14",
+        "Z19"
+      ],
+      "trigger_assets": [
+        "SUB-01",
+        "SUB-04",
+        "SUB-06",
+        "FAC-HOS-01"
+      ]
+    },
+    {
+      "id": "grid_cascade",
+      "hazard": "grid",
+      "name": "220kV Substation Bus Fault & Feeder Cascade",
+      "city": "mumbai_mithi",
+      "city_name": "Mithi River Corridor, Mumbai",
+      "lead_banner": "Real lead: 12–72 h if weather/load-driven; fault-triggered starts at first fault",
+      "clock_semantics": "HYBRID_ONSET",
+      "default_overlay": "PWR",
+      "rho_peak": 1.44,
+      "p_cascade_24h": 0.92,
+      "trigger_zones": [
+        "Z09",
+        "Z08",
+        "Z14",
+        "Z04"
+      ],
+      "trigger_assets": [
+        "SUB-03",
+        "SUB-04",
+        "SUB-01",
+        "FAC-COM-01"
+      ]
+    },
+    {
+      "id": "epidemic_surge",
+      "hazard": "epidemic",
+      "name": "Post-Monsoon Acute Syndromic Surge",
+      "city": "mumbai_mithi",
+      "city_name": "Mithi River Corridor, Mumbai",
+      "lead_banner": "Real lead: days for hospital strain (ED/syndromic signals lead occupancy); we forecast the surge, not the pathogen",
+      "clock_semantics": "SYNDROMIC_LEAD",
+      "default_overlay": "HLT",
+      "rho_peak": 1.29,
+      "p_cascade_24h": 0.81,
+      "trigger_zones": [
+        "Z02",
+        "Z04",
+        "Z10",
+        "Z03"
+      ],
+      "trigger_assets": [
+        "FAC-HOS-06",
+        "FAC-HOS-01",
+        "FAC-HOS-02"
+      ]
+    },
+    {
+      "id": "quake_fault",
+      "hazard": "earthquake",
+      "name": "M 6.1 Panvel Flexure Mainshock (Post-Detection)",
+      "city": "mumbai_mithi",
+      "city_name": "Mithi River Corridor, Mumbai",
+      "lead_banner": "No precursors. Clock starts at mainshock detection. 72 h covers aftershocks + secondary cascade.",
+      "clock_semantics": "DETECTION_LOCKED",
+      "default_overlay": "SEI",
+      "rho_peak": 1.52,
+      "p_cascade_24h": 0.95,
+      "trigger_zones": [
+        "Z06",
+        "Z09",
+        "Z10",
+        "Z15"
+      ],
+      "trigger_assets": [
+        "RD-13",
+        "RD-15",
+        "SUB-03",
+        "FAC-HOS-02"
+      ]
+    },
+    {
+      "id": "chem_plume",
+      "hazard": "chemical",
+      "name": "Saki Naka / Kurla Industrial Chlorine Release",
+      "city": "mumbai_mithi",
+      "city_name": "Mithi River Corridor, Mumbai",
+      "lead_banner": "No precursors. Clock starts at first sensor/report. We forecast plume and downstream cascade.",
+      "clock_semantics": "DETECTION_LOCKED",
+      "default_overlay": "AIR",
+      "rho_peak": 1.33,
+      "p_cascade_24h": 0.86,
+      "trigger_zones": [
+        "Z19",
+        "Z15",
+        "Z18",
+        "Z14"
+      ],
+      "trigger_assets": [
+        "RD-30",
+        "RD-31",
+        "FAC-EMS-04",
+        "FAC-HOS-05"
+      ]
+    },
+    {
+      "id": "compound_flood_grid",
+      "hazard": "compound",
+      "name": "Compound: Mithi Flood + 220kV Substation Trip → Hospital Bottleneck",
+      "city": "mumbai_mithi",
+      "city_name": "Mithi River Corridor, Mumbai",
+      "lead_banner": "Two cascades share a bottleneck (interaction_gain = 1.42× joint vs independent)",
+      "clock_semantics": "COMPOUND_COUPLED",
+      "default_overlay": "RISK",
+      "rho_peak": 1.64,
+      "p_cascade_24h": 0.96,
+      "interaction_gain": 1.42,
+      "trigger_zones": [
+        "Z09",
+        "Z10",
+        "Z14",
+        "Z04",
+        "Z03"
+      ],
+      "trigger_assets": [
+        "DRN-06",
+        "SUB-03",
+        "RD-13",
+        "FAC-HOS-02",
+        "FAC-HOS-01"
+      ]
+    },
+    {
+      "id": "held_out_chennai",
+      "hazard": "flood",
+      "name": "Held-Out City: Adyar Basin Corridor (Zero-Shot Transfer)",
+      "city": "chennai_adyar",
+      "city_name": "Adyar Basin Corridor, Chennai [NEVER TUNED ON]",
+      "never_tuned_on": true,
+      "lead_banner": "Held-out evaluation city (never tuned on). Real lead: 24–72 h from rain + drainage telemetry",
+      "clock_semantics": "FORECAST_DRIVEN",
+      "default_overlay": "HYD",
+      "rho_peak": 1.31,
+      "p_cascade_24h": 0.84,
+      "trigger_zones": [
+        "Z09",
+        "Z10",
+        "Z04"
+      ],
+      "trigger_assets": [
+        "DRN-06",
+        "DRN-07",
+        "RD-13"
+      ]
+    },
+    {
+      "id": "regime_drift_alarm",
+      "hazard": "flood",
+      "name": "Drift Scenario: Culvert Siltation Alarm → Edge Re-Weighting → Recovery",
+      "city": "mumbai_mithi",
+      "city_name": "Mithi River Corridor, Mumbai",
+      "drift_mode": true,
+      "lead_banner": "Online regime shift at T+72h: HYD→TRF lag shortens by 2.5h; drift alarm triggers online Hawkes update",
+      "clock_semantics": "FORECAST_DRIVEN",
+      "default_overlay": "HYD",
+      "rho_peak": 1.36,
+      "p_cascade_24h": 0.87,
+      "trigger_zones": [
+        "Z14",
+        "Z10",
+        "Z09"
+      ],
+      "trigger_assets": [
+        "DRN-03",
+        "DRN-07",
+        "RD-15"
+      ]
+    }
+  ],
+  "provenance": "SIMULATED"
+}

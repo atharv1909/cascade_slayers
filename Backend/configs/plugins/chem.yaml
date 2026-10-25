@@ -1,0 +1,23 @@
+id: "chem"
+name: "Industrial Point-Release Toxic Gas Plume"
+lead_semantics: "No precursors. Clock starts at first sensor/report. We forecast plume and downstream cascade."
+honest_statement: "Chemical releases have no advance precursors; clock starts at first atmospheric sensor spike or HAZMAT report. The system executes Gaussian puff dispersion over shifting wind fields to forecast downwind plume footprints, road containment closures, and acute respiratory casualties."
+primary_layers: ["AIR", "TRF", "HOS", "EMS", "COM"]
+trigger_generator:
+  event_type: "chlorine_pressurized_release"
+  onset_hour: 54
+  source_asset: "CHEM_01_Fuel_Storage"
+  source_zone: "z11_airside_mithi"
+  release_rate_kg_s: 4.5
+  duration_h: 6
+  guideline_standard: "EPA AEGL (Acute Exposure Guideline Levels) Level 2 & 3"
+  aegl_level_2_ppm: 2.0
+  aegl_level_3_ppm: 20.0
+critical_event:
+  condition: "concentration_index >= 2.5 for >= 1 h in populated zone"
+expected_chain:
+  - { from: "AIR", to: "TRF", lag_h: 1, mechanism: "physical", description: "Perimeter cordons and police road closures seal toxic transit corridor" }
+  - { from: "AIR", to: "HOS", lag_h: 2, mechanism: "physical", description: "Acute inhalation burn and asphyxiation casualties present at ED" }
+  - { from: "AIR", to: "EMS", lag_h: 1, mechanism: "logical", description: "HAZMAT decontamination protocols delay standard ambulance turnarounds" }
+  - { from: "TRF", to: "EMS", lag_h: 2, mechanism: "physical", description: "Evacuation panic and roadblocks impede ambulances" }
+seed_zones: ["z11_airside_mithi", "z08_kalina_s", "z09_kalina_campus"]

@@ -1,0 +1,185 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "rd_weh_01",
+      "properties": {
+        "name": "Western Express Highway (Northbound)",
+        "class": "primary",
+        "length_km": 6.77,
+        "speed_limit_kmh": 50,
+        "provenance": "OBSERVED"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.847,
+            19.04
+          ],
+          [
+            72.85,
+            19.055
+          ],
+          [
+            72.854,
+            19.07
+          ],
+          [
+            72.855,
+            19.085
+          ],
+          [
+            72.858,
+            19.1
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "rd_cst_01",
+      "properties": {
+        "name": "CST Road Arterial (Kurla-Kalina)",
+        "class": "secondary",
+        "length_km": 3.14,
+        "speed_limit_kmh": 50,
+        "provenance": "OBSERVED"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.859,
+            19.074
+          ],
+          [
+            72.865,
+            19.071
+          ],
+          [
+            72.871,
+            19.062
+          ],
+          [
+            72.883,
+            19.063
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "rd_lbs_01",
+      "properties": {
+        "name": "Lal Bahadur Shastri (LBS) Marg",
+        "class": "primary",
+        "length_km": 6.72,
+        "speed_limit_kmh": 50,
+        "provenance": "OBSERVED"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.861,
+            19.043
+          ],
+          [
+            72.871,
+            19.062
+          ],
+          [
+            72.882,
+            19.092
+          ],
+          [
+            72.887,
+            19.098
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "rd_bkc_ave",
+      "properties": {
+        "name": "BKC Avenue / G-Block Arterial",
+        "class": "primary",
+        "length_km": 2.97,
+        "speed_limit_kmh": 50,
+        "provenance": "OBSERVED"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.852,
+            19.058
+          ],
+          [
+            72.862,
+            19.069
+          ],
+          [
+            72.875,
+            19.071
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "rd_sclink_01",
+      "properties": {
+        "name": "Santacruz-Chembur Link Road (SCLR)",
+        "class": "trunk",
+        "length_km": 4.13,
+        "speed_limit_kmh": 80,
+        "provenance": "OBSERVED"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.848,
+            19.082
+          ],
+          [
+            72.868,
+            19.075
+          ],
+          [
+            72.883,
+            19.065
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "rd_bail_bazar",
+      "properties": {
+        "name": "Bail Bazar Connecting Road",
+        "class": "tertiary",
+        "length_km": 1.26,
+        "speed_limit_kmh": 50,
+        "provenance": "OBSERVED"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.871,
+            19.062
+          ],
+          [
+            72.874,
+            19.051
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,4741 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "bldg_0001",
+      "properties": {
+        "height": 35.0,
+        "height_approx": true,
+        "type": "BKC High-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8484,
+              19.0544
+            ],
+            [
+              72.84960000000001,
+              19.0544
+            ],
+            [
+              72.84960000000001,
+              19.0556
+            ],
+            [
+              72.8484,
+              19.0556
+            ],
+            [
+              72.8484,
+              19.0544
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0002",
+      "properties": {
+        "height": 42.0,
+        "height_approx": true,
+        "type": "BKC High-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8484,
+              19.0564
+            ],
+            [
+              72.84960000000001,
+              19.0564
+            ],
+            [
+              72.84960000000001,
+              19.057599999999997
+            ],
+            [
+              72.8484,
+              19.057599999999997
+            ],
+            [
+              72.8484,
+              19.0564
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0003",
+      "properties": {
+        "height": 34.0,
+        "height_approx": true,
+        "type": "BKC High-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8484,
+              19.058400000000002
+            ],
+            [
+              72.84960000000001,
+              19.058400000000002
+            ],
+            [
+              72.84960000000001,
+              19.0596
+            ],
+            [
+              72.8484,
+              19.0596
+            ],
+            [
+              72.8484,
+              19.058400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0004",
+      "properties": {
+        "height": 41.0,
+        "height_approx": true,
+        "type": "BKC High-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8484,
+              19.0604
+            ],
+            [
+              72.84960000000001,
+              19.0604
+            ],
+            [
+              72.84960000000001,
+              19.0616
+            ],
+            [
+              72.8484,
+              19.0616
+            ],
+            [
+              72.8484,
+              19.0604
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0005",
+      "properties": {
+        "height": 33.0,
+        "height_approx": true,
+        "type": "BKC High-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8504,
+              19.0544
+            ],
+            [
+              72.8516,
+              19.0544
+            ],
+            [
+              72.8516,
+              19.0556
+            ],
+            [
+              72.8504,
+              19.0556
+            ],
+            [
+              72.8504,
+              19.0544
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0006",
+      "properties": {
+        "height": 40.0,
+        "height_approx": true,
+        "type": "BKC High-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8504,
+              19.0564
+            ],
+            [
+              72.8516,
+              19.0564
+            ],
+            [
+              72.8516,
+              19.057599999999997
+            ],
+            [
+              72.8504,
+              19.057599999999997
+            ],
+            [
+              72.8504,
+              19.0564
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0007",
+      "properties": {
+        "height": 32.0,
+        "height_approx": true,
+        "type": "BKC High-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8504,
+              19.058400000000002
+            ],
+            [
+              72.8516,
+              19.058400000000002
+            ],
+            [
+              72.8516,
+              19.0596
+            ],
+            [
+              72.8504,
+              19.0596
+            ],
+            [
+              72.8504,
+              19.058400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0008",
+      "properties": {
+        "height": 39.0,
+        "height_approx": true,
+        "type": "BKC High-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8504,
+              19.0604
+            ],
+            [
+              72.8516,
+              19.0604
+            ],
+            [
+              72.8516,
+              19.0616
+            ],
+            [
+              72.8504,
+              19.0616
+            ],
+            [
+              72.8504,
+              19.0604
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0009",
+      "properties": {
+        "height": 31.0,
+        "height_approx": true,
+        "type": "BKC High-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8524,
+              19.0544
+            ],
+            [
+              72.85360000000001,
+              19.0544
+            ],
+            [
+              72.85360000000001,
+              19.0556
+            ],
+            [
+              72.8524,
+              19.0556
+            ],
+            [
+              72.8524,
+              19.0544
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0010",
+      "properties": {
+        "height": 38.0,
+        "height_approx": true,
+        "type": "BKC High-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8524,
+              19.0564
+            ],
+            [
+              72.85360000000001,
+              19.0564
+            ],
+            [
+              72.85360000000001,
+              19.057599999999997
+            ],
+            [
+              72.8524,
+              19.057599999999997
+            ],
+            [
+              72.8524,
+              19.0564
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0011",
+      "properties": {
+        "height": 30.0,
+        "height_approx": true,
+        "type": "BKC High-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8524,
+              19.058400000000002
+            ],
+            [
+              72.85360000000001,
+              19.058400000000002
+            ],
+            [
+              72.85360000000001,
+              19.0596
+            ],
+            [
+              72.8524,
+              19.0596
+            ],
+            [
+              72.8524,
+              19.058400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0012",
+      "properties": {
+        "height": 37.0,
+        "height_approx": true,
+        "type": "BKC High-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8524,
+              19.0604
+            ],
+            [
+              72.85360000000001,
+              19.0604
+            ],
+            [
+              72.85360000000001,
+              19.0616
+            ],
+            [
+              72.8524,
+              19.0616
+            ],
+            [
+              72.8524,
+              19.0604
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0013",
+      "properties": {
+        "height": 29.0,
+        "height_approx": true,
+        "type": "BKC High-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8544,
+              19.0544
+            ],
+            [
+              72.85560000000001,
+              19.0544
+            ],
+            [
+              72.85560000000001,
+              19.0556
+            ],
+            [
+              72.8544,
+              19.0556
+            ],
+            [
+              72.8544,
+              19.0544
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0014",
+      "properties": {
+        "height": 36.0,
+        "height_approx": true,
+        "type": "BKC High-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8544,
+              19.0564
+            ],
+            [
+              72.85560000000001,
+              19.0564
+            ],
+            [
+              72.85560000000001,
+              19.057599999999997
+            ],
+            [
+              72.8544,
+              19.057599999999997
+            ],
+            [
+              72.8544,
+              19.0564
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0015",
+      "properties": {
+        "height": 28.0,
+        "height_approx": true,
+        "type": "BKC High-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8544,
+              19.058400000000002
+            ],
+            [
+              72.85560000000001,
+              19.058400000000002
+            ],
+            [
+              72.85560000000001,
+              19.0596
+            ],
+            [
+              72.8544,
+              19.0596
+            ],
+            [
+              72.8544,
+              19.058400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0016",
+      "properties": {
+        "height": 35.0,
+        "height_approx": true,
+        "type": "BKC High-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8544,
+              19.0604
+            ],
+            [
+              72.85560000000001,
+              19.0604
+            ],
+            [
+              72.85560000000001,
+              19.0616
+            ],
+            [
+              72.8544,
+              19.0616
+            ],
+            [
+              72.8544,
+              19.0604
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0017",
+      "properties": {
+        "height": 19.0,
+        "height_approx": true,
+        "type": "Dharavi Dense Low-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8514,
+              19.041400000000003
+            ],
+            [
+              72.85260000000001,
+              19.041400000000003
+            ],
+            [
+              72.85260000000001,
+              19.0426
+            ],
+            [
+              72.8514,
+              19.0426
+            ],
+            [
+              72.8514,
+              19.041400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0018",
+      "properties": {
+        "height": 11.0,
+        "height_approx": true,
+        "type": "Dharavi Dense Low-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8514,
+              19.043400000000002
+            ],
+            [
+              72.85260000000001,
+              19.043400000000002
+            ],
+            [
+              72.85260000000001,
+              19.0446
+            ],
+            [
+              72.8514,
+              19.0446
+            ],
+            [
+              72.8514,
+              19.043400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0019",
+      "properties": {
+        "height": 18.0,
+        "height_approx": true,
+        "type": "Dharavi Dense Low-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8514,
+              19.045400000000004
+            ],
+            [
+              72.85260000000001,
+              19.045400000000004
+            ],
+            [
+              72.85260000000001,
+              19.0466
+            ],
+            [
+              72.8514,
+              19.0466
+            ],
+            [
+              72.8514,
+              19.045400000000004
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0020",
+      "properties": {
+        "height": 10.0,
+        "height_approx": true,
+        "type": "Dharavi Dense Low-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8514,
+              19.047400000000003
+            ],
+            [
+              72.85260000000001,
+              19.047400000000003
+            ],
+            [
+              72.85260000000001,
+              19.0486
+            ],
+            [
+              72.8514,
+              19.0486
+            ],
+            [
+              72.8514,
+              19.047400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0021",
+      "properties": {
+        "height": 17.0,
+        "height_approx": true,
+        "type": "Dharavi Dense Low-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8534,
+              19.041400000000003
+            ],
+            [
+              72.8546,
+              19.041400000000003
+            ],
+            [
+              72.8546,
+              19.0426
+            ],
+            [
+              72.8534,
+              19.0426
+            ],
+            [
+              72.8534,
+              19.041400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0022",
+      "properties": {
+        "height": 9.0,
+        "height_approx": true,
+        "type": "Dharavi Dense Low-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8534,
+              19.043400000000002
+            ],
+            [
+              72.8546,
+              19.043400000000002
+            ],
+            [
+              72.8546,
+              19.0446
+            ],
+            [
+              72.8534,
+              19.0446
+            ],
+            [
+              72.8534,
+              19.043400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0023",
+      "properties": {
+        "height": 16.0,
+        "height_approx": true,
+        "type": "Dharavi Dense Low-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8534,
+              19.045400000000004
+            ],
+            [
+              72.8546,
+              19.045400000000004
+            ],
+            [
+              72.8546,
+              19.0466
+            ],
+            [
+              72.8534,
+              19.0466
+            ],
+            [
+              72.8534,
+              19.045400000000004
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0024",
+      "properties": {
+        "height": 8.0,
+        "height_approx": true,
+        "type": "Dharavi Dense Low-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8534,
+              19.047400000000003
+            ],
+            [
+              72.8546,
+              19.047400000000003
+            ],
+            [
+              72.8546,
+              19.0486
+            ],
+            [
+              72.8534,
+              19.0486
+            ],
+            [
+              72.8534,
+              19.047400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0025",
+      "properties": {
+        "height": 15.0,
+        "height_approx": true,
+        "type": "Dharavi Dense Low-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8554,
+              19.041400000000003
+            ],
+            [
+              72.85660000000001,
+              19.041400000000003
+            ],
+            [
+              72.85660000000001,
+              19.0426
+            ],
+            [
+              72.8554,
+              19.0426
+            ],
+            [
+              72.8554,
+              19.041400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0026",
+      "properties": {
+        "height": 8.0,
+        "height_approx": true,
+        "type": "Dharavi Dense Low-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8554,
+              19.043400000000002
+            ],
+            [
+              72.85660000000001,
+              19.043400000000002
+            ],
+            [
+              72.85660000000001,
+              19.0446
+            ],
+            [
+              72.8554,
+              19.0446
+            ],
+            [
+              72.8554,
+              19.043400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0027",
+      "properties": {
+        "height": 14.0,
+        "height_approx": true,
+        "type": "Dharavi Dense Low-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8554,
+              19.045400000000004
+            ],
+            [
+              72.85660000000001,
+              19.045400000000004
+            ],
+            [
+              72.85660000000001,
+              19.0466
+            ],
+            [
+              72.8554,
+              19.0466
+            ],
+            [
+              72.8554,
+              19.045400000000004
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0028",
+      "properties": {
+        "height": 8.0,
+        "height_approx": true,
+        "type": "Dharavi Dense Low-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8554,
+              19.047400000000003
+            ],
+            [
+              72.85660000000001,
+              19.047400000000003
+            ],
+            [
+              72.85660000000001,
+              19.0486
+            ],
+            [
+              72.8554,
+              19.0486
+            ],
+            [
+              72.8554,
+              19.047400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0029",
+      "properties": {
+        "height": 13.0,
+        "height_approx": true,
+        "type": "Dharavi Dense Low-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8574,
+              19.041400000000003
+            ],
+            [
+              72.85860000000001,
+              19.041400000000003
+            ],
+            [
+              72.85860000000001,
+              19.0426
+            ],
+            [
+              72.8574,
+              19.0426
+            ],
+            [
+              72.8574,
+              19.041400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0030",
+      "properties": {
+        "height": 8.0,
+        "height_approx": true,
+        "type": "Dharavi Dense Low-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8574,
+              19.043400000000002
+            ],
+            [
+              72.85860000000001,
+              19.043400000000002
+            ],
+            [
+              72.85860000000001,
+              19.0446
+            ],
+            [
+              72.8574,
+              19.0446
+            ],
+            [
+              72.8574,
+              19.043400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0031",
+      "properties": {
+        "height": 12.0,
+        "height_approx": true,
+        "type": "Dharavi Dense Low-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8574,
+              19.045400000000004
+            ],
+            [
+              72.85860000000001,
+              19.045400000000004
+            ],
+            [
+              72.85860000000001,
+              19.0466
+            ],
+            [
+              72.8574,
+              19.0466
+            ],
+            [
+              72.8574,
+              19.045400000000004
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0032",
+      "properties": {
+        "height": 19.0,
+        "height_approx": true,
+        "type": "Dharavi Dense Low-Rise",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8574,
+              19.047400000000003
+            ],
+            [
+              72.85860000000001,
+              19.047400000000003
+            ],
+            [
+              72.85860000000001,
+              19.0486
+            ],
+            [
+              72.8574,
+              19.0486
+            ],
+            [
+              72.8574,
+              19.047400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0033",
+      "properties": {
+        "height": 17.0,
+        "height_approx": true,
+        "type": "Kurla Mixed Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86739999999999,
+              19.058400000000002
+            ],
+            [
+              72.8686,
+              19.058400000000002
+            ],
+            [
+              72.8686,
+              19.0596
+            ],
+            [
+              72.86739999999999,
+              19.0596
+            ],
+            [
+              72.86739999999999,
+              19.058400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0034",
+      "properties": {
+        "height": 24.0,
+        "height_approx": true,
+        "type": "Kurla Mixed Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86739999999999,
+              19.0604
+            ],
+            [
+              72.8686,
+              19.0604
+            ],
+            [
+              72.8686,
+              19.0616
+            ],
+            [
+              72.86739999999999,
+              19.0616
+            ],
+            [
+              72.86739999999999,
+              19.0604
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0035",
+      "properties": {
+        "height": 16.0,
+        "height_approx": true,
+        "type": "Kurla Mixed Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86739999999999,
+              19.062400000000004
+            ],
+            [
+              72.8686,
+              19.062400000000004
+            ],
+            [
+              72.8686,
+              19.0636
+            ],
+            [
+              72.86739999999999,
+              19.0636
+            ],
+            [
+              72.86739999999999,
+              19.062400000000004
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0036",
+      "properties": {
+        "height": 23.0,
+        "height_approx": true,
+        "type": "Kurla Mixed Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86739999999999,
+              19.064400000000003
+            ],
+            [
+              72.8686,
+              19.064400000000003
+            ],
+            [
+              72.8686,
+              19.0656
+            ],
+            [
+              72.86739999999999,
+              19.0656
+            ],
+            [
+              72.86739999999999,
+              19.064400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0037",
+      "properties": {
+        "height": 15.0,
+        "height_approx": true,
+        "type": "Kurla Mixed Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86939999999998,
+              19.058400000000002
+            ],
+            [
+              72.8706,
+              19.058400000000002
+            ],
+            [
+              72.8706,
+              19.0596
+            ],
+            [
+              72.86939999999998,
+              19.0596
+            ],
+            [
+              72.86939999999998,
+              19.058400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0038",
+      "properties": {
+        "height": 22.0,
+        "height_approx": true,
+        "type": "Kurla Mixed Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86939999999998,
+              19.0604
+            ],
+            [
+              72.8706,
+              19.0604
+            ],
+            [
+              72.8706,
+              19.0616
+            ],
+            [
+              72.86939999999998,
+              19.0616
+            ],
+            [
+              72.86939999999998,
+              19.0604
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0039",
+      "properties": {
+        "height": 14.0,
+        "height_approx": true,
+        "type": "Kurla Mixed Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86939999999998,
+              19.062400000000004
+            ],
+            [
+              72.8706,
+              19.062400000000004
+            ],
+            [
+              72.8706,
+              19.0636
+            ],
+            [
+              72.86939999999998,
+              19.0636
+            ],
+            [
+              72.86939999999998,
+              19.062400000000004
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0040",
+      "properties": {
+        "height": 21.0,
+        "height_approx": true,
+        "type": "Kurla Mixed Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86939999999998,
+              19.064400000000003
+            ],
+            [
+              72.8706,
+              19.064400000000003
+            ],
+            [
+              72.8706,
+              19.0656
+            ],
+            [
+              72.86939999999998,
+              19.0656
+            ],
+            [
+              72.86939999999998,
+              19.064400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0041",
+      "properties": {
+        "height": 13.0,
+        "height_approx": true,
+        "type": "Kurla Mixed Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8714,
+              19.058400000000002
+            ],
+            [
+              72.8726,
+              19.058400000000002
+            ],
+            [
+              72.8726,
+              19.0596
+            ],
+            [
+              72.8714,
+              19.0596
+            ],
+            [
+              72.8714,
+              19.058400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0042",
+      "properties": {
+        "height": 20.0,
+        "height_approx": true,
+        "type": "Kurla Mixed Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8714,
+              19.0604
+            ],
+            [
+              72.8726,
+              19.0604
+            ],
+            [
+              72.8726,
+              19.0616
+            ],
+            [
+              72.8714,
+              19.0616
+            ],
+            [
+              72.8714,
+              19.0604
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0043",
+      "properties": {
+        "height": 12.0,
+        "height_approx": true,
+        "type": "Kurla Mixed Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8714,
+              19.062400000000004
+            ],
+            [
+              72.8726,
+              19.062400000000004
+            ],
+            [
+              72.8726,
+              19.0636
+            ],
+            [
+              72.8714,
+              19.0636
+            ],
+            [
+              72.8714,
+              19.062400000000004
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0044",
+      "properties": {
+        "height": 19.0,
+        "height_approx": true,
+        "type": "Kurla Mixed Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8714,
+              19.064400000000003
+            ],
+            [
+              72.8726,
+              19.064400000000003
+            ],
+            [
+              72.8726,
+              19.0656
+            ],
+            [
+              72.8714,
+              19.0656
+            ],
+            [
+              72.8714,
+              19.064400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0045",
+      "properties": {
+        "height": 11.0,
+        "height_approx": true,
+        "type": "Kurla Mixed Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.87339999999999,
+              19.058400000000002
+            ],
+            [
+              72.8746,
+              19.058400000000002
+            ],
+            [
+              72.8746,
+              19.0596
+            ],
+            [
+              72.87339999999999,
+              19.0596
+            ],
+            [
+              72.87339999999999,
+              19.058400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0046",
+      "properties": {
+        "height": 18.0,
+        "height_approx": true,
+        "type": "Kurla Mixed Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.87339999999999,
+              19.0604
+            ],
+            [
+              72.8746,
+              19.0604
+            ],
+            [
+              72.8746,
+              19.0616
+            ],
+            [
+              72.87339999999999,
+              19.0616
+            ],
+            [
+              72.87339999999999,
+              19.0604
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0047",
+      "properties": {
+        "height": 25.0,
+        "height_approx": true,
+        "type": "Kurla Mixed Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.87339999999999,
+              19.062400000000004
+            ],
+            [
+              72.8746,
+              19.062400000000004
+            ],
+            [
+              72.8746,
+              19.0636
+            ],
+            [
+              72.87339999999999,
+              19.0636
+            ],
+            [
+              72.87339999999999,
+              19.062400000000004
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0048",
+      "properties": {
+        "height": 17.0,
+        "height_approx": true,
+        "type": "Kurla Mixed Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.87339999999999,
+              19.064400000000003
+            ],
+            [
+              72.8746,
+              19.064400000000003
+            ],
+            [
+              72.8746,
+              19.0656
+            ],
+            [
+              72.87339999999999,
+              19.0656
+            ],
+            [
+              72.87339999999999,
+              19.064400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0049",
+      "properties": {
+        "height": 51.0,
+        "height_approx": true,
+        "type": "BKC Financial Tower",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.85839999999999,
+              19.0654
+            ],
+            [
+              72.8596,
+              19.0654
+            ],
+            [
+              72.8596,
+              19.066599999999998
+            ],
+            [
+              72.85839999999999,
+              19.066599999999998
+            ],
+            [
+              72.85839999999999,
+              19.0654
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0050",
+      "properties": {
+        "height": 43.0,
+        "height_approx": true,
+        "type": "BKC Financial Tower",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.85839999999999,
+              19.0674
+            ],
+            [
+              72.8596,
+              19.0674
+            ],
+            [
+              72.8596,
+              19.068599999999996
+            ],
+            [
+              72.85839999999999,
+              19.068599999999996
+            ],
+            [
+              72.85839999999999,
+              19.0674
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0051",
+      "properties": {
+        "height": 50.0,
+        "height_approx": true,
+        "type": "BKC Financial Tower",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.85839999999999,
+              19.0694
+            ],
+            [
+              72.8596,
+              19.0694
+            ],
+            [
+              72.8596,
+              19.0706
+            ],
+            [
+              72.85839999999999,
+              19.0706
+            ],
+            [
+              72.85839999999999,
+              19.0694
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0052",
+      "properties": {
+        "height": 42.0,
+        "height_approx": true,
+        "type": "BKC Financial Tower",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.85839999999999,
+              19.0714
+            ],
+            [
+              72.8596,
+              19.0714
+            ],
+            [
+              72.8596,
+              19.072599999999998
+            ],
+            [
+              72.85839999999999,
+              19.072599999999998
+            ],
+            [
+              72.85839999999999,
+              19.0714
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0053",
+      "properties": {
+        "height": 49.0,
+        "height_approx": true,
+        "type": "BKC Financial Tower",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86039999999998,
+              19.0654
+            ],
+            [
+              72.8616,
+              19.0654
+            ],
+            [
+              72.8616,
+              19.066599999999998
+            ],
+            [
+              72.86039999999998,
+              19.066599999999998
+            ],
+            [
+              72.86039999999998,
+              19.0654
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0054",
+      "properties": {
+        "height": 41.0,
+        "height_approx": true,
+        "type": "BKC Financial Tower",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86039999999998,
+              19.0674
+            ],
+            [
+              72.8616,
+              19.0674
+            ],
+            [
+              72.8616,
+              19.068599999999996
+            ],
+            [
+              72.86039999999998,
+              19.068599999999996
+            ],
+            [
+              72.86039999999998,
+              19.0674
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0055",
+      "properties": {
+        "height": 48.0,
+        "height_approx": true,
+        "type": "BKC Financial Tower",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86039999999998,
+              19.0694
+            ],
+            [
+              72.8616,
+              19.0694
+            ],
+            [
+              72.8616,
+              19.0706
+            ],
+            [
+              72.86039999999998,
+              19.0706
+            ],
+            [
+              72.86039999999998,
+              19.0694
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0056",
+      "properties": {
+        "height": 40.0,
+        "height_approx": true,
+        "type": "BKC Financial Tower",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86039999999998,
+              19.0714
+            ],
+            [
+              72.8616,
+              19.0714
+            ],
+            [
+              72.8616,
+              19.072599999999998
+            ],
+            [
+              72.86039999999998,
+              19.072599999999998
+            ],
+            [
+              72.86039999999998,
+              19.0714
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0057",
+      "properties": {
+        "height": 47.0,
+        "height_approx": true,
+        "type": "BKC Financial Tower",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8624,
+              19.0654
+            ],
+            [
+              72.8636,
+              19.0654
+            ],
+            [
+              72.8636,
+              19.066599999999998
+            ],
+            [
+              72.8624,
+              19.066599999999998
+            ],
+            [
+              72.8624,
+              19.0654
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0058",
+      "properties": {
+        "height": 39.0,
+        "height_approx": true,
+        "type": "BKC Financial Tower",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8624,
+              19.0674
+            ],
+            [
+              72.8636,
+              19.0674
+            ],
+            [
+              72.8636,
+              19.068599999999996
+            ],
+            [
+              72.8624,
+              19.068599999999996
+            ],
+            [
+              72.8624,
+              19.0674
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0059",
+      "properties": {
+        "height": 46.0,
+        "height_approx": true,
+        "type": "BKC Financial Tower",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8624,
+              19.0694
+            ],
+            [
+              72.8636,
+              19.0694
+            ],
+            [
+              72.8636,
+              19.0706
+            ],
+            [
+              72.8624,
+              19.0706
+            ],
+            [
+              72.8624,
+              19.0694
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0060",
+      "properties": {
+        "height": 38.0,
+        "height_approx": true,
+        "type": "BKC Financial Tower",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8624,
+              19.0714
+            ],
+            [
+              72.8636,
+              19.0714
+            ],
+            [
+              72.8636,
+              19.072599999999998
+            ],
+            [
+              72.8624,
+              19.072599999999998
+            ],
+            [
+              72.8624,
+              19.0714
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0061",
+      "properties": {
+        "height": 45.0,
+        "height_approx": true,
+        "type": "BKC Financial Tower",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86439999999999,
+              19.0654
+            ],
+            [
+              72.8656,
+              19.0654
+            ],
+            [
+              72.8656,
+              19.066599999999998
+            ],
+            [
+              72.86439999999999,
+              19.066599999999998
+            ],
+            [
+              72.86439999999999,
+              19.0654
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0062",
+      "properties": {
+        "height": 52.0,
+        "height_approx": true,
+        "type": "BKC Financial Tower",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86439999999999,
+              19.0674
+            ],
+            [
+              72.8656,
+              19.0674
+            ],
+            [
+              72.8656,
+              19.068599999999996
+            ],
+            [
+              72.86439999999999,
+              19.068599999999996
+            ],
+            [
+              72.86439999999999,
+              19.0674
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0063",
+      "properties": {
+        "height": 44.0,
+        "height_approx": true,
+        "type": "BKC Financial Tower",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86439999999999,
+              19.0694
+            ],
+            [
+              72.8656,
+              19.0694
+            ],
+            [
+              72.8656,
+              19.0706
+            ],
+            [
+              72.86439999999999,
+              19.0706
+            ],
+            [
+              72.86439999999999,
+              19.0694
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0064",
+      "properties": {
+        "height": 51.0,
+        "height_approx": true,
+        "type": "BKC Financial Tower",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86439999999999,
+              19.0714
+            ],
+            [
+              72.8656,
+              19.0714
+            ],
+            [
+              72.8656,
+              19.072599999999998
+            ],
+            [
+              72.86439999999999,
+              19.072599999999998
+            ],
+            [
+              72.86439999999999,
+              19.0714
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0065",
+      "properties": {
+        "height": 20.0,
+        "height_approx": true,
+        "type": "Kalina Residential",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.85539999999999,
+              19.070400000000003
+            ],
+            [
+              72.8566,
+              19.070400000000003
+            ],
+            [
+              72.8566,
+              19.0716
+            ],
+            [
+              72.85539999999999,
+              19.0716
+            ],
+            [
+              72.85539999999999,
+              19.070400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0066",
+      "properties": {
+        "height": 27.0,
+        "height_approx": true,
+        "type": "Kalina Residential",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.85539999999999,
+              19.072400000000002
+            ],
+            [
+              72.8566,
+              19.072400000000002
+            ],
+            [
+              72.8566,
+              19.0736
+            ],
+            [
+              72.85539999999999,
+              19.0736
+            ],
+            [
+              72.85539999999999,
+              19.072400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0067",
+      "properties": {
+        "height": 19.0,
+        "height_approx": true,
+        "type": "Kalina Residential",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.85539999999999,
+              19.074400000000004
+            ],
+            [
+              72.8566,
+              19.074400000000004
+            ],
+            [
+              72.8566,
+              19.0756
+            ],
+            [
+              72.85539999999999,
+              19.0756
+            ],
+            [
+              72.85539999999999,
+              19.074400000000004
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0068",
+      "properties": {
+        "height": 26.0,
+        "height_approx": true,
+        "type": "Kalina Residential",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.85539999999999,
+              19.076400000000003
+            ],
+            [
+              72.8566,
+              19.076400000000003
+            ],
+            [
+              72.8566,
+              19.0776
+            ],
+            [
+              72.85539999999999,
+              19.0776
+            ],
+            [
+              72.85539999999999,
+              19.076400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0069",
+      "properties": {
+        "height": 18.0,
+        "height_approx": true,
+        "type": "Kalina Residential",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.85739999999998,
+              19.070400000000003
+            ],
+            [
+              72.8586,
+              19.070400000000003
+            ],
+            [
+              72.8586,
+              19.0716
+            ],
+            [
+              72.85739999999998,
+              19.0716
+            ],
+            [
+              72.85739999999998,
+              19.070400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0070",
+      "properties": {
+        "height": 25.0,
+        "height_approx": true,
+        "type": "Kalina Residential",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.85739999999998,
+              19.072400000000002
+            ],
+            [
+              72.8586,
+              19.072400000000002
+            ],
+            [
+              72.8586,
+              19.0736
+            ],
+            [
+              72.85739999999998,
+              19.0736
+            ],
+            [
+              72.85739999999998,
+              19.072400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0071",
+      "properties": {
+        "height": 17.0,
+        "height_approx": true,
+        "type": "Kalina Residential",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.85739999999998,
+              19.074400000000004
+            ],
+            [
+              72.8586,
+              19.074400000000004
+            ],
+            [
+              72.8586,
+              19.0756
+            ],
+            [
+              72.85739999999998,
+              19.0756
+            ],
+            [
+              72.85739999999998,
+              19.074400000000004
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0072",
+      "properties": {
+        "height": 24.0,
+        "height_approx": true,
+        "type": "Kalina Residential",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.85739999999998,
+              19.076400000000003
+            ],
+            [
+              72.8586,
+              19.076400000000003
+            ],
+            [
+              72.8586,
+              19.0776
+            ],
+            [
+              72.85739999999998,
+              19.0776
+            ],
+            [
+              72.85739999999998,
+              19.076400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0073",
+      "properties": {
+        "height": 16.0,
+        "height_approx": true,
+        "type": "Kalina Residential",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8594,
+              19.070400000000003
+            ],
+            [
+              72.8606,
+              19.070400000000003
+            ],
+            [
+              72.8606,
+              19.0716
+            ],
+            [
+              72.8594,
+              19.0716
+            ],
+            [
+              72.8594,
+              19.070400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0074",
+      "properties": {
+        "height": 23.0,
+        "height_approx": true,
+        "type": "Kalina Residential",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8594,
+              19.072400000000002
+            ],
+            [
+              72.8606,
+              19.072400000000002
+            ],
+            [
+              72.8606,
+              19.0736
+            ],
+            [
+              72.8594,
+              19.0736
+            ],
+            [
+              72.8594,
+              19.072400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0075",
+      "properties": {
+        "height": 15.0,
+        "height_approx": true,
+        "type": "Kalina Residential",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8594,
+              19.074400000000004
+            ],
+            [
+              72.8606,
+              19.074400000000004
+            ],
+            [
+              72.8606,
+              19.0756
+            ],
+            [
+              72.8594,
+              19.0756
+            ],
+            [
+              72.8594,
+              19.074400000000004
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0076",
+      "properties": {
+        "height": 22.0,
+        "height_approx": true,
+        "type": "Kalina Residential",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8594,
+              19.076400000000003
+            ],
+            [
+              72.8606,
+              19.076400000000003
+            ],
+            [
+              72.8606,
+              19.0776
+            ],
+            [
+              72.8594,
+              19.0776
+            ],
+            [
+              72.8594,
+              19.076400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0077",
+      "properties": {
+        "height": 29.0,
+        "height_approx": true,
+        "type": "Kalina Residential",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86139999999999,
+              19.070400000000003
+            ],
+            [
+              72.8626,
+              19.070400000000003
+            ],
+            [
+              72.8626,
+              19.0716
+            ],
+            [
+              72.86139999999999,
+              19.0716
+            ],
+            [
+              72.86139999999999,
+              19.070400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0078",
+      "properties": {
+        "height": 21.0,
+        "height_approx": true,
+        "type": "Kalina Residential",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86139999999999,
+              19.072400000000002
+            ],
+            [
+              72.8626,
+              19.072400000000002
+            ],
+            [
+              72.8626,
+              19.0736
+            ],
+            [
+              72.86139999999999,
+              19.0736
+            ],
+            [
+              72.86139999999999,
+              19.072400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0079",
+      "properties": {
+        "height": 28.0,
+        "height_approx": true,
+        "type": "Kalina Residential",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86139999999999,
+              19.074400000000004
+            ],
+            [
+              72.8626,
+              19.074400000000004
+            ],
+            [
+              72.8626,
+              19.0756
+            ],
+            [
+              72.86139999999999,
+              19.0756
+            ],
+            [
+              72.86139999999999,
+              19.074400000000004
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0080",
+      "properties": {
+        "height": 20.0,
+        "height_approx": true,
+        "type": "Kalina Residential",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86139999999999,
+              19.076400000000003
+            ],
+            [
+              72.8626,
+              19.076400000000003
+            ],
+            [
+              72.8626,
+              19.0776
+            ],
+            [
+              72.86139999999999,
+              19.0776
+            ],
+            [
+              72.86139999999999,
+              19.076400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0081",
+      "properties": {
+        "height": 30.0,
+        "height_approx": true,
+        "type": "Vakola Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8504,
+              19.078400000000002
+            ],
+            [
+              72.8516,
+              19.078400000000002
+            ],
+            [
+              72.8516,
+              19.0796
+            ],
+            [
+              72.8504,
+              19.0796
+            ],
+            [
+              72.8504,
+              19.078400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0082",
+      "properties": {
+        "height": 22.0,
+        "height_approx": true,
+        "type": "Vakola Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8504,
+              19.0804
+            ],
+            [
+              72.8516,
+              19.0804
+            ],
+            [
+              72.8516,
+              19.081599999999998
+            ],
+            [
+              72.8504,
+              19.081599999999998
+            ],
+            [
+              72.8504,
+              19.0804
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0083",
+      "properties": {
+        "height": 29.0,
+        "height_approx": true,
+        "type": "Vakola Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8504,
+              19.082400000000003
+            ],
+            [
+              72.8516,
+              19.082400000000003
+            ],
+            [
+              72.8516,
+              19.0836
+            ],
+            [
+              72.8504,
+              19.0836
+            ],
+            [
+              72.8504,
+              19.082400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0084",
+      "properties": {
+        "height": 21.0,
+        "height_approx": true,
+        "type": "Vakola Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8504,
+              19.084400000000002
+            ],
+            [
+              72.8516,
+              19.084400000000002
+            ],
+            [
+              72.8516,
+              19.0856
+            ],
+            [
+              72.8504,
+              19.0856
+            ],
+            [
+              72.8504,
+              19.084400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0085",
+      "properties": {
+        "height": 28.0,
+        "height_approx": true,
+        "type": "Vakola Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.85239999999999,
+              19.078400000000002
+            ],
+            [
+              72.8536,
+              19.078400000000002
+            ],
+            [
+              72.8536,
+              19.0796
+            ],
+            [
+              72.85239999999999,
+              19.0796
+            ],
+            [
+              72.85239999999999,
+              19.078400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0086",
+      "properties": {
+        "height": 20.0,
+        "height_approx": true,
+        "type": "Vakola Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.85239999999999,
+              19.0804
+            ],
+            [
+              72.8536,
+              19.0804
+            ],
+            [
+              72.8536,
+              19.081599999999998
+            ],
+            [
+              72.85239999999999,
+              19.081599999999998
+            ],
+            [
+              72.85239999999999,
+              19.0804
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0087",
+      "properties": {
+        "height": 27.0,
+        "height_approx": true,
+        "type": "Vakola Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.85239999999999,
+              19.082400000000003
+            ],
+            [
+              72.8536,
+              19.082400000000003
+            ],
+            [
+              72.8536,
+              19.0836
+            ],
+            [
+              72.85239999999999,
+              19.0836
+            ],
+            [
+              72.85239999999999,
+              19.082400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0088",
+      "properties": {
+        "height": 19.0,
+        "height_approx": true,
+        "type": "Vakola Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.85239999999999,
+              19.084400000000002
+            ],
+            [
+              72.8536,
+              19.084400000000002
+            ],
+            [
+              72.8536,
+              19.0856
+            ],
+            [
+              72.85239999999999,
+              19.0856
+            ],
+            [
+              72.85239999999999,
+              19.084400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0089",
+      "properties": {
+        "height": 26.0,
+        "height_approx": true,
+        "type": "Vakola Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8544,
+              19.078400000000002
+            ],
+            [
+              72.85560000000001,
+              19.078400000000002
+            ],
+            [
+              72.85560000000001,
+              19.0796
+            ],
+            [
+              72.8544,
+              19.0796
+            ],
+            [
+              72.8544,
+              19.078400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0090",
+      "properties": {
+        "height": 18.0,
+        "height_approx": true,
+        "type": "Vakola Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8544,
+              19.0804
+            ],
+            [
+              72.85560000000001,
+              19.0804
+            ],
+            [
+              72.85560000000001,
+              19.081599999999998
+            ],
+            [
+              72.8544,
+              19.081599999999998
+            ],
+            [
+              72.8544,
+              19.0804
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0091",
+      "properties": {
+        "height": 25.0,
+        "height_approx": true,
+        "type": "Vakola Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8544,
+              19.082400000000003
+            ],
+            [
+              72.85560000000001,
+              19.082400000000003
+            ],
+            [
+              72.85560000000001,
+              19.0836
+            ],
+            [
+              72.8544,
+              19.0836
+            ],
+            [
+              72.8544,
+              19.082400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0092",
+      "properties": {
+        "height": 32.0,
+        "height_approx": true,
+        "type": "Vakola Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8544,
+              19.084400000000002
+            ],
+            [
+              72.85560000000001,
+              19.084400000000002
+            ],
+            [
+              72.85560000000001,
+              19.0856
+            ],
+            [
+              72.8544,
+              19.0856
+            ],
+            [
+              72.8544,
+              19.084400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0093",
+      "properties": {
+        "height": 24.0,
+        "height_approx": true,
+        "type": "Vakola Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8564,
+              19.078400000000002
+            ],
+            [
+              72.8576,
+              19.078400000000002
+            ],
+            [
+              72.8576,
+              19.0796
+            ],
+            [
+              72.8564,
+              19.0796
+            ],
+            [
+              72.8564,
+              19.078400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0094",
+      "properties": {
+        "height": 31.0,
+        "height_approx": true,
+        "type": "Vakola Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8564,
+              19.0804
+            ],
+            [
+              72.8576,
+              19.0804
+            ],
+            [
+              72.8576,
+              19.081599999999998
+            ],
+            [
+              72.8564,
+              19.081599999999998
+            ],
+            [
+              72.8564,
+              19.0804
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0095",
+      "properties": {
+        "height": 23.0,
+        "height_approx": true,
+        "type": "Vakola Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8564,
+              19.082400000000003
+            ],
+            [
+              72.8576,
+              19.082400000000003
+            ],
+            [
+              72.8576,
+              19.0836
+            ],
+            [
+              72.8564,
+              19.0836
+            ],
+            [
+              72.8564,
+              19.082400000000003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0096",
+      "properties": {
+        "height": 30.0,
+        "height_approx": true,
+        "type": "Vakola Commercial",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8564,
+              19.084400000000002
+            ],
+            [
+              72.8576,
+              19.084400000000002
+            ],
+            [
+              72.8576,
+              19.0856
+            ],
+            [
+              72.8564,
+              19.0856
+            ],
+            [
+              72.8564,
+              19.084400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0097",
+      "properties": {
+        "height": 12.0,
+        "height_approx": true,
+        "type": "Airside Logistics Warehouse",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8624,
+              19.084400000000002
+            ],
+            [
+              72.8636,
+              19.084400000000002
+            ],
+            [
+              72.8636,
+              19.0856
+            ],
+            [
+              72.8624,
+              19.0856
+            ],
+            [
+              72.8624,
+              19.084400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0098",
+      "properties": {
+        "height": 19.0,
+        "height_approx": true,
+        "type": "Airside Logistics Warehouse",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8624,
+              19.0864
+            ],
+            [
+              72.8636,
+              19.0864
+            ],
+            [
+              72.8636,
+              19.0876
+            ],
+            [
+              72.8624,
+              19.0876
+            ],
+            [
+              72.8624,
+              19.0864
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0099",
+      "properties": {
+        "height": 11.0,
+        "height_approx": true,
+        "type": "Airside Logistics Warehouse",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8624,
+              19.088400000000004
+            ],
+            [
+              72.8636,
+              19.088400000000004
+            ],
+            [
+              72.8636,
+              19.0896
+            ],
+            [
+              72.8624,
+              19.0896
+            ],
+            [
+              72.8624,
+              19.088400000000004
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0100",
+      "properties": {
+        "height": 18.0,
+        "height_approx": true,
+        "type": "Airside Logistics Warehouse",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8624,
+              19.090400000000002
+            ],
+            [
+              72.8636,
+              19.090400000000002
+            ],
+            [
+              72.8636,
+              19.0916
+            ],
+            [
+              72.8624,
+              19.0916
+            ],
+            [
+              72.8624,
+              19.090400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0101",
+      "properties": {
+        "height": 10.0,
+        "height_approx": true,
+        "type": "Airside Logistics Warehouse",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86439999999999,
+              19.084400000000002
+            ],
+            [
+              72.8656,
+              19.084400000000002
+            ],
+            [
+              72.8656,
+              19.0856
+            ],
+            [
+              72.86439999999999,
+              19.0856
+            ],
+            [
+              72.86439999999999,
+              19.084400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0102",
+      "properties": {
+        "height": 17.0,
+        "height_approx": true,
+        "type": "Airside Logistics Warehouse",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86439999999999,
+              19.0864
+            ],
+            [
+              72.8656,
+              19.0864
+            ],
+            [
+              72.8656,
+              19.0876
+            ],
+            [
+              72.86439999999999,
+              19.0876
+            ],
+            [
+              72.86439999999999,
+              19.0864
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0103",
+      "properties": {
+        "height": 9.0,
+        "height_approx": true,
+        "type": "Airside Logistics Warehouse",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86439999999999,
+              19.088400000000004
+            ],
+            [
+              72.8656,
+              19.088400000000004
+            ],
+            [
+              72.8656,
+              19.0896
+            ],
+            [
+              72.86439999999999,
+              19.0896
+            ],
+            [
+              72.86439999999999,
+              19.088400000000004
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0104",
+      "properties": {
+        "height": 16.0,
+        "height_approx": true,
+        "type": "Airside Logistics Warehouse",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.86439999999999,
+              19.090400000000002
+            ],
+            [
+              72.8656,
+              19.090400000000002
+            ],
+            [
+              72.8656,
+              19.0916
+            ],
+            [
+              72.86439999999999,
+              19.0916
+            ],
+            [
+              72.86439999999999,
+              19.090400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0105",
+      "properties": {
+        "height": 8.0,
+        "height_approx": true,
+        "type": "Airside Logistics Warehouse",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8664,
+              19.084400000000002
+            ],
+            [
+              72.86760000000001,
+              19.084400000000002
+            ],
+            [
+              72.86760000000001,
+              19.0856
+            ],
+            [
+              72.8664,
+              19.0856
+            ],
+            [
+              72.8664,
+              19.084400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0106",
+      "properties": {
+        "height": 15.0,
+        "height_approx": true,
+        "type": "Airside Logistics Warehouse",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8664,
+              19.0864
+            ],
+            [
+              72.86760000000001,
+              19.0864
+            ],
+            [
+              72.86760000000001,
+              19.0876
+            ],
+            [
+              72.8664,
+              19.0876
+            ],
+            [
+              72.8664,
+              19.0864
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0107",
+      "properties": {
+        "height": 22.0,
+        "height_approx": true,
+        "type": "Airside Logistics Warehouse",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8664,
+              19.088400000000004
+            ],
+            [
+              72.86760000000001,
+              19.088400000000004
+            ],
+            [
+              72.86760000000001,
+              19.0896
+            ],
+            [
+              72.8664,
+              19.0896
+            ],
+            [
+              72.8664,
+              19.088400000000004
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0108",
+      "properties": {
+        "height": 14.0,
+        "height_approx": true,
+        "type": "Airside Logistics Warehouse",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8664,
+              19.090400000000002
+            ],
+            [
+              72.86760000000001,
+              19.090400000000002
+            ],
+            [
+              72.86760000000001,
+              19.0916
+            ],
+            [
+              72.8664,
+              19.0916
+            ],
+            [
+              72.8664,
+              19.090400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0109",
+      "properties": {
+        "height": 21.0,
+        "height_approx": true,
+        "type": "Airside Logistics Warehouse",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8684,
+              19.084400000000002
+            ],
+            [
+              72.8696,
+              19.084400000000002
+            ],
+            [
+              72.8696,
+              19.0856
+            ],
+            [
+              72.8684,
+              19.0856
+            ],
+            [
+              72.8684,
+              19.084400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0110",
+      "properties": {
+        "height": 13.0,
+        "height_approx": true,
+        "type": "Airside Logistics Warehouse",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8684,
+              19.0864
+            ],
+            [
+              72.8696,
+              19.0864
+            ],
+            [
+              72.8696,
+              19.0876
+            ],
+            [
+              72.8684,
+              19.0876
+            ],
+            [
+              72.8684,
+              19.0864
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0111",
+      "properties": {
+        "height": 20.0,
+        "height_approx": true,
+        "type": "Airside Logistics Warehouse",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8684,
+              19.088400000000004
+            ],
+            [
+              72.8696,
+              19.088400000000004
+            ],
+            [
+              72.8696,
+              19.0896
+            ],
+            [
+              72.8684,
+              19.0896
+            ],
+            [
+              72.8684,
+              19.088400000000004
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0112",
+      "properties": {
+        "height": 12.0,
+        "height_approx": true,
+        "type": "Airside Logistics Warehouse",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8684,
+              19.090400000000002
+            ],
+            [
+              72.8696,
+              19.090400000000002
+            ],
+            [
+              72.8696,
+              19.0916
+            ],
+            [
+              72.8684,
+              19.0916
+            ],
+            [
+              72.8684,
+              19.090400000000002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0113",
+      "properties": {
+        "height": 32.0,
+        "height_approx": true,
+        "type": "Saki Naka Metro Hub",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8784,
+              19.0884
+            ],
+            [
+              72.87960000000001,
+              19.0884
+            ],
+            [
+              72.87960000000001,
+              19.089599999999997
+            ],
+            [
+              72.8784,
+              19.089599999999997
+            ],
+            [
+              72.8784,
+              19.0884
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0114",
+      "properties": {
+        "height": 24.0,
+        "height_approx": true,
+        "type": "Saki Naka Metro Hub",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8784,
+              19.0904
+            ],
+            [
+              72.87960000000001,
+              19.0904
+            ],
+            [
+              72.87960000000001,
+              19.091599999999996
+            ],
+            [
+              72.8784,
+              19.091599999999996
+            ],
+            [
+              72.8784,
+              19.0904
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0115",
+      "properties": {
+        "height": 31.0,
+        "height_approx": true,
+        "type": "Saki Naka Metro Hub",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8784,
+              19.0924
+            ],
+            [
+              72.87960000000001,
+              19.0924
+            ],
+            [
+              72.87960000000001,
+              19.0936
+            ],
+            [
+              72.8784,
+              19.0936
+            ],
+            [
+              72.8784,
+              19.0924
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0116",
+      "properties": {
+        "height": 23.0,
+        "height_approx": true,
+        "type": "Saki Naka Metro Hub",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8784,
+              19.0944
+            ],
+            [
+              72.87960000000001,
+              19.0944
+            ],
+            [
+              72.87960000000001,
+              19.095599999999997
+            ],
+            [
+              72.8784,
+              19.095599999999997
+            ],
+            [
+              72.8784,
+              19.0944
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0117",
+      "properties": {
+        "height": 30.0,
+        "height_approx": true,
+        "type": "Saki Naka Metro Hub",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8804,
+              19.0884
+            ],
+            [
+              72.8816,
+              19.0884
+            ],
+            [
+              72.8816,
+              19.089599999999997
+            ],
+            [
+              72.8804,
+              19.089599999999997
+            ],
+            [
+              72.8804,
+              19.0884
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0118",
+      "properties": {
+        "height": 22.0,
+        "height_approx": true,
+        "type": "Saki Naka Metro Hub",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8804,
+              19.0904
+            ],
+            [
+              72.8816,
+              19.0904
+            ],
+            [
+              72.8816,
+              19.091599999999996
+            ],
+            [
+              72.8804,
+              19.091599999999996
+            ],
+            [
+              72.8804,
+              19.0904
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0119",
+      "properties": {
+        "height": 29.0,
+        "height_approx": true,
+        "type": "Saki Naka Metro Hub",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8804,
+              19.0924
+            ],
+            [
+              72.8816,
+              19.0924
+            ],
+            [
+              72.8816,
+              19.0936
+            ],
+            [
+              72.8804,
+              19.0936
+            ],
+            [
+              72.8804,
+              19.0924
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0120",
+      "properties": {
+        "height": 21.0,
+        "height_approx": true,
+        "type": "Saki Naka Metro Hub",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8804,
+              19.0944
+            ],
+            [
+              72.8816,
+              19.0944
+            ],
+            [
+              72.8816,
+              19.095599999999997
+            ],
+            [
+              72.8804,
+              19.095599999999997
+            ],
+            [
+              72.8804,
+              19.0944
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0121",
+      "properties": {
+        "height": 28.0,
+        "height_approx": true,
+        "type": "Saki Naka Metro Hub",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8824,
+              19.0884
+            ],
+            [
+              72.88360000000002,
+              19.0884
+            ],
+            [
+              72.88360000000002,
+              19.089599999999997
+            ],
+            [
+              72.8824,
+              19.089599999999997
+            ],
+            [
+              72.8824,
+              19.0884
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0122",
+      "properties": {
+        "height": 35.0,
+        "height_approx": true,
+        "type": "Saki Naka Metro Hub",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8824,
+              19.0904
+            ],
+            [
+              72.88360000000002,
+              19.0904
+            ],
+            [
+              72.88360000000002,
+              19.091599999999996
+            ],
+            [
+              72.8824,
+              19.091599999999996
+            ],
+            [
+              72.8824,
+              19.0904
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0123",
+      "properties": {
+        "height": 27.0,
+        "height_approx": true,
+        "type": "Saki Naka Metro Hub",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8824,
+              19.0924
+            ],
+            [
+              72.88360000000002,
+              19.0924
+            ],
+            [
+              72.88360000000002,
+              19.0936
+            ],
+            [
+              72.8824,
+              19.0936
+            ],
+            [
+              72.8824,
+              19.0924
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0124",
+      "properties": {
+        "height": 34.0,
+        "height_approx": true,
+        "type": "Saki Naka Metro Hub",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8824,
+              19.0944
+            ],
+            [
+              72.88360000000002,
+              19.0944
+            ],
+            [
+              72.88360000000002,
+              19.095599999999997
+            ],
+            [
+              72.8824,
+              19.095599999999997
+            ],
+            [
+              72.8824,
+              19.0944
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0125",
+      "properties": {
+        "height": 26.0,
+        "height_approx": true,
+        "type": "Saki Naka Metro Hub",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8844,
+              19.0884
+            ],
+            [
+              72.88560000000001,
+              19.0884
+            ],
+            [
+              72.88560000000001,
+              19.089599999999997
+            ],
+            [
+              72.8844,
+              19.089599999999997
+            ],
+            [
+              72.8844,
+              19.0884
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0126",
+      "properties": {
+        "height": 33.0,
+        "height_approx": true,
+        "type": "Saki Naka Metro Hub",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8844,
+              19.0904
+            ],
+            [
+              72.88560000000001,
+              19.0904
+            ],
+            [
+              72.88560000000001,
+              19.091599999999996
+            ],
+            [
+              72.8844,
+              19.091599999999996
+            ],
+            [
+              72.8844,
+              19.0904
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0127",
+      "properties": {
+        "height": 25.0,
+        "height_approx": true,
+        "type": "Saki Naka Metro Hub",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8844,
+              19.0924
+            ],
+            [
+              72.88560000000001,
+              19.0924
+            ],
+            [
+              72.88560000000001,
+              19.0936
+            ],
+            [
+              72.8844,
+              19.0936
+            ],
+            [
+              72.8844,
+              19.0924
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bldg_0128",
+      "properties": {
+        "height": 32.0,
+        "height_approx": true,
+        "type": "Saki Naka Metro Hub",
+        "provenance": "MODELLED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.8844,
+              19.0944
+            ],
+            [
+              72.88560000000001,
+              19.0944
+            ],
+            [
+              72.88560000000001,
+              19.095599999999997
+            ],
+            [
+              72.8844,
+              19.095599999999997
+            ],
+            [
+              72.8844,
+              19.0944
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

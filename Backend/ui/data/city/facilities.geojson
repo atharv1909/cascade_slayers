@@ -1,0 +1,163 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "HOS_01_BKC_Specialty",
+      "properties": {
+        "id": "HOS_01_BKC_Specialty",
+        "name": "BKC Specialty Care Hospital",
+        "type": "hospital",
+        "beds": 450,
+        "icu_beds": 65
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.852,
+          19.058
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HOS_02_Bhabha_Kurla",
+      "properties": {
+        "id": "HOS_02_Bhabha_Kurla",
+        "name": "KB Bhabha Municipal Hospital Kurla",
+        "type": "hospital",
+        "beds": 380,
+        "icu_beds": 45
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.871,
+          19.062
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HOS_03_Asian_Heart",
+      "properties": {
+        "id": "HOS_03_Asian_Heart",
+        "name": "Asian Heart Institute BKC",
+        "type": "hospital",
+        "beds": 250,
+        "icu_beds": 50
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.862,
+          19.069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HOS_04_VN_Desai_Santacruz",
+      "properties": {
+        "id": "HOS_04_VN_Desai_Santacruz",
+        "name": "VN Desai Municipal Hospital Santacruz",
+        "type": "hospital",
+        "beds": 300,
+        "icu_beds": 35
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.847,
+          19.085
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "HOS_06_Lokmanya_Tilak_Sion",
+      "properties": {
+        "id": "HOS_06_Lokmanya_Tilak_Sion",
+        "name": "Lokmanya Tilak Municipal General Hospital (Sion)",
+        "type": "hospital",
+        "beds": 1400,
+        "icu_beds": 120
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.861,
+          19.043
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EMS_01_Dharavi_Depot",
+      "properties": {
+        "id": "EMS_01_Dharavi_Depot",
+        "name": "Dharavi 108 Emergency Ambulance Station",
+        "type": "ems_depot",
+        "ambulances": 8
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.855,
+          19.045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "EMS_02_Kurla_Depot",
+      "properties": {
+        "id": "EMS_02_Kurla_Depot",
+        "name": "Kurla West Emergency Response Depot",
+        "type": "ems_depot",
+        "ambulances": 12
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.883,
+          19.063
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SHELTER_01_Nehru_Ground",
+      "properties": {
+        "id": "SHELTER_01_Nehru_Ground",
+        "name": "Nehru Nagar Flood Evacuation Shelter",
+        "type": "shelter",
+        "capacity": 3500
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.883,
+          19.063
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CHEM_01_Fuel_Storage",
+      "properties": {
+        "id": "CHEM_01_Fuel_Storage",
+        "name": "Airside Industrial Fuel & Solvent Depot",
+        "type": "chemical_plant",
+        "aegl_class": "Chlorine/LPG"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.866,
+          19.088
+        ]
+      }
+    }
+  ]
+}

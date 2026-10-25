@@ -1,0 +1,55 @@
+# Risk and severity thresholds with hysteresis configuration
+risk_mapping:
+  tau_W: 0.20   # WATCH threshold at 72h
+  tau_H: 0.40   # HIGH RISK threshold at 24h
+  tau_C: 0.60   # CRITICAL threshold at 12h
+  city_cascade_24h_critical: 0.50
+  city_cascade_48h_high: 0.35
+  zones_critical_for_city_critical: 3
+  zones_high_for_city_high: 4
+  downgrade_hysteresis_ticks: 2
+
+severity_ladder:
+  WX:
+    rain_mm_h: { stressed: 15.0, degraded: 40.0, failed: 75.0 }
+    wbgt_c: { stressed: 29.0, degraded: 32.0, failed: 35.0 }
+    wind_speed_mps: { stressed: 15.0, degraded: 25.0, failed: 35.0 }
+  HYD:
+    drain_load_ratio: { stressed: 0.70, degraded: 0.95, failed: 1.30 }
+    canal_level_m: { stressed: 3.0, degraded: 4.5, failed: 6.0 }
+    waterlogging_risk_index: { stressed: 0.25, degraded: 0.55, failed: 0.80 }
+  TRF:
+    speed_index: { stressed: 0.65, degraded: 0.40, failed: 0.20 } # lower is worse
+    roads_accessible_pct: { stressed: 80.0, degraded: 60.0, failed: 40.0 } # lower is worse
+  PWR:
+    load_ratio: { stressed: 0.85, degraded: 1.05, failed: 1.25 }
+    substation_loading: { stressed: 85.0, degraded: 110.0, failed: 135.0 }
+    customers_out_pct: { stressed: 5.0, degraded: 25.0, failed: 60.0 }
+  EMS:
+    response_time_min: { stressed: 18.0, degraded: 30.0, failed: 50.0 }
+    units_unavailable_pct: { stressed: 25.0, degraded: 50.0, failed: 80.0 }
+  HOS:
+    bed_occupancy_pct: { stressed: 85.0, degraded: 92.0, failed: 100.0 }
+    icu_occupancy_pct: { stressed: 80.0, degraded: 90.0, failed: 98.0 }
+    generator_hours_rem: { stressed: 24.0, degraded: 12.0, failed: 4.0 } # lower is worse
+  HLT:
+    ed_syndromic_count: { stressed: 25.0, degraded: 60.0, failed: 150.0 }
+    rt: { stressed: 1.15, degraded: 1.45, failed: 1.90 }
+  AIR:
+    concentration_index: { stressed: 0.8, degraded: 2.5, failed: 5.0 } # AEGL-1, AEGL-2, AEGL-3
+    aqi: { stressed: 200.0, degraded: 300.0, failed: 400.0 }
+  SEI:
+    shaking_intensity_mmi: { stressed: 4.5, degraded: 6.5, failed: 8.0 }
+    damage_index: { stressed: 0.15, degraded: 0.40, failed: 0.70 }
+  COM:
+    network_load_pct: { stressed: 80.0, degraded: 95.0, failed: 115.0 }
+
+# Event types monitored for multi-horizon survival/onset
+event_types:
+  - "access_loss"         # TRF degraded/failed
+  - "power_loss"          # PWR customers out > 25%
+  - "hospital_saturation" # HOS ICU/bed > 92%
+  - "heat_stress"         # WX WBGT >= 32 C for 3h
+  - "contamination_exposure" # AIR concentration >= AEGL-2
+  - "structural_damage"   # SEI damage index >= 0.40
+  - "comms_loss"          # COM network load/down > battery

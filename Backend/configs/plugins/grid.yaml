@@ -1,0 +1,18 @@
+id: "grid"
+name: "Cascading Power Grid & Feeder Infrastructure Failure"
+lead_semantics: "Real lead: 12–72 h if weather/load-driven; fault-triggered starts at first fault"
+honest_statement: "Weather/demand-driven grid failures provide 12–72 h warning. Equipment fault cascades start at the initial breaker trip; the system forecasts subsequent feeder tripping, traffic signal blackouts, pump station stoppages, and hospital backup generator exhaustion."
+primary_layers: ["PWR", "TRF", "HYD", "HOS", "COM"]
+trigger_generator:
+  event_type: "transformer_overload_trip"
+  onset_hour: 52
+  root_substation: "SUB_02_Kurla_Central"
+  contingency_depth: 3
+critical_event:
+  condition: "customers_out_pct >= 35.0 for >= 2 h"
+expected_chain:
+  - { from: "PWR", to: "TRF", lag_h: 1, mechanism: "physical", description: "Traffic signal blackouts induce arterial gridlock" }
+  - { from: "PWR", to: "HYD", lag_h: 2, mechanism: "physical", description: "Stormwater pump lift stations lose primary electricity" }
+  - { from: "PWR", to: "COM", lag_h: 4, mechanism: "cyber", description: "Cellular tower batteries drain after 4 hours" }
+  - { from: "PWR", to: "HOS", lag_h: 8, mechanism: "physical", description: "Hospital diesel generator fuel reserves start running out" }
+seed_zones: ["z04_kurla_w", "z06_chunabhatti", "z07_bkc_central"]

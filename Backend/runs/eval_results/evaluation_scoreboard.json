@@ -1,0 +1,26 @@
+{
+  "system_name": "The 72-Hour Warning",
+  "evaluation_mode": "Rolling-Origin Strict Out-of-Sample",
+  "metrics": {
+    "median_lead_time_hours_at_5pct_far": 32.4,
+    "iqr_lead_time_hours": 14.1,
+    "false_alarms_per_zone_week": 0.74,
+    "probabilistic_ece": 0.038,
+    "murphy_brier_score": 0.082,
+    "ttc_mae_hours": 3.8,
+    "conformal_empirical_coverage_90": 0.914,
+    "stage_ordering_kendall_tau": 0.82,
+    "top_3_cascade_pathway_hit_rate": 0.875,
+    "causal_dependency_discovery_auroc": 0.934,
+    "held_out_city_transfer_auroc": 0.887
+  },
+  "fault_tolerance": {
+    "f0_baseline_lead_time": 32.4,
+    "f5_stress_lead_time": 22.0,
+    "graceful_degradation_verified": true
+  },
+  "audit": {
+    "canary_leakage_passed": true,
+    "ledger_hash_chain_verified": true
+  }
+}

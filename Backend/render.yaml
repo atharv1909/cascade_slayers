@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: cascade-slayers-backend
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: "pip install --upgrade pip && pip install -r requirements.txt"
+    startCommand: "uvicorn api.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.6
+      - key: PROJECT_ROOT
+        value: "."
+      - key: DISABLE_TICKER
+        value: "0"

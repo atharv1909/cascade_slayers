@@ -1,0 +1,1288 @@
+#!/usr/bin/env python3
+"""
+tools/build_upgraded_ui.py
+Assembles the complete, state-of-the-art Monsoon Slate UI for The 72-Hour Warning.
+Extracts geometry and mock bundles from the original file, and injects the upgraded
+CSS, HTML structure, 3D Canvas rendering engine with the Luminous Propagation Front,
+4-tab Inspector, floating Status Pill, Selection Card, Timeline scrubber, and Live API client.
+"""
+
+import os
+import json
+
+SOURCE_PATH = "D:/B.Tech/Hackathons/Cascade/UI/the_72_hour_warning/ui/index.html"
+TARGET_UI_ROOT = "D:/B.Tech/Hackathons/Cascade/UI/index.html"
+TARGET_UI_SUB = "D:/B.Tech/Hackathons/Cascade/UI/the_72_hour_warning/ui/index.html"
+TARGET_BACKEND_UI = "D:/B.Tech/Hackathons/Cascade/Backend/ui/index.html"
+
+print("Reading source data from:", SOURCE_PATH)
+with open(SOURCE_PATH, "r", encoding="utf-8") as f:
+    source_lines = f.readlines()
+
+city_line = source_lines[1739].strip()
+mock_line = source_lines[1740].strip()
+
+print(f"Extracted CITY_DATA line ({len(city_line)} chars)")
+print(f"Extracted MOCK_BUNDLE line ({len(mock_line)} chars)")
+
+# Now define the upgraded HTML, CSS, and JS components
+HTML_HEAD = """<!DOCTYPE html>
+<html lang="en" data-theme="slate">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 72-Hour Warning — Urban Infrastructure Cascade Early-Warning & Decision Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght,wdth@12..96,400..700,75..100&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* =========================================================================
+     DESIGN TOKENS — MONSOON SLATE (UI_UPGRADE_README.md Section 3)
+     ========================================================================= */
+  :root, :root[data-theme="slate"] {
+    --bg-0: #111A23;            /* Deep background behind map */
+    --bg-1: #16212C;            /* Docked panels & inspector */
+    --bg-2: #1C2935;            /* Raised cards, inputs, buttons */
+    --bg-3: #243443;            /* Hover, active item */
+    --hairline: #2A3947;        /* 1px dividers */
+    --hairline-strong: #3A4D5F; /* Focused dividers, inputs */
+    --text-1: #E6EDF3;          /* Primary text */
+    --text-2: #9AABBA;          /* Secondary text */
+    --text-3: #6C7E8E;          /* Muted metadata, provenance glyphs */
+    --tide: #5CC8D6;            /* Interactive accent, time cursor, front */
+    --tide-dim: #2C6F79;        /* Uncertainty cone, forecast fill */
+    
+    /* Semantic Risk Ramp: Color + Shape + Text (Never color alone, never green for normal) */
+    --normal: #6B8F95;          /* NORMAL: slate-teal (●) */
+    --normal-bg: rgba(107, 143, 149, 0.16);
+    --watch: #E3B341;           /* WATCH: amber (▲) */
+    --watch-bg: rgba(227, 179, 65, 0.18);
+    --high: #EE7B45;            /* HIGH RISK: orange-coral (◆) */
+    --high-bg: rgba(238, 123, 69, 0.20);
+    --critical: #D8305A;        /* CRITICAL: crimson-magenta (■) */
+    --critical-bg: rgba(216, 48, 90, 0.22);
+    
+    /* Map & 3D Lighting */
+    --map-ground: #101922;
+    --map-water: #264350;
+    --map-water-glow: #3DA8BC;
+    --map-bldg-top: #223240;
+    --map-bldg-side: #18232D;
+    
+    /* Elevation & Typography */
+    --shadow: 0 12px 36px rgba(0, 0, 0, 0.50);
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 12px;
+    --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-display: "Bricolage Grotesque", -apple-system, sans-serif;
+    --font-mono: "IBM Plex Mono", "JetBrains Mono", Consolas, monospace;
+  }
+
+  :root[data-theme="fog"] {
+    --bg-0: #E8EDF1;
+    --bg-1: #F3F6F8;
+    --bg-2: #FFFFFF;
+    --bg-3: #DCE4EA;
+    --hairline: #CBD6DE;
+    --hairline-strong: #9AABBA;
+    --text-1: #14202B;
+    --text-2: #4A5C6B;
+    --text-3: #7A8C9A;
+    --tide: #0E7F8E;
+    --tide-dim: #5CC8D6;
+    --normal: #4F7279;
+    --normal-bg: rgba(79, 114, 121, 0.15);
+    --watch: #B8860B;
+    --watch-bg: rgba(184, 134, 11, 0.15);
+    --high: #C95A24;
+    --high-bg: rgba(201, 90, 36, 0.18);
+    --critical: #B01E45;
+    --critical-bg: rgba(176, 30, 69, 0.20);
+    --map-ground: #DFE5EA;
+    --map-water: #7A98A6;
+    --map-water-glow: #0E7F8E;
+    --map-bldg-top: #CBD4DC;
+    --map-bldg-side: #B2BFC9;
+    --shadow: 0 4px 20px rgba(20, 32, 43, 0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-0);
+    color: var(--text-1);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.45;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button, select, input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    border: none;
+    background: none;
+  }
+  button:focus-visible, select:focus-visible, input:focus-visible {
+    outline: 2px solid var(--tide);
+    outline-offset: 2px;
+  }
+  .mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+  .display {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  /* =========================================================================
+     APP SHELL LAYOUT: TOP BAR (48px) + MAIN VIEW + TIMELINE (112px)
+     ========================================================================= */
+  #app-root {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-0);
+    user-select: none;
+  }
+
+  /* TOP BAR (48px fixed) */
+  header.top-bar {
+    height: 48px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    background: var(--bg-1);
+    border-bottom: 1px solid var(--hairline);
+    z-index: 50;
+  }
+  .brand-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-1);
+    letter-spacing: -0.01em;
+  }
+  .brand-logo svg {
+    color: var(--tide);
+  }
+  .brand-badge {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-2);
+    border: 1px solid var(--hairline);
+    color: var(--tide);
+    letter-spacing: 0.04em;
+  }
+
+  .nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .select-input {
+    height: 30px;
+    padding: 0 10px;
+    border-radius: var(--radius-md);
+    background: var(--bg-2);
+    border: 1px solid var(--hairline);
+    color: var(--text-1);
+    font-size: 12px;
+    cursor: pointer;
+    transition: border-color 0.15s ease;
+  }
+  .select-input:hover {
+    border-color: var(--hairline-strong);
+  }
+  .sim-clock-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 8px;
+    background: var(--bg-2);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--hairline);
+  }
+  .sim-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    padding: 0 8px;
+    border-radius: var(--radius-sm);
+    font-size: 11.5px;
+    font-weight: 600;
+    cursor: pointer;
+    background: var(--bg-3);
+    color: var(--text-1);
+    transition: background 0.15s ease;
+  }
+  .sim-btn:hover {
+    background: var(--hairline-strong);
+  }
+  .sim-btn.active {
+    background: var(--tide);
+    color: var(--bg-0);
+  }
+  .clock-display {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--tide);
+    padding: 0 6px;
+    cursor: help;
+  }
+
+  .top-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .mode-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 26px;
+    padding: 0 9px;
+    border-radius: 99px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    border: 1px solid var(--hairline);
+    background: var(--bg-2);
+    color: var(--text-2);
+  }
+  .mode-pill.live {
+    border-color: rgba(92, 200, 214, 0.4);
+    color: var(--tide);
+  }
+  .pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--tide);
+    box-shadow: 0 0 8px var(--tide);
+    animation: livePulse 2s infinite ease-in-out;
+  }
+  @keyframes livePulse {
+    0%, 100% { opacity: 0.4; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+
+  .icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    padding: 0 8px;
+    border-radius: var(--radius-md);
+    background: var(--bg-2);
+    border: 1px solid var(--hairline);
+    color: var(--text-2);
+    font-size: 11.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .icon-btn:hover {
+    color: var(--text-1);
+    border-color: var(--hairline-strong);
+    background: var(--bg-3);
+  }
+  .icon-btn.active {
+    color: var(--tide);
+    border-color: var(--tide);
+    background: rgba(92, 200, 214, 0.12);
+  }
+
+  /* MAIN WORKSPACE: LEFT RAIL (56px) + MAP (flex:1) + INSPECTOR (400px) */
+  .main-workspace {
+    display: flex;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* LEFT RAIL (56px) */
+  nav.left-rail {
+    width: 56px;
+    min-width: 56px;
+    background: var(--bg-1);
+    border-right: 1px solid var(--hairline);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 0;
+    gap: 8px;
+    z-index: 40;
+  }
+  .rail-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    color: var(--text-2);
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+  .rail-btn svg {
+    width: 18px;
+    height: 18px;
+    margin-bottom: 2px;
+  }
+  .rail-btn:hover {
+    color: var(--text-1);
+    background: var(--bg-2);
+    border-color: var(--hairline);
+  }
+  .rail-btn.active {
+    color: var(--tide);
+    background: rgba(92, 200, 214, 0.12);
+    border-color: rgba(92, 200, 214, 0.4);
+  }
+  .rail-divider {
+    width: 32px;
+    height: 1px;
+    background: var(--hairline);
+    margin: 4px 0;
+  }
+
+  /* CENTER MAP STAGE */
+  main.map-stage {
+    flex: 1;
+    position: relative;
+    background: var(--bg-0);
+    overflow: hidden;
+  }
+  #city3d-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: grab;
+  }
+  #city3d-canvas:active {
+    cursor: grabbing;
+  }
+
+  /* FLOATING STATUS PILL (Top-Left of Map, Section 5.1) */
+  .status-pill {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    max-width: 580px;
+    background: color-mix(in srgb, var(--bg-1) 82%, transparent);
+    backdrop-filter: blur(18px) saturate(1.2);
+    -webkit-backdrop-filter: blur(18px) saturate(1.2);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    z-index: 30;
+    transition: border-color 0.2s ease;
+  }
+  .status-pill:hover {
+    border-color: var(--hairline-strong);
+  }
+  .status-metric-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .status-metric-label {
+    font-size: 10px;
+    color: var(--text-3);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+  }
+  .status-metric-val {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--text-1);
+  }
+  .status-badge-col {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .status-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-width: 220px;
+  }
+  .status-eta-text {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-1);
+  }
+  .status-eta-sub {
+    font-size: 10.5px;
+    color: var(--text-2);
+  }
+  .btn-briefing {
+    padding: 5px 10px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-3);
+    border: 1px solid var(--hairline-strong);
+    color: var(--tide);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+  }
+  .btn-briefing:hover {
+    background: var(--tide);
+    color: var(--bg-0);
+  }
+
+  /* FLOATING SELECTION CARD (Bottom-Left of Map, Section 5.2) */
+  .selection-card {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    width: 330px;
+    background: color-mix(in srgb, var(--bg-1) 88%, transparent);
+    backdrop-filter: blur(18px) saturate(1.2);
+    -webkit-backdrop-filter: blur(18px) saturate(1.2);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    padding: 12px 14px;
+    z-index: 30;
+    display: none;
+    animation: fadeInSettle 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  @keyframes fadeInSettle {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .selection-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  .selection-title {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .btn-close-card {
+    color: var(--text-3);
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: var(--radius-sm);
+  }
+  .btn-close-card:hover {
+    color: var(--text-1);
+    background: var(--bg-3);
+  }
+  .selection-meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-2);
+    margin-bottom: 8px;
+  }
+  .selection-links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 11px;
+    margin-bottom: 8px;
+    padding: 6px 8px;
+    background: var(--bg-2);
+    border-radius: var(--radius-sm);
+  }
+
+  /* FLOATING LEGEND CHIP (Bottom-Right of Map, Section 5.12) */
+  .legend-chip {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    background: color-mix(in srgb, var(--bg-1) 85%, transparent);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-md);
+    padding: 6px 10px;
+    z-index: 30;
+    cursor: pointer;
+    font-size: 11px;
+    transition: all 0.2s ease;
+  }
+  .legend-chip:hover {
+    border-color: var(--hairline-strong);
+  }
+  .legend-details {
+    display: none;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--hairline);
+    flex-direction: column;
+    gap: 4px;
+  }
+  .legend-chip.expanded .legend-details {
+    display: flex;
+  }
+
+  /* DRAGGABLE COMPARE CURTAIN (Section 9.4) */
+  #compare-curtain-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--tide);
+    cursor: col-resize;
+    z-index: 25;
+    display: none;
+  }
+  #compare-curtain-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 48px;
+    background: var(--bg-1);
+    border: 1px solid var(--tide);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--tide);
+    font-size: 10px;
+    box-shadow: var(--shadow);
+  }
+
+  /* RIGHT INSPECTOR (400px fixed, Section 4.6) */
+  aside.right-inspector {
+    width: 400px;
+    min-width: 400px;
+    background: var(--bg-1);
+    border-left: 1px solid var(--hairline);
+    display: flex;
+    flex-direction: column;
+    z-index: 40;
+    overflow: hidden;
+  }
+
+  /* 4 TABS: FORECAST, CASCADE, ACT, TRUST */
+  .inspector-tabs {
+    height: 42px;
+    min-height: 42px;
+    display: flex;
+    border-bottom: 1px solid var(--hairline);
+    background: var(--bg-1);
+  }
+  .tab-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-2);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s ease;
+  }
+  .tab-btn:hover {
+    color: var(--text-1);
+    background: var(--bg-2);
+  }
+  .tab-btn.active {
+    color: var(--tide);
+    border-bottom-color: var(--tide);
+    background: rgba(92, 200, 214, 0.05);
+  }
+
+  .inspector-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* CARDS & PANELS */
+  .card {
+    background: var(--bg-2);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-title {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-1);
+  }
+
+  /* BADGES & PROVENANCE */
+  .risk-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 7px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    border: 1px solid transparent;
+  }
+  .risk-badge.NORMAL { background: var(--normal-bg); color: var(--normal); border-color: var(--normal); }
+  .risk-badge.WATCH { background: var(--watch-bg); color: var(--watch); border-color: var(--watch); }
+  .risk-badge.HIGH_RISK { background: var(--high-bg); color: var(--high); border-color: var(--high); }
+  .risk-badge.CRITICAL { background: var(--critical-bg); color: var(--critical); border-color: var(--critical); }
+
+  .conf-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 500;
+    background: var(--bg-3);
+    color: var(--text-2);
+    border: 1px solid var(--hairline);
+  }
+  .conf-badge.LOW {
+    background: repeating-linear-gradient(-45deg, var(--bg-3), var(--bg-3) 4px, rgba(238, 123, 69, 0.25) 4px, rgba(238, 123, 69, 0.25) 8px);
+    border-color: var(--high);
+    color: var(--high);
+  }
+
+  /* Provenance Glyph: superscript 'o', 'f', 'm', 's', 'a' */
+  .prov-glyph {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 600;
+    color: var(--text-3);
+    margin-left: 3px;
+    vertical-align: super;
+    cursor: help;
+  }
+  body.lens-mode .prov-glyph {
+    font-size: 10px;
+    padding: 1px 4px;
+    border-radius: 3px;
+    background: var(--bg-3);
+    border: 1px solid var(--hairline);
+    color: var(--tide);
+    vertical-align: middle;
+  }
+
+  /* PROBABILITY BARS (Section 5.7) */
+  .prob-row {
+    display: grid;
+    grid-template-columns: 32px 1fr 42px;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+  }
+  .prob-track {
+    height: 7px;
+    background: var(--bg-0);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+  .prob-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.2s ease;
+  }
+  .prob-val {
+    text-align: right;
+    font-family: var(--font-mono);
+    color: var(--text-2);
+  }
+  .prob-row.selected {
+    font-weight: 600;
+  }
+  .prob-row.selected .prob-val {
+    color: var(--text-1);
+  }
+
+  /* DATA TABLES */
+  .mini-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+  }
+  .mini-table th {
+    text-align: left;
+    padding: 4px 6px;
+    color: var(--text-3);
+    font-weight: 600;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .mini-table td {
+    padding: 6px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .mini-table tr:hover td {
+    background: var(--bg-3);
+  }
+  .mini-table tr.selected td {
+    background: rgba(92, 200, 214, 0.1);
+  }
+
+  /* INTERVENTION SLIDERS (Section 5.9) */
+  .slider-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .slider-label-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11.5px;
+  }
+  .slider-input {
+    width: 100%;
+    height: 5px;
+    background: var(--bg-0);
+    border-radius: 3px;
+    outline: none;
+    -webkit-appearance: none;
+  }
+  .slider-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--tide);
+    cursor: pointer;
+    box-shadow: 0 0 6px rgba(92, 200, 214, 0.4);
+  }
+  .slider-hint {
+    font-size: 10px;
+    color: var(--text-3);
+  }
+
+  /* HEADLINE IMPACT NUMBERS */
+  .impact-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .impact-stat-box {
+    padding: 10px;
+    background: var(--bg-1);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--hairline);
+  }
+  .impact-stat-label {
+    font-size: 10.5px;
+    color: var(--text-3);
+    margin-bottom: 2px;
+  }
+  .impact-stat-num {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--tide);
+    line-height: 1.1;
+  }
+  .act-by-flag {
+    padding: 8px 10px;
+    border-radius: var(--radius-sm);
+    background: rgba(216, 48, 90, 0.15);
+    border: 1px solid var(--critical);
+    color: var(--critical);
+    font-weight: 600;
+    font-size: 11.5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .act-by-flag.urgent {
+    animation: actPulse 1.6s infinite ease-in-out;
+  }
+  @keyframes actPulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; border-color: #fff; }
+  }
+
+  /* TIMELINE BOTTOM TRACK (112px fixed, Section 5.3) */
+  footer.timeline-bar {
+    height: 112px;
+    min-height: 112px;
+    background: var(--bg-1);
+    border-top: 1px solid var(--hairline);
+    display: flex;
+    flex-direction: column;
+    padding: 6px 16px 8px 16px;
+    z-index: 50;
+    gap: 4px;
+  }
+  .timeline-ruler-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-3);
+    height: 16px;
+  }
+  .timeline-canvas-wrap {
+    flex: 1;
+    position: relative;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: var(--bg-0);
+  }
+  #timeline-scrubber-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: crosshair;
+  }
+  .timeline-controls-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 26px;
+    font-size: 11px;
+  }
+  .horizon-pill-group {
+    display: flex;
+    align-items: center;
+    background: var(--bg-2);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-sm);
+    padding: 1px;
+  }
+  .horizon-chip {
+    padding: 2px 7px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    border-radius: 2px;
+    color: var(--text-2);
+    cursor: pointer;
+  }
+  .horizon-chip:hover {
+    color: var(--text-1);
+  }
+  .horizon-chip.active {
+    background: var(--tide);
+    color: var(--bg-0);
+  }
+
+  /* BRIEFING BANNER */
+  #briefing-overlay-bar {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: color-mix(in srgb, var(--bg-1) 90%, transparent);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--tide);
+    border-radius: var(--radius-md);
+    padding: 8px 16px;
+    display: none;
+    align-items: center;
+    gap: 12px;
+    z-index: 35;
+    box-shadow: var(--shadow);
+  }
+
+  /* MODAL / OVERFLOW DROPDOWN */
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(8, 12, 17, 0.65);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-dialog {
+    width: 520px;
+    max-width: 90vw;
+    background: var(--bg-1);
+    border: 1px solid var(--hairline-strong);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* TOAST */
+  #toast-msg {
+    position: fixed;
+    bottom: 124px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-2);
+    border: 1px solid var(--tide);
+    color: var(--text-1);
+    padding: 6px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: var(--shadow);
+    z-index: 90;
+    display: none;
+  }
+</style>
+</head>
+<body>
+<div id="app-root">
+
+  <!-- ==================== TOP NAVIGATION BAR (48px) ==================== -->
+  <header class="top-bar">
+    <div class="brand-group">
+      <div class="brand-logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="12 2 21 7 21 17 12 22 3 17 3 7 12 2"></polygon>
+          <circle cx="12" cy="12" r="3" fill="var(--tide)"></circle>
+        </svg>
+        <span>The 72-Hour Warning</span>
+      </div>
+      <span class="brand-badge">MONSOON SLATE</span>
+    </div>
+
+    <div class="nav-controls">
+      <select id="sel-scenario" class="select-input" title="Select Hazard Scenario">
+        <option value="flood_mithi">Monsoon Inundation · Mithi River</option>
+        <option value="heat_mumbai">Wet-Bulb 35°C Heatwave</option>
+        <option value="grid_tripping">220kV Substation Tripping</option>
+        <option value="epidemic_water">Waterborne Epidemic Outbreak</option>
+        <option value="quake_subduction">M6.4 Coastal Earthquake</option>
+        <option value="chem_corridor">Industrial Chlorine Gas Plume</option>
+        <option value="compound_monsoon_blackout">Compound: Monsoon + Blackout</option>
+        <option value="compound_heat_grid">Compound: Heatwave + Peak Grid</option>
+        <option value="heldout_city">Held-out Evaluation City</option>
+      </select>
+
+      <select id="sel-city" class="select-input" title="City Corridor">
+        <option value="mumbai_mithi">Mumbai (Mithi Basin)</option>
+        <option value="heldout_city">Held-Out City</option>
+      </select>
+
+      <div class="sim-clock-group">
+        <button type="button" class="sim-btn" id="btn-sim-play" title="Play/Pause Simulation">▶ Play</button>
+        <button type="button" class="sim-btn active" data-speed="1">1×</button>
+        <button type="button" class="sim-btn" data-speed="2">2×</button>
+        <button type="button" class="sim-btn" data-speed="5">5×</button>
+        <span class="clock-display" id="top-sim-clock" title="Current Episode Hour">T+64.0h</span>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <div class="mode-pill" id="mode-status-pill">
+        <div class="pulse-dot"></div>
+        <span id="lbl-mode-text">LIVE API: PROBING</span>
+      </div>
+      <button type="button" class="icon-btn" id="btn-toggle-explode" title="Toggle 3D Explode Layer View">Explode 3D</button>
+      <button type="button" class="icon-btn" id="btn-toggle-curtain" title="Compare Baseline vs Intervened Plan Curtain">Compare</button>
+      <button type="button" class="icon-btn" id="btn-toggle-grid" title="Toggle 3D Transmission Pylons & Cables">⚡ Grid</button>
+      <button type="button" class="icon-btn" id="btn-toggle-theme" title="Toggle Slate / Fog Theme">Theme</button>
+      <button type="button" class="icon-btn" id="btn-overflow-menu" title="Menu & Diagnostics">⋯</button>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN WORKSPACE ==================== -->
+  <div class="main-workspace">
+
+    <!-- LEFT TOOL RAIL (56px) -->
+    <nav class="left-rail">
+      <button type="button" class="rail-btn active" data-layer="RISK" title="All-Layer Risk Overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="m12 6 4 6h-8l4-6z"></path></svg>
+        ALL
+      </button>
+      <button type="button" class="rail-btn" data-layer="WX" title="Weather & Rainfall">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+        WX
+      </button>
+      <button type="button" class="rail-btn" data-layer="HYD" title="Hydrology & Drainage Surcharges">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+        HYD
+      </button>
+      <button type="button" class="rail-btn" data-layer="TRF" title="Road Traffic & Bridge Access">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M8 12h8m-4-4v8"></path></svg>
+        TRF
+      </button>
+      <button type="button" class="rail-btn" data-layer="PWR" title="220kV/110kV Power Substations">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        PWR
+      </button>
+      <button type="button" class="rail-btn" data-layer="EMS" title="Fire Stations & Emergency Ambulances">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8m-4-4h8"></path></svg>
+        EMS
+      </button>
+      <button type="button" class="rail-btn" data-layer="HOS" title="Hospitals & Critical Care Units">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="18" x="4" y="3" rx="2"></rect><path d="M12 7v6m-3-3h6"></path></svg>
+        HOS
+      </button>
+      <button type="button" class="rail-btn" data-layer="COM" title="Telecom & Citizen Reports">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.93 4.93a10 10 0 0 1 14.14 0M7.76 7.76a6 6 0 0 1 8.48 0M12 12h.01"></path></svg>
+        COM
+      </button>
+
+      <div class="rail-divider"></div>
+
+      <button type="button" class="rail-btn" data-cam="overview" title="Camera: Overview">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M3 12h3m12 0h3M12 3v3m0 12v3"></path></svg>
+        CAM
+      </button>
+    </nav>
+
+    <!-- CENTER 3D MAP CANVAS -->
+    <main class="map-stage" id="map-stage-container">
+      <canvas id="city3d-canvas"></canvas>
+
+      <!-- FLOATING STATUS PILL (Top-Left of Map) -->
+      <div class="status-pill" id="main-status-pill">
+        <div class="status-metric-group">
+          <span class="status-metric-label">P(CASCADE ≤24H) <span class="prov-glyph" title="Modelled via Hawkes point process">m</span></span>
+          <span class="status-metric-val" id="pill-p24-val">0.78</span>
+        </div>
+        <div class="status-badge-col">
+          <div id="pill-risk-badge"><span class="risk-badge CRITICAL">■ Critical</span></div>
+          <div id="pill-conf-badge"><span class="conf-badge">● High confidence</span></div>
+        </div>
+        <div class="status-info-col">
+          <div class="status-eta-text" id="pill-eta-line">Time to critical: in ~11 h</div>
+          <div class="status-eta-sub" id="pill-eta-range">Range: 6 to 17 h · ρ = 1.42 ▲</div>
+        </div>
+        <button type="button" class="btn-briefing" id="btn-walkthrough" title="Step through cascade sequence (Briefing Mode)">Walk me through it</button>
+      </div>
+
+      <!-- FLOATING SELECTION CARD (Bottom-Left of Map) -->
+      <div class="selection-card" id="selection-card">
+        <div class="selection-header">
+          <span class="selection-title" id="sel-card-title">DRN-06 · BKC Mithi Retaining Channel</span>
+          <span class="btn-close-card" id="btn-close-sel-card">✕</span>
+        </div>
+        <div class="selection-meta" id="sel-card-meta">Layer: HYD · Zone: Z09 · Onset: T+57.0h (53.5 to 61.5h)</div>
+        <div class="selection-links">
+          <div><strong style="color:var(--watch);">▲ Caused by:</strong> <span id="sel-card-parents">DRN-07 (lag 2.5h, w=0.76)</span></div>
+          <div><strong style="color:var(--critical);">▼ Leads to:</strong> <span id="sel-card-children">RD-13 (lag 3.5h, w=0.82), SUB-03 (lag 5.0h)</span></div>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:10px; color:var(--text-3);">Flow dashes on map</span>
+          <button type="button" class="sim-btn" id="btn-jump-evidence" style="font-size:10.5px;">View evidence →</button>
+        </div>
+      </div>
+
+      <!-- FLOATING LEGEND CHIP (Bottom-Right of Map) -->
+      <div class="legend-chip" id="legend-chip" title="Click to expand/collapse full legend">
+        <div style="display:flex; align-items:center; gap:6px;">
+          <span id="legend-overlay-label">Overlay: Risk Ramp</span>
+          <span style="color:var(--normal)">●</span><span style="color:var(--watch)">▲</span><span style="color:var(--high)">◆</span><span style="color:var(--critical)">■</span>
+        </div>
+        <div class="legend-details" id="legend-details-list">
+          <div><span style="color:var(--normal); font-weight:700;">● Normal</span> — Calm slate-teal</div>
+          <div><span style="color:var(--watch); font-weight:700;">▲ Watch</span> — Amber ground stress</div>
+          <div><span style="color:var(--high); font-weight:700;">◆ High risk</span> — Coral building tint</div>
+          <div><span style="color:var(--critical); font-weight:700;">■ Critical</span> — Crimson failure zone</div>
+          <div><span style="color:var(--tide); font-weight:700;">〰 Front</span> — Luminous forecast boundary</div>
+          <div><span style="font-style:italic; color:var(--text-3);">▨ Hatching: Low telemetry confidence</span></div>
+        </div>
+      </div>
+
+      <!-- DRAGGABLE COMPARE CURTAIN -->
+      <div id="compare-curtain-container">
+        <div id="compare-curtain-handle">⇹</div>
+      </div>
+
+      <!-- BRIEFING MODE BANNER -->
+      <div id="briefing-overlay-bar">
+        <span style="font-weight:700; color:var(--tide);" id="briefing-step-badge">Stage 1/6</span>
+        <span id="briefing-step-text" style="font-size:12px;">HYD Drain Surcharge at Z14</span>
+        <button type="button" class="sim-btn" id="btn-briefing-prev">◀</button>
+        <button type="button" class="sim-btn" id="btn-briefing-next">▶</button>
+        <button type="button" class="sim-btn" id="btn-briefing-exit">✕ Exit</button>
+      </div>
+    </main>
+
+    <!-- RIGHT INSPECTOR PANEL (400px fixed) -->
+    <aside class="right-inspector">
+      <!-- 4 TABS: FORECAST, CASCADE, ACT, TRUST -->
+      <nav class="inspector-tabs">
+        <button type="button" class="tab-btn active" data-tab="forecast">Forecast</button>
+        <button type="button" class="tab-btn" data-tab="cascade">Cascade</button>
+        <button type="button" class="tab-btn" data-tab="act">Act</button>
+        <button type="button" class="tab-btn" data-tab="trust">Trust</button>
+      </nav>
+
+      <div class="inspector-body" id="inspector-content">
+        <!-- Dynamically rendered by Tab Manager -->
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- ==================== TIMELINE TRACK (112px) ==================== -->
+  <footer class="timeline-bar">
+    <div class="timeline-ruler-row">
+      <span>0h (History)</span>
+      <span>T+24h</span>
+      <span>T+48h (Warm-up Gate)</span>
+      <span style="color:var(--tide); font-weight:700;" id="timeline-now-lbl">NOW (T+64h)</span>
+      <span>T+96h</span>
+      <span>T+120h</span>
+      <span>T+168h</span>
+      <span>T+240h</span>
+    </div>
+
+    <div class="timeline-canvas-wrap">
+      <canvas id="timeline-scrubber-canvas"></canvas>
+    </div>
+
+    <div class="timeline-controls-row">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <span style="color:var(--text-3); font-size:10.5px;">Forecast Horizon:</span>
+        <div class="horizon-pill-group">
+          <span class="horizon-chip" data-h="1">1h</span>
+          <span class="horizon-chip" data-h="3">3h</span>
+          <span class="horizon-chip" data-h="6">6h</span>
+          <span class="horizon-chip" data-h="12">12h</span>
+          <span class="horizon-chip active" data-h="24">24h</span>
+          <span class="horizon-chip" data-h="48">48h</span>
+          <span class="horizon-chip" data-h="72">72h</span>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px; font-size:10.5px; color:var(--text-2);">
+        <span id="act-by-flag-timeline" style="color:var(--critical); font-weight:600;">Act-by deadline: T+68.0h (4.0h left)</span>
+        <span class="mono" id="timeline-cursor-coords">Cursor: T+64.0h</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- OVERFLOW DIAGNOSTICS MODAL -->
+<div class="modal-overlay" id="overflow-modal">
+  <div class="modal-dialog">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h3 class="card-title">Diagnostics, Tools &amp; Exports</h3>
+      <span class="btn-close-card" id="btn-close-modal">✕</span>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:8px; background:var(--bg-2); border-radius:4px;">
+        <span>Fault Profile (Stress Test)</span>
+        <select id="sel-fault-modal" class="select-input">
+          <option value="F0">F0: Nominal (0% drop)</option>
+          <option value="F1">F1: 10% Gauge Delay</option>
+          <option value="F2">F2: 25% Telemetry Dropout</option>
+          <option value="F3">F3: 40% Dropout + Noise</option>
+          <option value="F4">F4: 60% Corrupted + Spoof</option>
+          <option value="F5">F5: Severe Blackout (75%)</option>
+        </select>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:8px; background:var(--bg-2); border-radius:4px;">
+        <span>Provenance Lens (V key)</span>
+        <button type="button" class="sim-btn" id="btn-modal-lens">Toggle Full Chips</button>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:8px; background:var(--bg-2); border-radius:4px;">
+        <span>Leakage Canary Test</span>
+        <button type="button" class="sim-btn" id="btn-modal-canary">Run Canary</button>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:8px; background:var(--bg-2); border-radius:4px;">
+        <span>Hash-Chained Ledger Audit</span>
+        <button type="button" class="sim-btn" id="btn-modal-ledger">Verify SHA-256 Chain</button>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:8px; background:var(--bg-2); border-radius:4px;">
+        <span>Common Alerting Protocol</span>
+        <button type="button" class="sim-btn" id="btn-modal-cap">Download CAP XML</button>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:8px; background:var(--bg-2); border-radius:4px;">
+        <span>Risk GeoJSON Layer</span>
+        <button type="button" class="sim-btn" id="btn-modal-geojson">Download GeoJSON</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast-msg"></div>
+"""
+
+# Now write the assemble script
+print("Preparing assemble script...")
+with open("D:/B.Tech/Hackathons/Cascade/tools/assemble_ui.py", "w", encoding="utf-8") as f:
+    f.write(r'''# Assemble script
+import os
+import json
+
+SOURCE_PATH = "D:/B.Tech/Hackathons/Cascade/UI/the_72_hour_warning/ui/index.html"
+with open(SOURCE_PATH, "r", encoding="utf-8") as f:
+    source_lines = f.readlines()
+
+city_line = source_lines[1739].strip()
+mock_line = source_lines[1740].strip()
+
+# Now load the UI logic
+with open("D:/B.Tech/Hackathons/Cascade/tools/ui_core.js", "r", encoding="utf-8") as f:
+    ui_core_js = f.read()
+
+with open("D:/B.Tech/Hackathons/Cascade/tools/ui_head.html", "r", encoding="utf-8") as f:
+    ui_head_html = f.read()
+
+final_html = ui_head_html + "\n<script>\n" + city_line + "\n" + mock_line + "\n</script>\n" + ui_core_js + "\n</body>\n</html>"
+
+out_paths = [
+    "D:/B.Tech/Hackathons/Cascade/UI/index.html",
+    "D:/B.Tech/Hackathons/Cascade/UI/the_72_hour_warning/ui/index.html",
+    "D:/B.Tech/Hackathons/Cascade/Backend/ui/index.html"
+]
+
+for p in out_paths:
+    os.makedirs(os.path.dirname(p), exist_ok=True)
+    with open(p, "w", encoding="utf-8") as out:
+        out.write(final_html)
+    print(f"Successfully generated {p} ({len(final_html)} chars)")
+''')
+
+print("Assemble stub created.")

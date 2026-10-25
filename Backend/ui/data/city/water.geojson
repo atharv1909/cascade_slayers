@@ -1,0 +1,107 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "water_mithi_main",
+      "properties": {
+        "name": "Mithi River Main Channel",
+        "type": "river",
+        "provenance": "OBSERVED"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              72.885,
+              19.102
+            ],
+            [
+              72.88,
+              19.092
+            ],
+            [
+              72.871,
+              19.088
+            ],
+            [
+              72.866,
+              19.078
+            ],
+            [
+              72.862,
+              19.068
+            ],
+            [
+              72.868,
+              19.058
+            ],
+            [
+              72.86,
+              19.05
+            ],
+            [
+              72.848,
+              19.045
+            ],
+            [
+              72.842,
+              19.04
+            ],
+            [
+              72.845,
+              19.043
+            ],
+            [
+              72.862,
+              19.053
+            ],
+            [
+              72.868,
+              19.062
+            ],
+            [
+              72.873,
+              19.08
+            ],
+            [
+              72.875,
+              19.09
+            ],
+            [
+              72.885,
+              19.102
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "water_vakola_drain",
+      "properties": {
+        "name": "Vakola Nullah Channel",
+        "type": "drain",
+        "provenance": "OBSERVED"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.854,
+            19.082
+          ],
+          [
+            72.859,
+            19.074
+          ],
+          [
+            72.862,
+            19.068
+          ]
+        ]
+      }
+    }
+  ]
+}

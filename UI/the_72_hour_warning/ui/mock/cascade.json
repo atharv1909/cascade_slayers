@@ -1,0 +1,105 @@
+{
+  "scenario": "flood_mithi",
+  "provenance": "SIMULATED",
+  "rho": 1.38,
+  "interaction_gain": null,
+  "low_confidence": false,
+  "chains": [
+    {
+      "rank": 1,
+      "prob": 0.64,
+      "stages": [
+        {
+          "layer": "WX",
+          "event": "Extreme Monsoon Burst (>65 mm/h intensity index)",
+          "zone_code": "Z18",
+          "eta_h": {
+            "q10": 1,
+            "q50": 2,
+            "q90": 3.5
+          }
+        },
+        {
+          "layer": "HYD",
+          "event": "Mithi & Bail Bazaar Culvert Overload (DRN-03/06)",
+          "zone_code": "Z14",
+          "eta_h": {
+            "q10": 4.5,
+            "q50": 7,
+            "q90": 10
+          }
+        },
+        {
+          "layer": "TRF",
+          "event": "LBS Marg & Mithi Bridge Arterial Closure (RD-13/15)",
+          "zone_code": "Z09",
+          "eta_h": {
+            "q10": 8.5,
+            "q50": 11.5,
+            "q90": 15
+          }
+        },
+        {
+          "layer": "PWR",
+          "event": "BKC / Kurla 110kV Feeder Protective Trip (SUB-04)",
+          "zone_code": "Z10",
+          "eta_h": {
+            "q10": 12,
+            "q50": 16,
+            "q90": 21.5
+          }
+        },
+        {
+          "layer": "EMS",
+          "event": "Ambulance Corridor Fragmentation (+14 min response)",
+          "zone_code": "Z04",
+          "eta_h": {
+            "q10": 14.5,
+            "q50": 19,
+            "q90": 25
+          }
+        },
+        {
+          "layer": "HOS",
+          "event": "Sion & Bhabha Hospital ED Boarding & Generator Strain",
+          "zone_code": "Z03",
+          "eta_h": {
+            "q10": 19,
+            "q50": 25.5,
+            "q90": 34
+          }
+        }
+      ]
+    }
+  ],
+  "branches": [
+    {
+      "at": "HYD · Drain Overload",
+      "to": "PWR · Substation Inundation Trip",
+      "prob": 0.48
+    },
+    {
+      "at": "PWR · Substation Trip",
+      "to": "COM · Telecom Exchange Battery Depletion",
+      "prob": 0.37
+    }
+  ],
+  "loops": [
+    {
+      "nodes": [
+        "PWR",
+        "HYD"
+      ],
+      "gain": 1.24,
+      "description": "Substation trip de-energizes storm-water lift pumps, accelerating drain surcharge"
+    },
+    {
+      "nodes": [
+        "TRF",
+        "EMS"
+      ],
+      "gain": 1.18,
+      "description": "Uncleared stalled traffic blocks emergency tow & dewatering tankers"
+    }
+  ]
+}

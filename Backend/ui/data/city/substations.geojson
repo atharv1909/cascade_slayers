@@ -1,0 +1,101 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "SUB_01_Bandra_110kV",
+      "properties": {
+        "id": "SUB_01_Bandra_110kV",
+        "name": "Bandra East 110kV GIS Substation",
+        "rating_mva": 150
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.852,
+          19.058
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SUB_02_Kurla_Central",
+      "properties": {
+        "id": "SUB_02_Kurla_Central",
+        "name": "Kurla Central 220/33kV Substation",
+        "rating_mva": 220
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.871,
+          19.062
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SUB_03_Sion_Chuna",
+      "properties": {
+        "id": "SUB_03_Sion_Chuna",
+        "name": "Chunabhatti 110kV Receiving Station",
+        "rating_mva": 100
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.874,
+          19.051
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SUB_04_BKC_GIS",
+      "properties": {
+        "id": "SUB_04_BKC_GIS",
+        "name": "BKC Underground 110kV Gas-Insulated Substation",
+        "rating_mva": 180
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.862,
+          19.069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SUB_05_Vakola_Feeder",
+      "properties": {
+        "id": "SUB_05_Vakola_Feeder",
+        "name": "Vakola Distribution Substation",
+        "rating_mva": 80
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.854,
+          19.082
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "SUB_06_Sakinaka_Grid",
+      "properties": {
+        "id": "SUB_06_Sakinaka_Grid",
+        "name": "Saki Naka 110kV Grid Station",
+        "rating_mva": 140
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.882,
+          19.092
+        ]
+      }
+    }
+  ]
+}

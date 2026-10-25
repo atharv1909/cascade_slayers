@@ -1,0 +1,22 @@
+id: "compound_a"
+name: "Compound Disruption: Monsoon Inundation × Grid Failure × Hospital Saturation"
+lead_semantics: "Two cascades share a bottleneck"
+honest_statement: "Concurrent monsoon cloudburst and substation inundation produce a compound cascade. The joint failure probability exceeds the product of independent failure probabilities (interaction_gain > 1.0) due to shared hospital power and ambulance transit bottlenecks."
+primary_layers: ["WX", "HYD", "PWR", "TRF", "EMS", "HOS", "COM"]
+trigger_generator:
+  event_type: "compound_flood_grid_overload"
+  onset_hour: 48
+  rain_peak_mm_h: 75.0
+  substation_trip_hour: 54
+critical_event:
+  condition: ">= 3 layers critical within 12 h window across >= 2 coupled zones"
+expected_chain:
+  - { from: "WX", to: "HYD", lag_h: 2, mechanism: "physical", description: "Stormwater runoff overloads arterial drains" }
+  - { from: "HYD", to: "PWR", lag_h: 4, mechanism: "physical", description: "Substation inundation triggers regional power loss" }
+  - { from: "HYD", to: "TRF", lag_h: 3, mechanism: "physical", description: "Waterlogged roads obstruct emergency transit" }
+  - { from: "PWR", to: "HOS", lag_h: 6, mechanism: "physical", description: "Hospitals lose grid power, shifting to finite diesel generators" }
+  - { from: "TRF", to: "HOS", lag_h: 4, mechanism: "physical", description: "Fuel tankers unable to reach hospital generators due to blocked access" }
+  - { from: "HOS", to: "EMS", lag_h: 3, mechanism: "logical", description: "Generator power rationing forces full ICU ambulance divert" }
+shared_bottlenecks: ["HOS_02_Bhabha_Kurla", "EMS_02_Kurla_Depot", "TRF_Arterial_CST_Rd"]
+interaction_gain_expected: 2.35
+seed_zones: ["z04_kurla_w", "z02_dharavi_nw", "z08_kalina_s"]

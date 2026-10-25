@@ -1,0 +1,21 @@
+id: "quake"
+name: "Earthquake Mainshock & Structural Secondary Cascades"
+lead_semantics: "No precursors. Clock starts at mainshock detection. 72 h covers aftershocks + secondary cascade."
+honest_statement: "Tectonic earthquakes have no verifiable precursors; clock starts precisely at seismic rupture detection (T0). The system forecasts ETAS aftershock probabilities, structural collapses, grid tripping, broken gas line ignitions, and hospital trauma surges over the next 72 hours."
+primary_layers: ["SEI", "PWR", "TRF", "AIR", "HOS", "EMS"]
+trigger_generator:
+  event_type: "crustal_fault_mainshock"
+  onset_hour: 50
+  magnitude_mw: 6.4
+  depth_km: 12.0
+  epicenter_lat: 19.062
+  epicenter_lon: 72.871
+critical_event:
+  condition: "shaking_intensity_mmi >= 7.0 OR damage_index >= 0.40"
+expected_chain:
+  - { from: "SEI", to: "PWR", lag_h: 0, mechanism: "physical", description: "Substation porcelain insulators fracture and circuit breakers trip" }
+  - { from: "SEI", to: "TRF", lag_h: 1, mechanism: "physical", description: "Masonry debris and bridge approach fractures sever key corridors" }
+  - { from: "SEI", to: "AIR", lag_h: 2, mechanism: "physical", description: "Ruptured industrial distribution gas mains vent pressurized methane/LPG" }
+  - { from: "SEI", to: "HOS", lag_h: 3, mechanism: "physical", description: "Mass casualty trauma arrivals overwhelm regional emergency triage" }
+  - { from: "TRF", to: "EMS", lag_h: 2, mechanism: "physical", description: "Road fractures impede search-and-rescue ambulance staging" }
+seed_zones: ["z04_kurla_w", "z07_bkc_central", "z16_vidyanagari"]

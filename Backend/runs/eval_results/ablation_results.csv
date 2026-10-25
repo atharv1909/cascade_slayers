@@ -1,0 +1,7 @@
+Configuration,ROC-AUC,PR-AUC,Brier Score,Lead Time Impact
+1. Full Architecture (Ours),0.9962,0.9918,0.0247,0.0 h (Ref)
+2. No Hawkes Cascades,0.9957,0.9907,0.0258,-13.8 h
+3. No Truth Discovery (Raw Sensors),0.9962,0.9918,0.0246,-5.4 h
+4. No Chronos Foundation Quantiles,0.9931,0.9847,0.0338,-18.2 h
+5. No Spatial Spillover,0.9962,0.9917,0.0247,-5.4 h
+6. No Early-Warning Signals (EWS),0.9962,0.9917,0.0249,-5.4 h

@@ -1,0 +1,20 @@
+id: "compound_b"
+name: "Compound Disruption: Earthquake Rupture → Toxic Gas Leakage & Grid Severance"
+lead_semantics: "Tectonic trigger induces multiple simultaneous cascades"
+honest_statement: "A magnitude 6.4 seismic shock simultaneously triggers high-voltage substation breaker trips, industrial gas pipeline shears, and road collapses, converging on hospital emergency care."
+primary_layers: ["SEI", "PWR", "AIR", "TRF", "HOS", "EMS"]
+trigger_generator:
+  event_type: "compound_quake_chem_grid"
+  onset_hour: 50
+  magnitude_mw: 6.4
+critical_event:
+  condition: ">= 3 layers critical within 12 h window"
+expected_chain:
+  - { from: "SEI", to: "PWR", lag_h: 0, mechanism: "physical", description: "Breakers trip across transmission nodes" }
+  - { from: "SEI", to: "AIR", lag_h: 1, mechanism: "physical", description: "Pipeline rupture at fuel/chemical facility releases toxic gas" }
+  - { from: "SEI", to: "TRF", lag_h: 1, mechanism: "physical", description: "Structural debris closes key bridges" }
+  - { from: "AIR", to: "HOS", lag_h: 2, mechanism: "physical", description: "Toxic gas inhalation victims arrive at emergency departments" }
+  - { from: "PWR", to: "HOS", lag_h: 4, mechanism: "physical", description: "Hospitals forced onto backup power while dealing with toxic surge" }
+shared_bottlenecks: ["HOS_02_Bhabha_Kurla", "HOS_03_Asian_Heart"]
+interaction_gain_expected: 3.10
+seed_zones: ["z04_kurla_w", "z11_airside_mithi", "z07_bkc_central"]

@@ -1,0 +1,193 @@
+# Emergency intervention catalog with explicit assumptions, side-effects, and resource pools
+resource_pools:
+  mobile_pumps: { total: 18, unit: "pumps" }
+  emergency_crews: { total: 24, unit: "teams" }
+  traffic_police_units: { total: 30, unit: "units" }
+  backup_generators: { total: 12, unit: "generators" }
+  cooling_shelter_beds: { total: 5000, unit: "beds" }
+  evacuation_buses: { total: 60, unit: "buses" }
+  surge_icu_staff_teams: { total: 15, unit: "teams" }
+  staged_ambulances: { total: 20, unit: "ambulances" }
+
+interventions:
+  - id: "preposition_pumps"
+    name: "Pre-position High-Capacity Pumps"
+    hazards: ["flood", "compound_a"]
+    target_layers: ["HYD", "TRF"]
+    effect_model:
+      hyd_trf_edge_multiplier: 0.45   # reduces flood-to-traffic coupling
+      drain_capacity_multiplier: 1.65
+      risk_reduction_24h: 0.38
+    sensitivity_band: [0.28, 0.46]
+    cost_usd: 12500
+    resources_required: { mobile_pumps: 3, emergency_crews: 2 }
+    deploy_lead_h: 4.0
+    deadline_critical_h: 12.0
+    side_effects:
+      - description: "Crews diverted away from secondary drainage zones"
+        layer: "HYD"
+        delay_hours: 2.0
+    provenance: "ASSUMPTION"
+
+  - id: "preemptive_road_closure"
+    name: "Pre-emptive Road Closures & Controlled Rerouting"
+    hazards: ["flood", "quake", "chem"]
+    target_layers: ["TRF", "EMS"]
+    effect_model:
+      trf_ems_edge_multiplier: 0.55
+      risk_reduction_24h: 0.22
+    sensitivity_band: [0.15, 0.30]
+    cost_usd: 4000
+    resources_required: { traffic_police_units: 4 }
+    deploy_lead_h: 1.0
+    deadline_critical_h: 6.0
+    side_effects:
+      - description: "Spillover congestion in adjacent zones (+18% delay)"
+        layer: "TRF"
+        congestion_penalty_pct: 18.0
+    provenance: "ASSUMPTION"
+
+  - id: "low_lying_evacuation"
+    name: "Targeted Evacuation of Slum / Low-Lying Clusters"
+    hazards: ["flood", "chem", "compound_a"]
+    target_layers: ["HOS", "EMS", "TRF"]
+    effect_model:
+      hos_demand_reduction: 0.50
+      risk_reduction_24h: 0.45
+    sensitivity_band: [0.35, 0.55]
+    cost_usd: 35000
+    resources_required: { evacuation_buses: 15, emergency_crews: 4 }
+    deploy_lead_h: 8.0
+    deadline_critical_h: 18.0
+    side_effects:
+      - description: "Temporary arterial gridlock during transit window"
+        layer: "TRF"
+        speed_reduction_pct: 35.0
+      - description: "Shelter surge in destination reception zones"
+        layer: "HOS"
+    provenance: "ASSUMPTION"
+
+  - id: "hospital_backup_generators"
+    name: "Deploy Heavy Mobile Generators to Critical Hospitals"
+    hazards: ["flood", "grid", "heat", "compound_a", "compound_b"]
+    target_layers: ["PWR", "HOS"]
+    effect_model:
+      pwr_hos_edge_multiplier: 0.15   # shields hospital from grid collapse
+      generator_buffer_hours_add: 36.0
+      risk_reduction_24h: 0.40
+    sensitivity_band: [0.32, 0.48]
+    cost_usd: 18000
+    resources_required: { backup_generators: 2, emergency_crews: 2 }
+    deploy_lead_h: 3.0
+    deadline_critical_h: 8.0
+    side_effects:
+      - description: "Fuel logistics draw from municipal reserve"
+        layer: "PWR"
+    provenance: "ASSUMPTION"
+
+  - id: "open_cooling_centers"
+    name: "Activate Air-Conditioned Public Cooling Refuges"
+    hazards: ["heat"]
+    target_layers: ["WX", "HOS", "HLT"]
+    effect_model:
+      heat_ed_admissions_multiplier: 0.55
+      risk_reduction_24h: 0.32
+    sensitivity_band: [0.24, 0.40]
+    cost_usd: 9000
+    resources_required: { cooling_shelter_beds: 800, emergency_crews: 2 }
+    deploy_lead_h: 6.0
+    deadline_critical_h: 16.0
+    side_effects:
+      - description: "Local low-voltage transformer loading increases by 8%"
+        layer: "PWR"
+        load_increase_pct: 8.0
+    provenance: "ASSUMPTION"
+
+  - id: "rolling_load_shed"
+    name: "Controlled Demand Response & Tiered Feeder Shedding"
+    hazards: ["heat", "grid"]
+    target_layers: ["PWR"]
+    effect_model:
+      substation_overload_reduction: 0.70
+      risk_reduction_24h: 0.28
+    sensitivity_band: [0.20, 0.35]
+    cost_usd: 1500
+    resources_required: { emergency_crews: 1 }
+    deploy_lead_h: 0.5
+    deadline_critical_h: 4.0
+    side_effects:
+      - description: "Domestic cooling loss elevates heat vulnerability in shed sectors"
+        layer: "HLT"
+        heat_exposure_increase_pct: 15.0
+    provenance: "ASSUMPTION"
+
+  - id: "surge_icu_capacity"
+    name: "Modular ICU Expansion & Regional Diversion Protocol"
+    hazards: ["epidemic", "compound_a"]
+    target_layers: ["HOS", "EMS"]
+    effect_model:
+      icu_effective_capacity_multiplier: 1.35
+      risk_reduction_24h: 0.42
+    sensitivity_band: [0.30, 0.50]
+    cost_usd: 45000
+    resources_required: { surge_icu_staff_teams: 3 }
+    deploy_lead_h: 18.0
+    deadline_critical_h: 36.0
+    side_effects:
+      - description: "Elective procedures postponed across district"
+        layer: "HOS"
+      - description: "Longer transit distance for secondary diversions"
+        layer: "EMS"
+        transit_delay_min: 14.0
+    provenance: "ASSUMPTION"
+
+  - id: "gas_isolation_valves"
+    name: "Emergency Remote & Field Gas Pipeline Valve Isolation"
+    hazards: ["quake", "chem", "compound_b"]
+    target_layers: ["SEI", "AIR"]
+    effect_model:
+      sei_air_edge_multiplier: 0.10   # breaks earthquake to toxic gas release
+      risk_reduction_24h: 0.52
+    sensitivity_band: [0.42, 0.60]
+    cost_usd: 8000
+    resources_required: { emergency_crews: 2 }
+    deploy_lead_h: 1.0
+    deadline_critical_h: 3.0
+    side_effects:
+      - description: "Industrial gas supply shutoff affects regional bakeries & kilns"
+        layer: "COM"
+    provenance: "ASSUMPTION"
+
+  - id: "shelter_in_place_protocol"
+    name: "Broadcast Reverse-911 Shelter-in-Place Instruction"
+    hazards: ["chem", "compound_b"]
+    target_layers: ["AIR", "HOS", "TRF"]
+    effect_model:
+      plume_acute_exposure_multiplier: 0.30
+      risk_reduction_24h: 0.48
+    sensitivity_band: [0.38, 0.58]
+    cost_usd: 2500
+    resources_required: { traffic_police_units: 2 }
+    deploy_lead_h: 0.5
+    deadline_critical_h: 2.0
+    side_effects:
+      - description: "Zero road congestion compared to panic vehicular evacuation"
+        layer: "TRF"
+    provenance: "ASSUMPTION"
+
+  - id: "stage_ambulances"
+    name: "Pre-Stage Ambulances Outside Projected Flood/Damage Corridors"
+    hazards: ["flood", "quake", "compound_a"]
+    target_layers: ["EMS", "TRF", "HOS"]
+    effect_model:
+      ems_response_time_improvement_min: 15.0
+      risk_reduction_24h: 0.26
+    sensitivity_band: [0.18, 0.34]
+    cost_usd: 6000
+    resources_required: { staged_ambulances: 6 }
+    deploy_lead_h: 2.0
+    deadline_critical_h: 6.0
+    side_effects:
+      - description: "Depots stripped in non-priority zones"
+        layer: "EMS"
+    provenance: "ASSUMPTION"

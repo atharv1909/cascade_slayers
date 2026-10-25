@@ -1,0 +1,19 @@
+id: "epidemic"
+name: "Syndromic Epidemic Surge & Critical Care Overrun"
+lead_semantics: "Real lead: days for hospital strain (ED/syndromic signals lead occupancy); we forecast the surge, not the pathogen"
+honest_statement: "Pathogen emergence itself cannot be predicted weeks ahead, but early syndromic presentations and emergency triage complaints lead inpatient ICU saturation by 3 to 10 days. The system forecasts the healthcare strain wave."
+primary_layers: ["HLT", "HOS", "EMS", "COM"]
+trigger_generator:
+  event_type: "respiratory_pathogen_surge"
+  onset_hour: 48
+  r0_initial: 2.35
+  incubation_days: 4.0
+  ed_syndromic_lead_days: 3.5
+critical_event:
+  condition: "icu_occupancy_pct >= 90.0 OR bed_occupancy_pct >= 95.0"
+expected_chain:
+  - { from: "HLT", to: "HOS", lag_h: 24, mechanism: "logical", description: "Outpatient syndromic case cluster translates to acute bed admissions" }
+  - { from: "HOS", to: "HOS", lag_h: 48, mechanism: "logical", description: "Ward patients deteriorate into critical care ICU beds" }
+  - { from: "HOS", to: "EMS", lag_h: 12, mechanism: "logical", description: "ICU saturation triggers ambulance divert protocols across districts" }
+  - { from: "EMS", to: "COM", lag_h: 6, mechanism: "cyber", description: "Dispatch backlog and public panic surge emergency 112/108 call lines" }
+seed_zones: ["z02_dharavi_nw", "z03_dharavi_ne", "z04_kurla_w"]

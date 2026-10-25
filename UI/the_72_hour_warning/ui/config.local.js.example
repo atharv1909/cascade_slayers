@@ -1,0 +1,6 @@
+// Copy this file to ui/config.local.js (untracked by git) to point to a live backend or enable Google Photorealistic 3D Tiles.
+window.CONFIG = Object.assign(window.CONFIG || {}, {
+  API_BASE: "./mock",          // Change to "http://localhost:8000" when backend is running
+  GOOGLE_MAPS_KEY: "",         // Google Maps Platform Map Tiles API key (never commit!)
+  LIVE_TILE_BUDGET: 250        // Max tile requests per session before automatic fallback to DEMO
+});

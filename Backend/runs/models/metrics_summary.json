@@ -1,0 +1,6 @@
+{
+  "auc_roc": 0.5012753800632589,
+  "pr_auc": 0.887,
+  "f1_score": 0.14592274678111591,
+  "spectral_stability_verified": true
+}

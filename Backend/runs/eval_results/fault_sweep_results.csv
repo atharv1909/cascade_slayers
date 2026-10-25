@@ -1,0 +1,7 @@
+profile,name,lead_time_h,far,auc
+F0,Clean Baseline,32.4,0.048,0.941
+F1,Sensor Dropout (30%),30.1,0.052,0.925
+F2,Telemetry Latency (+6h),27.8,0.055,0.91
+F3,Sensor Stuck / Drift,26.5,0.059,0.898
+F4,Telecom Blackout,24.2,0.063,0.882
+F5,Compound Catastrophic,22.0,0.071,0.865

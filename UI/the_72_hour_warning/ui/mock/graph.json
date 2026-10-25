@@ -1,0 +1,604 @@
+{
+  "as_of_h": 64,
+  "provenance": "MODELLED",
+  "nodes": [
+    {
+      "id": "WX",
+      "amplifier": false,
+      "gain": 1.05
+    },
+    {
+      "id": "HYD",
+      "amplifier": true,
+      "gain": 1.35
+    },
+    {
+      "id": "TRF",
+      "amplifier": true,
+      "gain": 1.05
+    },
+    {
+      "id": "PWR",
+      "amplifier": true,
+      "gain": 1.42
+    },
+    {
+      "id": "EMS",
+      "amplifier": false,
+      "gain": 1.05
+    },
+    {
+      "id": "HOS",
+      "amplifier": true,
+      "gain": 1.28
+    },
+    {
+      "id": "HLT",
+      "amplifier": false,
+      "gain": 1.05
+    },
+    {
+      "id": "AIR",
+      "amplifier": false,
+      "gain": 1.05
+    },
+    {
+      "id": "SEI",
+      "amplifier": false,
+      "gain": 1.05
+    },
+    {
+      "id": "COM",
+      "amplifier": false,
+      "gain": 1.05
+    }
+  ],
+  "edges": [
+    {
+      "from": "WX",
+      "to": "HYD",
+      "weight": 0.89,
+      "lag_peak_h": 3,
+      "ci": [
+        2,
+        4.5
+      ],
+      "lr_p": 0.00012,
+      "precedes_count": 42,
+      "shuffled_baseline": 6.1,
+      "mechanism": "physical",
+      "unsupported_flag": false,
+      "provenance": "MODELLED",
+      "history": [
+        {
+          "t": "T-48h",
+          "w": 0.75
+        },
+        {
+          "t": "T-36h",
+          "w": 0.76
+        },
+        {
+          "t": "T-24h",
+          "w": 0.81
+        },
+        {
+          "t": "T-12h",
+          "w": 0.82
+        },
+        {
+          "t": "T-6h",
+          "w": 0.87
+        },
+        {
+          "t": "T0h",
+          "w": 0.88
+        }
+      ]
+    },
+    {
+      "from": "HYD",
+      "to": "TRF",
+      "weight": 0.84,
+      "lag_peak_h": 4,
+      "ci": [
+        2.5,
+        6
+      ],
+      "lr_p": 0.00018,
+      "precedes_count": 38,
+      "shuffled_baseline": 5.4,
+      "mechanism": "physical",
+      "unsupported_flag": false,
+      "provenance": "MODELLED",
+      "history": [
+        {
+          "t": "T-48h",
+          "w": 0.7
+        },
+        {
+          "t": "T-36h",
+          "w": 0.71
+        },
+        {
+          "t": "T-24h",
+          "w": 0.76
+        },
+        {
+          "t": "T-12h",
+          "w": 0.77
+        },
+        {
+          "t": "T-6h",
+          "w": 0.82
+        },
+        {
+          "t": "T0h",
+          "w": 0.83
+        }
+      ]
+    },
+    {
+      "from": "HYD",
+      "to": "PWR",
+      "weight": 0.71,
+      "lag_peak_h": 5.5,
+      "ci": [
+        3.5,
+        8
+      ],
+      "lr_p": 0.0014,
+      "precedes_count": 27,
+      "shuffled_baseline": 4.8,
+      "mechanism": "physical",
+      "unsupported_flag": false,
+      "provenance": "MODELLED",
+      "history": [
+        {
+          "t": "T-48h",
+          "w": 0.57
+        },
+        {
+          "t": "T-36h",
+          "w": 0.58
+        },
+        {
+          "t": "T-24h",
+          "w": 0.63
+        },
+        {
+          "t": "T-12h",
+          "w": 0.64
+        },
+        {
+          "t": "T-6h",
+          "w": 0.69
+        },
+        {
+          "t": "T0h",
+          "w": 0.7
+        }
+      ]
+    },
+    {
+      "from": "TRF",
+      "to": "EMS",
+      "weight": 0.82,
+      "lag_peak_h": 2.5,
+      "ci": [
+        1.5,
+        4
+      ],
+      "lr_p": 0.00025,
+      "precedes_count": 35,
+      "shuffled_baseline": 5.2,
+      "mechanism": "geographic",
+      "unsupported_flag": false,
+      "provenance": "MODELLED",
+      "history": [
+        {
+          "t": "T-48h",
+          "w": 0.68
+        },
+        {
+          "t": "T-36h",
+          "w": 0.69
+        },
+        {
+          "t": "T-24h",
+          "w": 0.74
+        },
+        {
+          "t": "T-12h",
+          "w": 0.75
+        },
+        {
+          "t": "T-6h",
+          "w": 0.8
+        },
+        {
+          "t": "T0h",
+          "w": 0.81
+        }
+      ]
+    },
+    {
+      "from": "PWR",
+      "to": "COM",
+      "weight": 0.76,
+      "lag_peak_h": 2,
+      "ci": [
+        1,
+        3.5
+      ],
+      "lr_p": 0.0008,
+      "precedes_count": 31,
+      "shuffled_baseline": 4.9,
+      "mechanism": "cyber",
+      "unsupported_flag": false,
+      "provenance": "MODELLED",
+      "history": [
+        {
+          "t": "T-48h",
+          "w": 0.62
+        },
+        {
+          "t": "T-36h",
+          "w": 0.63
+        },
+        {
+          "t": "T-24h",
+          "w": 0.68
+        },
+        {
+          "t": "T-12h",
+          "w": 0.69
+        },
+        {
+          "t": "T-6h",
+          "w": 0.74
+        },
+        {
+          "t": "T0h",
+          "w": 0.75
+        }
+      ]
+    },
+    {
+      "from": "PWR",
+      "to": "HOS",
+      "weight": 0.86,
+      "lag_peak_h": 6,
+      "ci": [
+        4,
+        9
+      ],
+      "lr_p": 0.00015,
+      "precedes_count": 33,
+      "shuffled_baseline": 4.2,
+      "mechanism": "physical",
+      "unsupported_flag": false,
+      "provenance": "MODELLED",
+      "history": [
+        {
+          "t": "T-48h",
+          "w": 0.72
+        },
+        {
+          "t": "T-36h",
+          "w": 0.73
+        },
+        {
+          "t": "T-24h",
+          "w": 0.78
+        },
+        {
+          "t": "T-12h",
+          "w": 0.79
+        },
+        {
+          "t": "T-6h",
+          "w": 0.84
+        },
+        {
+          "t": "T0h",
+          "w": 0.85
+        }
+      ]
+    },
+    {
+      "from": "EMS",
+      "to": "HOS",
+      "weight": 0.79,
+      "lag_peak_h": 3.5,
+      "ci": [
+        2,
+        5.5
+      ],
+      "lr_p": 0.00042,
+      "precedes_count": 29,
+      "shuffled_baseline": 4.7,
+      "mechanism": "logical",
+      "unsupported_flag": false,
+      "provenance": "MODELLED",
+      "history": [
+        {
+          "t": "T-48h",
+          "w": 0.65
+        },
+        {
+          "t": "T-36h",
+          "w": 0.66
+        },
+        {
+          "t": "T-24h",
+          "w": 0.71
+        },
+        {
+          "t": "T-12h",
+          "w": 0.72
+        },
+        {
+          "t": "T-6h",
+          "w": 0.77
+        },
+        {
+          "t": "T0h",
+          "w": 0.78
+        }
+      ]
+    },
+    {
+      "from": "WX",
+      "to": "PWR",
+      "weight": 0.74,
+      "lag_peak_h": 8,
+      "ci": [
+        5,
+        12
+      ],
+      "lr_p": 0.0019,
+      "precedes_count": 24,
+      "shuffled_baseline": 4.5,
+      "mechanism": "physical",
+      "unsupported_flag": false,
+      "provenance": "MODELLED",
+      "history": [
+        {
+          "t": "T-48h",
+          "w": 0.6
+        },
+        {
+          "t": "T-36h",
+          "w": 0.61
+        },
+        {
+          "t": "T-24h",
+          "w": 0.66
+        },
+        {
+          "t": "T-12h",
+          "w": 0.67
+        },
+        {
+          "t": "T-6h",
+          "w": 0.72
+        },
+        {
+          "t": "T0h",
+          "w": 0.73
+        }
+      ]
+    },
+    {
+      "from": "HLT",
+      "to": "HOS",
+      "weight": 0.88,
+      "lag_peak_h": 18,
+      "ci": [
+        12,
+        26
+      ],
+      "lr_p": 0.00011,
+      "precedes_count": 40,
+      "shuffled_baseline": 5.8,
+      "mechanism": "logical",
+      "unsupported_flag": false,
+      "provenance": "MODELLED",
+      "history": [
+        {
+          "t": "T-48h",
+          "w": 0.74
+        },
+        {
+          "t": "T-36h",
+          "w": 0.75
+        },
+        {
+          "t": "T-24h",
+          "w": 0.8
+        },
+        {
+          "t": "T-12h",
+          "w": 0.81
+        },
+        {
+          "t": "T-6h",
+          "w": 0.86
+        },
+        {
+          "t": "T0h",
+          "w": 0.87
+        }
+      ]
+    },
+    {
+      "from": "SEI",
+      "to": "TRF",
+      "weight": 0.91,
+      "lag_peak_h": 0.5,
+      "ci": [
+        0.1,
+        1.5
+      ],
+      "lr_p": 0.00005,
+      "precedes_count": 19,
+      "shuffled_baseline": 2.1,
+      "mechanism": "physical",
+      "unsupported_flag": false,
+      "provenance": "MODELLED",
+      "history": [
+        {
+          "t": "T-48h",
+          "w": 0.77
+        },
+        {
+          "t": "T-36h",
+          "w": 0.78
+        },
+        {
+          "t": "T-24h",
+          "w": 0.83
+        },
+        {
+          "t": "T-12h",
+          "w": 0.84
+        },
+        {
+          "t": "T-6h",
+          "w": 0.89
+        },
+        {
+          "t": "T0h",
+          "w": 0.9
+        }
+      ]
+    },
+    {
+      "from": "SEI",
+      "to": "AIR",
+      "weight": 0.67,
+      "lag_peak_h": 1.5,
+      "ci": [
+        0.5,
+        3.5
+      ],
+      "lr_p": 0.0031,
+      "precedes_count": 16,
+      "shuffled_baseline": 2.4,
+      "mechanism": "physical",
+      "unsupported_flag": false,
+      "provenance": "MODELLED",
+      "history": [
+        {
+          "t": "T-48h",
+          "w": 0.53
+        },
+        {
+          "t": "T-36h",
+          "w": 0.54
+        },
+        {
+          "t": "T-24h",
+          "w": 0.59
+        },
+        {
+          "t": "T-12h",
+          "w": 0.6
+        },
+        {
+          "t": "T-6h",
+          "w": 0.65
+        },
+        {
+          "t": "T0h",
+          "w": 0.66
+        }
+      ]
+    },
+    {
+      "from": "AIR",
+      "to": "HOS",
+      "weight": 0.81,
+      "lag_peak_h": 4.5,
+      "ci": [
+        2.5,
+        7
+      ],
+      "lr_p": 0.0006,
+      "precedes_count": 22,
+      "shuffled_baseline": 3.3,
+      "mechanism": "geographic",
+      "unsupported_flag": false,
+      "provenance": "MODELLED",
+      "history": [
+        {
+          "t": "T-48h",
+          "w": 0.67
+        },
+        {
+          "t": "T-36h",
+          "w": 0.68
+        },
+        {
+          "t": "T-24h",
+          "w": 0.73
+        },
+        {
+          "t": "T-12h",
+          "w": 0.74
+        },
+        {
+          "t": "T-6h",
+          "w": 0.79
+        },
+        {
+          "t": "T0h",
+          "w": 0.8
+        }
+      ]
+    },
+    {
+      "from": "COM",
+      "to": "HLT",
+      "weight": 0.34,
+      "lag_peak_h": 9,
+      "ci": [
+        4,
+        17
+      ],
+      "lr_p": 0.142,
+      "precedes_count": 9,
+      "shuffled_baseline": 7.4,
+      "mechanism": "logical",
+      "unsupported_flag": true,
+      "provenance": "MODELLED",
+      "history": [
+        {
+          "t": "T-48h",
+          "w": 0.2
+        },
+        {
+          "t": "T-36h",
+          "w": 0.21
+        },
+        {
+          "t": "T-24h",
+          "w": 0.26
+        },
+        {
+          "t": "T-12h",
+          "w": 0.27
+        },
+        {
+          "t": "T-6h",
+          "w": 0.32
+        },
+        {
+          "t": "T0h",
+          "w": 0.33
+        }
+      ]
+    }
+  ]
+}

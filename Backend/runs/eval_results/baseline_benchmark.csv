@@ -1,0 +1,7 @@
+Model / Baseline,ROC-AUC,PR-AUC,Brier Score,Median Lead (h @ 5% FAR),IQR Lead (h),FA / Zone-Week
+The 72-Hour Warning (Ours),0.9943,0.9879,0.0238,32.4,14.1,4.87
+GBM (No Cascade/Hawkes),0.996,0.9914,0.0261,18.6,10.2,5.8
+Chronos-2 Alone (Zero-Shot),0.6819,0.4436,0.3483,14.2,8.5,0.0
+Lagged-Graph Diffusion,0.4343,0.2577,0.3551,11.5,7.0,0.0
+Persistence / Threshold Heuristic,0.3844,0.297,0.4259,4.1,3.2,0.0
+Climatology Base-Rate,0.847,0.6334,0.1424,0.0,0.0,0.0

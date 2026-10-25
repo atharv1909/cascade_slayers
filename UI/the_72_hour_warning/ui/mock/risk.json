@@ -1,0 +1,5244 @@
+{
+  "as_of": "2026-07-18T16:00:00Z",
+  "sim_hour": 64,
+  "scenario": "flood_mithi",
+  "fault_profile": "F0",
+  "provenance": "SIMULATED",
+  "city": {
+    "state": "HIGH_RISK",
+    "p_cascade_24h": 0.89,
+    "rho": 1.38,
+    "confidence": "HIGH"
+  },
+  "zones": [
+    {
+      "zone_id": "88608b4c01fffff",
+      "zone_code": "Z01",
+      "name": "Mahim Causeway & Creek Mouth",
+      "state": "CRITICAL",
+      "confidence": "MED",
+      "confidence_reason": "Multi-sensor agreement across HYD + TRF",
+      "evidence_coverage": 0.91,
+      "p": {
+        "1": 0.21,
+        "3": 0.36,
+        "6": 0.52,
+        "12": 0.68,
+        "24": 0.82,
+        "48": 0.9,
+        "72": 0.96
+      },
+      "t_critical": {
+        "q10": 6.5,
+        "q50": 11,
+        "q90": 17.5,
+        "beyond_72h_p": null
+      },
+      "event_types": {
+        "drain_overload": {
+          "p24": 0.84
+        },
+        "access_loss": {
+          "p24": 0.76
+        },
+        "substation_trip": {
+          "p24": 0.59
+        },
+        "hospital_strain": {
+          "p24": 0.71
+        }
+      },
+      "exposure": {
+        "population_est": 64200,
+        "assets": [
+          "DRN-10",
+          "RD-01"
+        ],
+        "provenance": "MODELLED"
+      }
+    },
+    {
+      "zone_id": "88608b4c03fffff",
+      "zone_code": "Z02",
+      "name": "Dharavi West & 90 Feet Rd",
+      "state": "NORMAL",
+      "confidence": "HIGH",
+      "confidence_reason": "Multi-sensor agreement across HYD + TRF",
+      "evidence_coverage": 0.91,
+      "p": {
+        "1": 0.05,
+        "3": 0.09,
+        "6": 0.13,
+        "12": 0.17,
+        "24": 0.2,
+        "48": 0.23,
+        "72": 0.24
+      },
+      "t_critical": {
+        "q10": null,
+        "q50": null,
+        "q90": null,
+        "beyond_72h_p": 0.24
+      },
+      "event_types": {
+        "drain_overload": {
+          "p24": 0.21
+        },
+        "access_loss": {
+          "p24": 0.19
+        },
+        "substation_trip": {
+          "p24": 0.15
+        },
+        "hospital_strain": {
+          "p24": 0.18
+        }
+      },
+      "exposure": {
+        "population_est": 98500,
+        "assets": [
+          "RD-02"
+        ],
+        "provenance": "MODELLED"
+      }
+    },
+    {
+      "zone_id": "88608b4c05fffff",
+      "zone_code": "Z03",
+      "name": "Sion Hospital & Matunga East",
+      "state": "NORMAL",
+      "confidence": "HIGH",
+      "confidence_reason": "Multi-sensor agreement across HYD + TRF",
+      "evidence_coverage": 0.91,
+      "p": {
+        "1": 0.05,
+        "3": 0.09,
+        "6": 0.13,
+        "12": 0.17,
+        "24": 0.2,
+        "48": 0.23,
+        "72": 0.24
+      },
+      "t_critical": {
+        "q10": null,
+        "q50": null,
+        "q90": null,
+        "beyond_72h_p": 0.24
+      },
+      "event_types": {
+        "drain_overload": {
+          "p24": 0.21
+        },
+        "access_loss": {
+          "p24": 0.19
+        },
+        "substation_trip": {
+          "p24": 0.15
+        },
+        "hospital_strain": {
+          "p24": 0.18
+        }
+      },
+      "exposure": {
+        "population_est": 78400,
+        "assets": [
+          "RD-03",
+          "RD-06",
+          "FAC-HOS-01",
+          "FAC-SHL-02"
+        ],
+        "provenance": "MODELLED"
+      }
+    },
+    {
+      "zone_id": "88608b4c07fffff",
+      "zone_code": "Z04",
+      "name": "Dharavi Cross Rd & T-Junction",
+      "state": "CRITICAL",
+      "confidence": "HIGH",
+      "confidence_reason": "Multi-sensor agreement across HYD + TRF",
+      "evidence_coverage": 0.91,
+      "p": {
+        "1": 0.21,
+        "3": 0.36,
+        "6": 0.52,
+        "12": 0.68,
+        "24": 0.82,
+        "48": 0.9,
+        "72": 0.96
+      },
+      "t_critical": {
+        "q10": 6.5,
+        "q50": 11,
+        "q90": 17.5,
+        "beyond_72h_p": null
+      },
+      "event_types": {
+        "drain_overload": {
+          "p24": 0.84
+        },
+        "access_loss": {
+          "p24": 0.76
+        },
+        "substation_trip": {
+          "p24": 0.59
+        },
+        "hospital_strain": {
+          "p24": 0.71
+        }
+      },
+      "exposure": {
+        "population_est": 112000,
+        "assets": [
+          "DRN-08",
+          "RD-04",
+          "SUB-01",
+          "FAC-HOS-06",
+          "FAC-EMS-02"
+        ],
+        "provenance": "MODELLED"
+      }
+    },
+    {
+      "zone_id": "88608b4c09fffff",
+      "zone_code": "Z05",
+      "name": "Sion-Bandra Link & Labor Camp",
+      "state": "NORMAL",
+      "confidence": "MED",
+      "confidence_reason": "Multi-sensor agreement across HYD + TRF",
+      "evidence_coverage": 0.91,
+      "p": {
+        "1": 0.05,
+        "3": 0.09,
+        "6": 0.13,
+        "12": 0.17,
+        "24": 0.2,
+        "48": 0.23,
+        "72": 0.24
+      },
+      "t_critical": {
+        "q10": null,
+        "q50": null,
+        "q90": null,
+        "beyond_72h_p": 0.24
+      },
+      "event_types": {
+        "drain_overload": {
+          "p24": 0.21
+        },
+        "access_loss": {
+          "p24": 0.19
+        },
+        "substation_trip": {
+          "p24": 0.15
+        },
+        "hospital_strain": {
+          "p24": 0.18
+        }
+      },
+      "exposure": {
+        "population_est": 86300,
+        "assets": [
+          "RD-05",
+          "SUB-02"
+        ],
+        "provenance": "MODELLED"
+      }
+    },
+    {
+      "zone_id": "88608b4c0bfffff",
+      "zone_code": "Z06",
+      "name": "Chunabhatti & Everard Nagar",
+      "state": "NORMAL",
+      "confidence": "LOW",
+      "confidence_reason": "2 rain-gauge telemetry dropouts + radar attenuation",
+      "evidence_coverage": 0.54,
+      "p": {
+        "1": 0.05,
+        "3": 0.09,
+        "6": 0.13,
+        "12": 0.17,
+        "24": 0.2,
+        "48": 0.23,
+        "72": 0.24
+      },
+      "t_critical": {
+        "q10": null,
+        "q50": null,
+        "q90": null,
+        "beyond_72h_p": 0.24
+      },
+      "event_types": {
+        "drain_overload": {
+          "p24": 0.21
+        },
+        "access_loss": {
+          "p24": 0.19
+        },
+        "substation_trip": {
+          "p24": 0.15
+        },
+        "hospital_strain": {
+          "p24": 0.18
+        }
+      },
+      "exposure": {
+        "population_est": 71900,
+        "assets": [
+          "DRN-09",
+          "RD-07",
+          "RD-08"
+        ],
+        "provenance": "MODELLED"
+      }
+    },
+    {
+      "zone_id": "88608b4c0dfffff",
+      "zone_code": "Z07",
+      "name": "BKC G-Block West (Drive-In)",
+      "state": "HIGH_RISK",
+      "confidence": "HIGH",
+      "confidence_reason": "Multi-sensor agreement across HYD + TRF",
+      "evidence_coverage": 0.91,
+      "p": {
+        "1": 0.2,
+        "3": 0.35,
+        "6": 0.5,
+        "12": 0.65,
+        "24": 0.78,
+        "48": 0.86,
+        "72": 0.92
+      },
+      "t_critical": {
+        "q10": 6.5,
+        "q50": 11,
+        "q90": 17.5,
+        "beyond_72h_p": null
+      },
+      "event_types": {
+        "drain_overload": {
+          "p24": 0.81
+        },
+        "access_loss": {
+          "p24": 0.73
+        },
+        "substation_trip": {
+          "p24": 0.56
+        },
+        "hospital_strain": {
+          "p24": 0.68
+        }
+      },
+      "exposure": {
+        "population_est": 49500,
+        "assets": [
+          "RD-09",
+          "RD-10",
+          "FAC-HOS-03"
+        ],
+        "provenance": "MODELLED"
+      }
+    },
+    {
+      "zone_id": "88608b4c11fffff",
+      "zone_code": "Z08",
+      "name": "BKC Central Financial Precinct",
+      "state": "NORMAL",
+      "confidence": "HIGH",
+      "confidence_reason": "Multi-sensor agreement across HYD + TRF",
+      "evidence_coverage": 0.91,
+      "p": {
+        "1": 0.05,
+        "3": 0.09,
+        "6": 0.13,
+        "12": 0.17,
+        "24": 0.2,
+        "48": 0.23,
+        "72": 0.24
+      },
+      "t_critical": {
+        "q10": null,
+        "q50": null,
+        "q90": null,
+        "beyond_72h_p": 0.24
+      },
+      "event_types": {
+        "drain_overload": {
+          "p24": 0.21
+        },
+        "access_loss": {
+          "p24": 0.19
+        },
+        "substation_trip": {
+          "p24": 0.15
+        },
+        "hospital_strain": {
+          "p24": 0.18
+        }
+      },
+      "exposure": {
+        "population_est": 68000,
+        "assets": [
+          "RD-11",
+          "RD-12",
+          "FAC-EMS-01"
+        ],
+        "provenance": "MODELLED"
+      }
+    },
+    {
+      "zone_id": "88608b4c13fffff",
+      "zone_code": "Z09",
+      "name": "BKC East & Mithi Bridge Approach",
+      "state": "HIGH_RISK",
+      "confidence": "MED",
+      "confidence_reason": "Multi-sensor agreement across HYD + TRF",
+      "evidence_coverage": 0.91,
+      "p": {
+        "1": 0.2,
+        "3": 0.35,
+        "6": 0.5,
+        "12": 0.65,
+        "24": 0.78,
+        "48": 0.86,
+        "72": 0.92
+      },
+      "t_critical": {
+        "q10": 6.5,
+        "q50": 11,
+        "q90": 17.5,
+        "beyond_72h_p": null
+      },
+      "event_types": {
+        "drain_overload": {
+          "p24": 0.81
+        },
+        "access_loss": {
+          "p24": 0.73
+        },
+        "substation_trip": {
+          "p24": 0.56
+        },
+        "hospital_strain": {
+          "p24": 0.68
+        }
+      },
+      "exposure": {
+        "population_est": 59200,
+        "assets": [
+          "DRN-06",
+          "RD-13",
+          "SUB-03",
+          "FAC-COM-01"
+        ],
+        "provenance": "MODELLED"
+      }
+    },
+    {
+      "zone_id": "88608b4c15fffff",
+      "zone_code": "Z10",
+      "name": "Kurla West & LBS Marg South",
+      "state": "HIGH_RISK",
+      "confidence": "HIGH",
+      "confidence_reason": "Multi-sensor agreement across HYD + TRF",
+      "evidence_coverage": 0.91,
+      "p": {
+        "1": 0.2,
+        "3": 0.35,
+        "6": 0.5,
+        "12": 0.65,
+        "24": 0.78,
+        "48": 0.86,
+        "72": 0.92
+      },
+      "t_critical": {
+        "q10": 6.5,
+        "q50": 11,
+        "q90": 17.5,
+        "beyond_72h_p": null
+      },
+      "event_types": {
+        "drain_overload": {
+          "p24": 0.81
+        },
+        "access_loss": {
+          "p24": 0.73
+        },
+        "substation_trip": {
+          "p24": 0.56
+        },
+        "hospital_strain": {
+          "p24": 0.68
+        }
+      },
+      "exposure": {
+        "population_est": 104500,
+        "assets": [
+          "DRN-07",
+          "RD-14",
+          "RD-15",
+          "FAC-HOS-02"
+        ],
+        "provenance": "MODELLED"
+      }
+    },
+    {
+      "zone_id": "88608b4c17fffff",
+      "zone_code": "Z11",
+      "name": "Kurla Station & Nehru Nagar",
+      "state": "NORMAL",
+      "confidence": "HIGH",
+      "confidence_reason": "Multi-sensor agreement across HYD + TRF",
+      "evidence_coverage": 0.91,
+      "p": {
+        "1": 0.05,
+        "3": 0.09,
+        "6": 0.13,
+        "12": 0.17,
+        "24": 0.2,
+        "48": 0.23,
+        "72": 0.24
+      },
+      "t_critical": {
+        "q10": null,
+        "q50": null,
+        "q90": null,
+        "beyond_72h_p": 0.24
+      },
+      "event_types": {
+        "drain_overload": {
+          "p24": 0.21
+        },
+        "access_loss": {
+          "p24": 0.19
+        },
+        "substation_trip": {
+          "p24": 0.15
+        },
+        "hospital_strain": {
+          "p24": 0.18
+        }
+      },
+      "exposure": {
+        "population_est": 94800,
+        "assets": [
+          "RD-16",
+          "FAC-SHL-03"
+        ],
+        "provenance": "MODELLED"
+      }
+    },
+    {
+      "zone_id": "88608b4c19fffff",
+      "zone_code": "Z12",
+      "name": "Vakola Nalla Confluence & Kalina",
+      "state": "NORMAL",
+      "confidence": "HIGH",
+      "confidence_reason": "Multi-sensor agreement across HYD + TRF",
+      "evidence_coverage": 0.91,
+      "p": {
+        "1": 0.05,
+        "3": 0.09,
+        "6": 0.13,
+        "12": 0.17,
+        "24": 0.2,
+        "48": 0.23,
+        "72": 0.24
+      },
+      "t_critical": {
+        "q10": null,
+        "q50": null,
+        "q90": null,
+        "beyond_72h_p": 0.24
+      },
+      "event_types": {
+        "drain_overload": {
+          "p24": 0.21
+        },
+        "access_loss": {
+          "p24": 0.19
+        },
+        "substation_trip": {
+          "p24": 0.15
+        },
+        "hospital_strain": {
+          "p24": 0.18
+        }
+      },
+      "exposure": {
+        "population_est": 74100,
+        "assets": [
+          "DRN-05",
+          "RD-17",
+          "RD-18",
+          "SUB-05"
+        ],
+        "provenance": "MODELLED"
+      }
+    },
+    {
+      "zone_id": "88608b4c1bfffff",
+      "zone_code": "Z13",
+      "name": "CST Road & Vidyanagari Campus",
+      "state": "HIGH_RISK",
+      "confidence": "MED",
+      "confidence_reason": "Multi-sensor agreement across HYD + TRF",
+      "evidence_coverage": 0.91,
+      "p": {
+        "1": 0.2,
+        "3": 0.35,
+        "6": 0.5,
+        "12": 0.65,
+        "24": 0.78,
+        "48": 0.86,
+        "72": 0.92
+      },
+      "t_critical": {
+        "q10": 6.5,
+        "q50": 11,
+        "q90": 17.5,
+        "beyond_72h_p": null
+      },
+      "event_types": {
+        "drain_overload": {
+          "p24": 0.81
+        },
+        "access_loss": {
+          "p24": 0.73
+        },
+        "substation_trip": {
+          "p24": 0.56
+        },
+        "hospital_strain": {
+          "p24": 0.68
+        }
+      },
+      "exposure": {
+        "population_est": 61300,
+        "assets": [
+          "DRN-04",
+          "RD-19",
+          "RD-20",
+          "FAC-SHL-01"
+        ],
+        "provenance": "MODELLED"
+      }
+    },
+    {
+      "zone_id": "88608b4c1dfffff",
+      "zone_code": "Z14",
+      "name": "Kapadia Nagar & Bail Bazaar",
+      "state": "HIGH_RISK",
+      "confidence": "HIGH",
+      "confidence_reason": "Multi-sensor agreement across HYD + TRF",
+      "evidence_coverage": 0.91,
+      "p": {
+        "1": 0.2,
+        "3": 0.35,
+        "6": 0.5,
+        "12": 0.65,
+        "24": 0.78,
+        "48": 0.86,
+        "72": 0.92
+      },
+      "t_critical": {
+        "q10": 6.5,
+        "q50": 11,
+        "q90": 17.5,
+        "beyond_72h_p": null
+      },
+      "event_types": {
+        "drain_overload": {
+          "p24": 0.81
+        },
+        "access_loss": {
+          "p24": 0.73
+        },
+        "substation_trip": {
+          "p24": 0.56
+        },
+        "hospital_strain": {
+          "p24": 0.68
+        }
+      },
+      "exposure": {
+        "population_est": 89400,
+        "assets": [
+          "DRN-03",
+          "RD-21",
+          "RD-22",
+          "SUB-04",
+          "FAC-EMS-03"
+        ],
+        "provenance": "MODELLED"
+      }
+    },
+    {
+      "zone_id": "88608b4c21fffff",
+      "zone_code": "Z15",
+      "name": "Kurla Industrial & Kirol Road",
+      "state": "NORMAL",
+      "confidence": "LOW",
+      "confidence_reason": "2 rain-gauge telemetry dropouts + radar attenuation",
+      "evidence_coverage": 0.54,
+      "p": {
+        "1": 0.05,
+        "3": 0.09,
+        "6": 0.13,
+        "12": 0.17,
+        "24": 0.2,
+        "48": 0.23,
+        "72": 0.24
+      },
+      "t_critical": {
+        "q10": null,
+        "q50": null,
+        "q90": null,
+        "beyond_72h_p": 0.24
+      },
+      "event_types": {
+        "drain_overload": {
+          "p24": 0.21
+        },
+        "access_loss": {
+          "p24": 0.19
+        },
+        "substation_trip": {
+          "p24": 0.15
+        },
+        "hospital_strain": {
+          "p24": 0.18
+        }
+      },
+      "exposure": {
+        "population_est": 67200,
+        "assets": [
+          "RD-23",
+          "RD-24"
+        ],
+        "provenance": "MODELLED"
+      }
+    },
+    {
+      "zone_id": "88608b4c23fffff",
+      "zone_code": "Z16",
+      "name": "Vakola Bridge & WEH Junction",
+      "state": "WATCH",
+      "confidence": "HIGH",
+      "confidence_reason": "Multi-sensor agreement across HYD + TRF",
+      "evidence_coverage": 0.91,
+      "p": {
+        "1": 0.15,
+        "3": 0.26,
+        "6": 0.37,
+        "12": 0.48,
+        "24": 0.58,
+        "48": 0.64,
+        "72": 0.68
+      },
+      "t_critical": {
+        "q10": null,
+        "q50": null,
+        "q90": null,
+        "beyond_72h_p": 0.68
+      },
+      "event_types": {
+        "drain_overload": {
+          "p24": 0.6
+        },
+        "access_loss": {
+          "p24": 0.54
+        },
+        "substation_trip": {
+          "p24": 0.41
+        },
+        "hospital_strain": {
+          "p24": 0.5
+        }
+      },
+      "exposure": {
+        "population_est": 72600,
+        "assets": [
+          "RD-25",
+          "FAC-HOS-04"
+        ],
+        "provenance": "MODELLED"
+      }
+    },
+    {
+      "zone_id": "88608b4c25fffff",
+      "zone_code": "Z17",
+      "name": "Kalina Military & Air India Col.",
+      "state": "NORMAL",
+      "confidence": "MED",
+      "confidence_reason": "Multi-sensor agreement across HYD + TRF",
+      "evidence_coverage": 0.91,
+      "p": {
+        "1": 0.05,
+        "3": 0.09,
+        "6": 0.13,
+        "12": 0.17,
+        "24": 0.2,
+        "48": 0.23,
+        "72": 0.24
+      },
+      "t_critical": {
+        "q10": null,
+        "q50": null,
+        "q90": null,
+        "beyond_72h_p": 0.24
+      },
+      "event_types": {
+        "drain_overload": {
+          "p24": 0.21
+        },
+        "access_loss": {
+          "p24": 0.19
+        },
+        "substation_trip": {
+          "p24": 0.15
+        },
+        "hospital_strain": {
+          "p24": 0.18
+        }
+      },
+      "exposure": {
+        "population_est": 53800,
+        "assets": [
+          "RD-26",
+          "RD-27"
+        ],
+        "provenance": "MODELLED"
+      }
+    },
+    {
+      "zone_id": "88608b4c27fffff",
+      "zone_code": "Z18",
+      "name": "Kranti Nagar & Airport Fringe",
+      "state": "HIGH_RISK",
+      "confidence": "HIGH",
+      "confidence_reason": "Multi-sensor agreement across HYD + TRF",
+      "evidence_coverage": 0.91,
+      "p": {
+        "1": 0.2,
+        "3": 0.35,
+        "6": 0.5,
+        "12": 0.65,
+        "24": 0.78,
+        "48": 0.86,
+        "72": 0.92
+      },
+      "t_critical": {
+        "q10": 6.5,
+        "q50": 11,
+        "q90": 17.5,
+        "beyond_72h_p": null
+      },
+      "event_types": {
+        "drain_overload": {
+          "p24": 0.81
+        },
+        "access_loss": {
+          "p24": 0.73
+        },
+        "substation_trip": {
+          "p24": 0.56
+        },
+        "hospital_strain": {
+          "p24": 0.68
+        }
+      },
+      "exposure": {
+        "population_est": 83700,
+        "assets": [
+          "DRN-01",
+          "RD-28",
+          "RD-29"
+        ],
+        "provenance": "MODELLED"
+      }
+    },
+    {
+      "zone_id": "88608b4c29fffff",
+      "zone_code": "Z19",
+      "name": "Saki Naka & Safed Pool Nalla",
+      "state": "HIGH_RISK",
+      "confidence": "HIGH",
+      "confidence_reason": "Multi-sensor agreement across HYD + TRF",
+      "evidence_coverage": 0.91,
+      "p": {
+        "1": 0.2,
+        "3": 0.35,
+        "6": 0.5,
+        "12": 0.65,
+        "24": 0.78,
+        "48": 0.86,
+        "72": 0.92
+      },
+      "t_critical": {
+        "q10": 6.5,
+        "q50": 11,
+        "q90": 17.5,
+        "beyond_72h_p": null
+      },
+      "event_types": {
+        "drain_overload": {
+          "p24": 0.81
+        },
+        "access_loss": {
+          "p24": 0.73
+        },
+        "substation_trip": {
+          "p24": 0.56
+        },
+        "hospital_strain": {
+          "p24": 0.68
+        }
+      },
+      "exposure": {
+        "population_est": 91200,
+        "assets": [
+          "DRN-02",
+          "RD-30",
+          "RD-31",
+          "SUB-06",
+          "FAC-EMS-04"
+        ],
+        "provenance": "MODELLED"
+      }
+    },
+    {
+      "zone_id": "88608b4c2bfffff",
+      "zone_code": "Z20",
+      "name": "Marol Pipeline & Upper Mithi",
+      "state": "NORMAL",
+      "confidence": "HIGH",
+      "confidence_reason": "Multi-sensor agreement across HYD + TRF",
+      "evidence_coverage": 0.91,
+      "p": {
+        "1": 0.05,
+        "3": 0.09,
+        "6": 0.13,
+        "12": 0.17,
+        "24": 0.2,
+        "48": 0.23,
+        "72": 0.24
+      },
+      "t_critical": {
+        "q10": null,
+        "q50": null,
+        "q90": null,
+        "beyond_72h_p": 0.24
+      },
+      "event_types": {
+        "drain_overload": {
+          "p24": 0.21
+        },
+        "access_loss": {
+          "p24": 0.19
+        },
+        "substation_trip": {
+          "p24": 0.15
+        },
+        "hospital_strain": {
+          "p24": 0.18
+        }
+      },
+      "exposure": {
+        "population_est": 69400,
+        "assets": [
+          "RD-32",
+          "RD-33",
+          "FAC-HOS-05"
+        ],
+        "provenance": "MODELLED"
+      }
+    }
+  ],
+  "assets": {
+    "DRN-01": {
+      "asset_id": "DRN-01",
+      "name": "Kranti Nagar Culvert & Weir",
+      "layer": "HYD",
+      "zone_code": "Z18",
+      "coords": [
+        72.8748,
+        19.079
+      ],
+      "onset_h": 52,
+      "onset_q10": 48.5,
+      "onset_q90": 56.5,
+      "recommended_onset_h": 66.5,
+      "primary_parent": null,
+      "parents": [],
+      "children": [
+        {
+          "id": "DRN-02",
+          "lag_h": 2.5,
+          "weight": 0.76,
+          "edge_key": "HYD->HYD"
+        },
+        {
+          "id": "RD-28",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-29",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "SUB-06",
+          "lag_h": 5,
+          "weight": 0.68,
+          "edge_key": "HYD->PWR"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "DRN-02": {
+      "asset_id": "DRN-02",
+      "name": "Safed Pool Box Drain",
+      "layer": "HYD",
+      "zone_code": "Z19",
+      "coords": [
+        72.8805,
+        19.0795
+      ],
+      "onset_h": 55,
+      "onset_q10": 51.5,
+      "onset_q90": 59.5,
+      "recommended_onset_h": 69.5,
+      "primary_parent": {
+        "parent_id": "DRN-01",
+        "lag_h": 2.5,
+        "weight": 0.76,
+        "edge_key": "HYD->HYD"
+      },
+      "parents": [
+        {
+          "id": "DRN-01",
+          "lag_h": 2.5,
+          "weight": 0.76,
+          "edge_key": "HYD->HYD"
+        }
+      ],
+      "children": [
+        {
+          "id": "DRN-03",
+          "lag_h": 2.5,
+          "weight": 0.76,
+          "edge_key": "HYD->HYD"
+        },
+        {
+          "id": "RD-30",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-31",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "SUB-06",
+          "lag_h": 5,
+          "weight": 0.68,
+          "edge_key": "HYD->PWR"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "DRN-03": {
+      "asset_id": "DRN-03",
+      "name": "Bail Bazaar & LBS Outfall",
+      "layer": "HYD",
+      "zone_code": "Z14",
+      "coords": [
+        72.8755,
+        19.07
+      ],
+      "onset_h": 54.5,
+      "onset_q10": 51,
+      "onset_q90": 59,
+      "recommended_onset_h": 69,
+      "primary_parent": null,
+      "parents": [
+        {
+          "id": "DRN-02",
+          "lag_h": 2.5,
+          "weight": 0.76,
+          "edge_key": "HYD->HYD"
+        }
+      ],
+      "children": [
+        {
+          "id": "DRN-04",
+          "lag_h": 2.5,
+          "weight": 0.76,
+          "edge_key": "HYD->HYD"
+        },
+        {
+          "id": "RD-21",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-22",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "SUB-04",
+          "lag_h": 5,
+          "weight": 0.68,
+          "edge_key": "HYD->PWR"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "DRN-04": {
+      "asset_id": "DRN-04",
+      "name": "CST Road Stormwater Trunk",
+      "layer": "HYD",
+      "zone_code": "Z13",
+      "coords": [
+        72.8705,
+        19.066
+      ],
+      "onset_h": 57.5,
+      "onset_q10": 54,
+      "onset_q90": 62,
+      "recommended_onset_h": 72,
+      "primary_parent": {
+        "parent_id": "DRN-03",
+        "lag_h": 2.5,
+        "weight": 0.76,
+        "edge_key": "HYD->HYD"
+      },
+      "parents": [
+        {
+          "id": "DRN-03",
+          "lag_h": 2.5,
+          "weight": 0.76,
+          "edge_key": "HYD->HYD"
+        }
+      ],
+      "children": [
+        {
+          "id": "DRN-05",
+          "lag_h": 2.5,
+          "weight": 0.76,
+          "edge_key": "HYD->HYD"
+        },
+        {
+          "id": "RD-19",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-20",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "SUB-05",
+          "lag_h": 5,
+          "weight": 0.68,
+          "edge_key": "HYD->PWR"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "DRN-05": {
+      "asset_id": "DRN-05",
+      "name": "Vakola Nalla Lower Culvert",
+      "layer": "HYD",
+      "zone_code": "Z12",
+      "coords": [
+        72.8615,
+        19.063
+      ],
+      "onset_h": 60.5,
+      "onset_q10": 57,
+      "onset_q90": 65,
+      "recommended_onset_h": 75,
+      "primary_parent": {
+        "parent_id": "DRN-04",
+        "lag_h": 2.5,
+        "weight": 0.76,
+        "edge_key": "HYD->HYD"
+      },
+      "parents": [
+        {
+          "id": "DRN-04",
+          "lag_h": 2.5,
+          "weight": 0.76,
+          "edge_key": "HYD->HYD"
+        }
+      ],
+      "children": [
+        {
+          "id": "DRN-07",
+          "lag_h": 2.5,
+          "weight": 0.76,
+          "edge_key": "HYD->HYD"
+        },
+        {
+          "id": "RD-17",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-18",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "SUB-05",
+          "lag_h": 5,
+          "weight": 0.68,
+          "edge_key": "HYD->PWR"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "DRN-06": {
+      "asset_id": "DRN-06",
+      "name": "BKC Mithi Retaining Channel",
+      "layer": "HYD",
+      "zone_code": "Z09",
+      "coords": [
+        72.8655,
+        19.0585
+      ],
+      "onset_h": 57,
+      "onset_q10": 53.5,
+      "onset_q90": 61.5,
+      "recommended_onset_h": 71.5,
+      "primary_parent": null,
+      "parents": [
+        {
+          "id": "DRN-07",
+          "lag_h": 2.5,
+          "weight": 0.76,
+          "edge_key": "HYD->HYD"
+        }
+      ],
+      "children": [
+        {
+          "id": "DRN-09",
+          "lag_h": 2.5,
+          "weight": 0.76,
+          "edge_key": "HYD->HYD"
+        },
+        {
+          "id": "RD-13",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "SUB-03",
+          "lag_h": 5,
+          "weight": 0.68,
+          "edge_key": "HYD->PWR"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "DRN-07": {
+      "asset_id": "DRN-07",
+      "name": "Kurla West Pumping Trunk",
+      "layer": "HYD",
+      "zone_code": "Z10",
+      "coords": [
+        72.8735,
+        19.0615
+      ],
+      "onset_h": 59.5,
+      "onset_q10": 56,
+      "onset_q90": 64,
+      "recommended_onset_h": 74,
+      "primary_parent": null,
+      "parents": [
+        {
+          "id": "DRN-05",
+          "lag_h": 2.5,
+          "weight": 0.76,
+          "edge_key": "HYD->HYD"
+        }
+      ],
+      "children": [
+        {
+          "id": "DRN-06",
+          "lag_h": 2.5,
+          "weight": 0.76,
+          "edge_key": "HYD->HYD"
+        },
+        {
+          "id": "RD-14",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-15",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "SUB-04",
+          "lag_h": 5,
+          "weight": 0.68,
+          "edge_key": "HYD->PWR"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "DRN-08": {
+      "asset_id": "DRN-08",
+      "name": "Sion-Dharavi Tidal Sluice",
+      "layer": "HYD",
+      "zone_code": "Z04",
+      "coords": [
+        72.8565,
+        19.051
+      ],
+      "onset_h": 62,
+      "onset_q10": 58.5,
+      "onset_q90": 66.5,
+      "recommended_onset_h": 76.5,
+      "primary_parent": null,
+      "parents": [
+        {
+          "id": "DRN-09",
+          "lag_h": 2.5,
+          "weight": 0.76,
+          "edge_key": "HYD->HYD"
+        }
+      ],
+      "children": [
+        {
+          "id": "DRN-10",
+          "lag_h": 2.5,
+          "weight": 0.76,
+          "edge_key": "HYD->HYD"
+        },
+        {
+          "id": "RD-04",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "SUB-01",
+          "lag_h": 5,
+          "weight": 0.68,
+          "edge_key": "HYD->PWR"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "DRN-09": {
+      "asset_id": "DRN-09",
+      "name": "Chunabhatti Lowland Drain",
+      "layer": "HYD",
+      "zone_code": "Z06",
+      "coords": [
+        72.864,
+        19.0495
+      ],
+      "onset_h": 60,
+      "onset_q10": 56.5,
+      "onset_q90": 64.5,
+      "recommended_onset_h": 74.5,
+      "primary_parent": {
+        "parent_id": "DRN-06",
+        "lag_h": 2.5,
+        "weight": 0.76,
+        "edge_key": "HYD->HYD"
+      },
+      "parents": [
+        {
+          "id": "DRN-06",
+          "lag_h": 2.5,
+          "weight": 0.76,
+          "edge_key": "HYD->HYD"
+        }
+      ],
+      "children": [
+        {
+          "id": "DRN-08",
+          "lag_h": 2.5,
+          "weight": 0.76,
+          "edge_key": "HYD->HYD"
+        },
+        {
+          "id": "RD-07",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-08",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "SUB-02",
+          "lag_h": 5,
+          "weight": 0.68,
+          "edge_key": "HYD->PWR"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "DRN-10": {
+      "asset_id": "DRN-10",
+      "name": "Mahim Outfall & Tidal Gate",
+      "layer": "HYD",
+      "zone_code": "Z01",
+      "coords": [
+        72.848,
+        19.0485
+      ],
+      "onset_h": 65.4,
+      "onset_q10": 61.9,
+      "onset_q90": 69.9,
+      "recommended_onset_h": 79.9,
+      "primary_parent": {
+        "parent_id": "DRN-08",
+        "lag_h": 2.5,
+        "weight": 0.76,
+        "edge_key": "HYD->HYD"
+      },
+      "parents": [
+        {
+          "id": "DRN-08",
+          "lag_h": 2.5,
+          "weight": 0.76,
+          "edge_key": "HYD->HYD"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-01",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "SUB-01",
+          "lag_h": 5,
+          "weight": 0.68,
+          "edge_key": "HYD->PWR"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-01": {
+      "asset_id": "RD-01",
+      "name": "Mahim Causeway",
+      "layer": "TRF",
+      "zone_code": "Z01",
+      "coords": [
+        72.850979,
+        19.04877
+      ],
+      "onset_h": 68,
+      "onset_q10": 64.5,
+      "onset_q90": 72.5,
+      "recommended_onset_h": 82.5,
+      "primary_parent": {
+        "parent_id": "RD-04",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "DRN-10",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-02",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-04",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-05",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-02",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-04",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-05",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-09",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-10",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-02": {
+      "asset_id": "RD-02",
+      "name": "Dharavi 90 Feet Road",
+      "layer": "TRF",
+      "zone_code": "Z02",
+      "coords": [
+        72.850224,
+        19.045196
+      ],
+      "onset_h": 68.4,
+      "onset_q10": 64.9,
+      "onset_q90": 72.9,
+      "recommended_onset_h": 82.9,
+      "primary_parent": {
+        "parent_id": "RD-04",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "RD-01",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-03",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-04",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-09",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-01",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-03",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-04",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-09",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-03": {
+      "asset_id": "RD-03",
+      "name": "Sion Hospital Arterial",
+      "layer": "TRF",
+      "zone_code": "Z03",
+      "coords": [
+        72.857747,
+        19.043562
+      ],
+      "onset_h": 66.8,
+      "onset_q10": 63.3,
+      "onset_q90": 71.3,
+      "recommended_onset_h": 81.3,
+      "primary_parent": {
+        "parent_id": "RD-07",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "RD-02",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-04",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-06",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-07",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-02",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-04",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-06",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-07",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "FAC-HOS-01",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-04": {
+      "asset_id": "RD-04",
+      "name": "Dharavi Cross Road",
+      "layer": "TRF",
+      "zone_code": "Z04",
+      "coords": [
+        72.855122,
+        19.047338
+      ],
+      "onset_h": 65.5,
+      "onset_q10": 62,
+      "onset_q90": 70,
+      "recommended_onset_h": 80,
+      "primary_parent": {
+        "parent_id": "DRN-08",
+        "lag_h": 3.5,
+        "weight": 0.82,
+        "edge_key": "HYD->TRF"
+      },
+      "parents": [
+        {
+          "id": "DRN-08",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-01",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-02",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-03",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-01",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-02",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-03",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-05",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-10",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-05": {
+      "asset_id": "RD-05",
+      "name": "Sion-Bandra Link Road",
+      "layer": "TRF",
+      "zone_code": "Z05",
+      "coords": [
+        72.860367,
+        19.050483
+      ],
+      "onset_h": 67.5,
+      "onset_q10": 64,
+      "onset_q90": 72,
+      "recommended_onset_h": 82,
+      "primary_parent": {
+        "parent_id": "RD-04",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "RD-01",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-04",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-06",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-08",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-01",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-04",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-06",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-08",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-10",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-06": {
+      "asset_id": "RD-06",
+      "name": "Lal Bahadur Shastri (LBS) South",
+      "layer": "TRF",
+      "zone_code": "Z03",
+      "coords": [
+        72.862243,
+        19.045657
+      ],
+      "onset_h": 66.8,
+      "onset_q10": 63.3,
+      "onset_q90": 71.3,
+      "recommended_onset_h": 81.3,
+      "primary_parent": {
+        "parent_id": "RD-08",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "RD-03",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-05",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-07",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-08",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-03",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-05",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-07",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-08",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-12",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-07": {
+      "asset_id": "RD-07",
+      "name": "Eastern Express Highway (Chunabhatti)",
+      "layer": "TRF",
+      "zone_code": "Z06",
+      "coords": [
+        72.866742,
+        19.046281
+      ],
+      "onset_h": 64.3,
+      "onset_q10": 60.8,
+      "onset_q90": 68.8,
+      "recommended_onset_h": 78.8,
+      "primary_parent": {
+        "parent_id": "RD-14",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "DRN-09",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-03",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-06",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-08",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-03",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-06",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-08",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-14",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "FAC-HOS-01",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-08": {
+      "asset_id": "RD-08",
+      "name": "Sion-Chunabhatti Connector",
+      "layer": "TRF",
+      "zone_code": "Z06",
+      "coords": [
+        72.868228,
+        19.049821
+      ],
+      "onset_h": 64.8,
+      "onset_q10": 61.3,
+      "onset_q90": 69.3,
+      "recommended_onset_h": 79.3,
+      "primary_parent": {
+        "parent_id": "RD-14",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "DRN-09",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-05",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-06",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-07",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-05",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-06",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-07",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-12",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-14",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-09": {
+      "asset_id": "RD-09",
+      "name": "Western Express Highway (BKC Approach)",
+      "layer": "TRF",
+      "zone_code": "Z07",
+      "coords": [
+        72.850328,
+        19.053263
+      ],
+      "onset_h": 66.8,
+      "onset_q10": 63.3,
+      "onset_q90": 71.3,
+      "recommended_onset_h": 81.3,
+      "primary_parent": {
+        "parent_id": "RD-17",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "RD-01",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-02",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-10",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-11",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-01",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-02",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-10",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-11",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-17",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-10": {
+      "asset_id": "RD-10",
+      "name": "Dharavi-BKC Kalanagar Causeway",
+      "layer": "TRF",
+      "zone_code": "Z07",
+      "coords": [
+        72.854579,
+        19.055703
+      ],
+      "onset_h": 67.2,
+      "onset_q10": 63.7,
+      "onset_q90": 71.7,
+      "recommended_onset_h": 81.7,
+      "primary_parent": {
+        "parent_id": "RD-11",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "RD-01",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-04",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-05",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-09",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-01",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-04",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-05",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-09",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-11",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-11": {
+      "asset_id": "RD-11",
+      "name": "BKC Central Avenue",
+      "layer": "TRF",
+      "zone_code": "Z08",
+      "coords": [
+        72.857378,
+        19.059962
+      ],
+      "onset_h": 64.3,
+      "onset_q10": 60.8,
+      "onset_q90": 68.8,
+      "recommended_onset_h": 78.8,
+      "primary_parent": {
+        "parent_id": "RD-13",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "RD-09",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-10",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-12",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-13",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-09",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-10",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-12",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-13",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-17",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-12": {
+      "asset_id": "RD-12",
+      "name": "Sion-BKC Elevated Connector",
+      "layer": "TRF",
+      "zone_code": "Z08",
+      "coords": [
+        72.863301,
+        19.055057
+      ],
+      "onset_h": 64.8,
+      "onset_q10": 61.3,
+      "onset_q90": 69.3,
+      "recommended_onset_h": 79.3,
+      "primary_parent": {
+        "parent_id": "RD-13",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "RD-05",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-06",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-08",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-11",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-05",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-06",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-08",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-11",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-13",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-13": {
+      "asset_id": "RD-13",
+      "name": "Mithi River BKC-Kurla Bridge",
+      "layer": "TRF",
+      "zone_code": "Z09",
+      "coords": [
+        72.865797,
+        19.061209
+      ],
+      "onset_h": 62.3,
+      "onset_q10": 58.8,
+      "onset_q90": 66.8,
+      "recommended_onset_h": 76.8,
+      "primary_parent": {
+        "parent_id": "DRN-06",
+        "lag_h": 3.5,
+        "weight": 0.82,
+        "edge_key": "HYD->TRF"
+      },
+      "parents": [
+        {
+          "id": "DRN-06",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-11",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-12",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-15",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-11",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-12",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-15",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-18",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-20",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-14": {
+      "asset_id": "RD-14",
+      "name": "LBS Marg (Kurla-Chunabhatti)",
+      "layer": "TRF",
+      "zone_code": "Z10",
+      "coords": [
+        72.87578,
+        19.056264
+      ],
+      "onset_h": 61.4,
+      "onset_q10": 57.9,
+      "onset_q90": 65.9,
+      "recommended_onset_h": 75.9,
+      "primary_parent": {
+        "parent_id": "RD-21",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "DRN-07",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-07",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-08",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-15",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-07",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-08",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-15",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-16",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-21",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-15": {
+      "asset_id": "RD-15",
+      "name": "Santacruz-Chembur Link Rd (SCLR Lower)",
+      "layer": "TRF",
+      "zone_code": "Z10",
+      "coords": [
+        72.874733,
+        19.061204
+      ],
+      "onset_h": 61.8,
+      "onset_q10": 58.3,
+      "onset_q90": 66.3,
+      "recommended_onset_h": 76.3,
+      "primary_parent": {
+        "parent_id": "RD-21",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "DRN-07",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-13",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-14",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-16",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-13",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-14",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-16",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-20",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-21",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-16": {
+      "asset_id": "RD-16",
+      "name": "Kurla Station East-West Overbridge",
+      "layer": "TRF",
+      "zone_code": "Z11",
+      "coords": [
+        72.881059,
+        19.063365
+      ],
+      "onset_h": 62.3,
+      "onset_q10": 58.8,
+      "onset_q90": 66.8,
+      "recommended_onset_h": 76.8,
+      "primary_parent": {
+        "parent_id": "RD-21",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "RD-14",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-15",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-21",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-23",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-14",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-15",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-21",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-23",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "FAC-HOS-02",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-17": {
+      "asset_id": "RD-17",
+      "name": "Vakola Nalla Corridor Road",
+      "layer": "TRF",
+      "zone_code": "Z12",
+      "coords": [
+        72.855256,
+        19.06383
+      ],
+      "onset_h": 63.9,
+      "onset_q10": 60.4,
+      "onset_q90": 68.4,
+      "recommended_onset_h": 78.4,
+      "primary_parent": {
+        "parent_id": "RD-19",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "DRN-05",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-09",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-10",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-11",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-09",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-10",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-11",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-18",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-19",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-18": {
+      "asset_id": "RD-18",
+      "name": "BKC-Vakola Link Road",
+      "layer": "TRF",
+      "zone_code": "Z12",
+      "coords": [
+        72.860021,
+        19.064791
+      ],
+      "onset_h": 64.3,
+      "onset_q10": 60.8,
+      "onset_q90": 68.8,
+      "recommended_onset_h": 78.8,
+      "primary_parent": {
+        "parent_id": "RD-19",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "DRN-05",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-11",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-12",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-13",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-11",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-12",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-13",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-17",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-19",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-19": {
+      "asset_id": "RD-19",
+      "name": "CST Road (Santacruz-Chembur Link)",
+      "layer": "TRF",
+      "zone_code": "Z13",
+      "coords": [
+        72.862194,
+        19.069188
+      ],
+      "onset_h": 61,
+      "onset_q10": 57.5,
+      "onset_q90": 65.5,
+      "recommended_onset_h": 75.5,
+      "primary_parent": {
+        "parent_id": "DRN-04",
+        "lag_h": 3.5,
+        "weight": 0.82,
+        "edge_key": "HYD->TRF"
+      },
+      "parents": [
+        {
+          "id": "DRN-04",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-17",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-18",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-20",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-17",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-18",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-20",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-22",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-25",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-20": {
+      "asset_id": "RD-20",
+      "name": "CST Road East (Kalina-Kurla)",
+      "layer": "TRF",
+      "zone_code": "Z13",
+      "coords": [
+        72.868801,
+        19.065205
+      ],
+      "onset_h": 61.5,
+      "onset_q10": 58,
+      "onset_q90": 66,
+      "recommended_onset_h": 76,
+      "primary_parent": {
+        "parent_id": "DRN-04",
+        "lag_h": 3.5,
+        "weight": 0.82,
+        "edge_key": "HYD->TRF"
+      },
+      "parents": [
+        {
+          "id": "DRN-04",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-13",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-15",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-19",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-13",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-15",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-19",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-22",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-27",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-21": {
+      "asset_id": "RD-21",
+      "name": "LBS Marg (Bail Bazaar Culvert)",
+      "layer": "TRF",
+      "zone_code": "Z14",
+      "coords": [
+        72.877368,
+        19.066037
+      ],
+      "onset_h": 58.9,
+      "onset_q10": 55.4,
+      "onset_q90": 63.4,
+      "recommended_onset_h": 73.4,
+      "primary_parent": {
+        "parent_id": "DRN-03",
+        "lag_h": 3.5,
+        "weight": 0.82,
+        "edge_key": "HYD->TRF"
+      },
+      "parents": [
+        {
+          "id": "DRN-03",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-14",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-15",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-16",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-14",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-15",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-16",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-22",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-24",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-22": {
+      "asset_id": "RD-22",
+      "name": "Air India Road (Kalina-Bail Bazaar)",
+      "layer": "TRF",
+      "zone_code": "Z14",
+      "coords": [
+        72.871515,
+        19.0698
+      ],
+      "onset_h": 59.4,
+      "onset_q10": 55.9,
+      "onset_q90": 63.9,
+      "recommended_onset_h": 73.9,
+      "primary_parent": {
+        "parent_id": "DRN-03",
+        "lag_h": 3.5,
+        "weight": 0.82,
+        "edge_key": "HYD->TRF"
+      },
+      "parents": [
+        {
+          "id": "DRN-03",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-19",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-20",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-21",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-19",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-20",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-21",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-24",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-27",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-23": {
+      "asset_id": "RD-23",
+      "name": "Kirol Road Industrial Feeder",
+      "layer": "TRF",
+      "zone_code": "Z15",
+      "coords": [
+        72.882579,
+        19.068513
+      ],
+      "onset_h": 61.4,
+      "onset_q10": 57.9,
+      "onset_q90": 65.9,
+      "recommended_onset_h": 75.9,
+      "primary_parent": {
+        "parent_id": "RD-31",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "RD-16",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-24",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-31",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-16",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-24",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-31",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "FAC-SHL-03",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-24": {
+      "asset_id": "RD-24",
+      "name": "Vidya Vihar - Bail Bazaar Link",
+      "layer": "TRF",
+      "zone_code": "Z15",
+      "coords": [
+        72.878724,
+        19.071459
+      ],
+      "onset_h": 60.6,
+      "onset_q10": 57.1,
+      "onset_q90": 65.1,
+      "recommended_onset_h": 75.1,
+      "primary_parent": {
+        "parent_id": "RD-28",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "RD-21",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-22",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-23",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-28",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-21",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-22",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-23",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-28",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-31",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-25": {
+      "asset_id": "RD-25",
+      "name": "Western Express Highway (Vakola)",
+      "layer": "TRF",
+      "zone_code": "Z16",
+      "coords": [
+        72.85615,
+        19.072856
+      ],
+      "onset_h": 60.9,
+      "onset_q10": 57.4,
+      "onset_q90": 65.4,
+      "recommended_onset_h": 75.4,
+      "primary_parent": {
+        "parent_id": "RD-26",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "RD-17",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-18",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-19",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-26",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-17",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-18",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-19",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-26",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "FAC-HOS-04",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-26": {
+      "asset_id": "RD-26",
+      "name": "Hans Bhugra Marg (Vakola-Kalina)",
+      "layer": "TRF",
+      "zone_code": "Z17",
+      "coords": [
+        72.859327,
+        19.076369
+      ],
+      "onset_h": 58,
+      "onset_q10": 54.5,
+      "onset_q90": 62.5,
+      "recommended_onset_h": 72.5,
+      "primary_parent": {
+        "parent_id": "RD-29",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "RD-25",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-27",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-29",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-25",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-27",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-29",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "FAC-HOS-04",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-27": {
+      "asset_id": "RD-27",
+      "name": "Kalina University Parkway",
+      "layer": "TRF",
+      "zone_code": "Z17",
+      "coords": [
+        72.864783,
+        19.073165
+      ],
+      "onset_h": 58.4,
+      "onset_q10": 54.9,
+      "onset_q90": 62.9,
+      "recommended_onset_h": 72.9,
+      "primary_parent": {
+        "parent_id": "RD-29",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "RD-19",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-20",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-22",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-26",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-19",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-20",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-22",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-26",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-29",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-28": {
+      "asset_id": "RD-28",
+      "name": "White House - Kranti Nagar Bridge",
+      "layer": "TRF",
+      "zone_code": "Z18",
+      "coords": [
+        72.873465,
+        19.073926
+      ],
+      "onset_h": 57.3,
+      "onset_q10": 53.8,
+      "onset_q90": 61.8,
+      "recommended_onset_h": 71.8,
+      "primary_parent": {
+        "parent_id": "DRN-01",
+        "lag_h": 3.5,
+        "weight": 0.82,
+        "edge_key": "HYD->TRF"
+      },
+      "parents": [
+        {
+          "id": "DRN-01",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-21",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-22",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-24",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-21",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-22",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-24",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-29",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-30",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-29": {
+      "asset_id": "RD-29",
+      "name": "Airport Southern Perimeter Road",
+      "layer": "TRF",
+      "zone_code": "Z18",
+      "coords": [
+        72.867739,
+        19.077093
+      ],
+      "onset_h": 55.5,
+      "onset_q10": 52,
+      "onset_q90": 60,
+      "recommended_onset_h": 70,
+      "primary_parent": {
+        "parent_id": "DRN-01",
+        "lag_h": 3.5,
+        "weight": 0.82,
+        "edge_key": "HYD->TRF"
+      },
+      "parents": [
+        {
+          "id": "DRN-01",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-26",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-27",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-28",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-26",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-27",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-28",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-30",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-32",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-30": {
+      "asset_id": "RD-30",
+      "name": "Andheri-Ghatkopar Link Rd (Saki Naka)",
+      "layer": "TRF",
+      "zone_code": "Z19",
+      "coords": [
+        72.876479,
+        19.078895
+      ],
+      "onset_h": 57.5,
+      "onset_q10": 54,
+      "onset_q90": 62,
+      "recommended_onset_h": 72,
+      "primary_parent": {
+        "parent_id": "RD-29",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "DRN-02",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-28",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-29",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-31",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-28",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-29",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-31",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-32",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-33",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-31": {
+      "asset_id": "RD-31",
+      "name": "Safed Pool - Kurla Industrial Road",
+      "layer": "TRF",
+      "zone_code": "Z19",
+      "coords": [
+        72.881448,
+        19.075848
+      ],
+      "onset_h": 59.4,
+      "onset_q10": 55.9,
+      "onset_q90": 63.9,
+      "recommended_onset_h": 73.9,
+      "primary_parent": {
+        "parent_id": "DRN-02",
+        "lag_h": 3.5,
+        "weight": 0.82,
+        "edge_key": "HYD->TRF"
+      },
+      "parents": [
+        {
+          "id": "DRN-02",
+          "lag_h": 3.5,
+          "weight": 0.82,
+          "edge_key": "HYD->TRF"
+        },
+        {
+          "id": "RD-23",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-24",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-30",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-23",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-24",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-30",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-33",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "FAC-EMS-04",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-32": {
+      "asset_id": "RD-32",
+      "name": "Marol Military Road",
+      "layer": "TRF",
+      "zone_code": "Z20",
+      "coords": [
+        72.874664,
+        19.081939
+      ],
+      "onset_h": 58.4,
+      "onset_q10": 54.9,
+      "onset_q90": 62.9,
+      "recommended_onset_h": 72.9,
+      "primary_parent": {
+        "parent_id": "RD-29",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "RD-28",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-29",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-30",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-33",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-28",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-29",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-30",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-33",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "FAC-HOS-05",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "RD-33": {
+      "asset_id": "RD-33",
+      "name": "Saki Vihar Road",
+      "layer": "TRF",
+      "zone_code": "Z20",
+      "coords": [
+        72.879707,
+        19.083486
+      ],
+      "onset_h": 60.9,
+      "onset_q10": 57.4,
+      "onset_q90": 65.4,
+      "recommended_onset_h": 75.4,
+      "primary_parent": {
+        "parent_id": "RD-32",
+        "lag_h": 2,
+        "weight": 0.64,
+        "edge_key": "TRF->TRF"
+      },
+      "parents": [
+        {
+          "id": "RD-30",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-31",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-32",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        }
+      ],
+      "children": [
+        {
+          "id": "RD-30",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-31",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "RD-32",
+          "lag_h": 2,
+          "weight": 0.64,
+          "edge_key": "TRF->TRF"
+        },
+        {
+          "id": "FAC-HOS-05",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        },
+        {
+          "id": "FAC-EMS-04",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "SUB-01": {
+      "asset_id": "SUB-01",
+      "name": "Dharavi 220kV Receiving Station",
+      "layer": "PWR",
+      "zone_code": "Z04",
+      "coords": [
+        72.8555,
+        19.0522
+      ],
+      "onset_h": 67.5,
+      "onset_q10": 64,
+      "onset_q90": 72,
+      "recommended_onset_h": 82,
+      "primary_parent": {
+        "parent_id": "DRN-08",
+        "lag_h": 5,
+        "weight": 0.68,
+        "edge_key": "HYD->PWR"
+      },
+      "parents": [
+        {
+          "id": "DRN-08",
+          "lag_h": 5,
+          "weight": 0.68,
+          "edge_key": "HYD->PWR"
+        },
+        {
+          "id": "DRN-10",
+          "lag_h": 5,
+          "weight": 0.68,
+          "edge_key": "HYD->PWR"
+        }
+      ],
+      "children": [
+        {
+          "id": "SUB-02",
+          "lag_h": 1.5,
+          "weight": 0.71,
+          "edge_key": "PWR->PWR"
+        },
+        {
+          "id": "FAC-HOS-06",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->HOS"
+        },
+        {
+          "id": "FAC-EMS-02",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->EMS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "SUB-02": {
+      "asset_id": "SUB-02",
+      "name": "Sion-Matunga 110kV Substation",
+      "layer": "PWR",
+      "zone_code": "Z05",
+      "coords": [
+        72.8632,
+        19.0478
+      ],
+      "onset_h": 65.5,
+      "onset_q10": 62,
+      "onset_q90": 70,
+      "recommended_onset_h": 80,
+      "primary_parent": {
+        "parent_id": "DRN-09",
+        "lag_h": 5,
+        "weight": 0.68,
+        "edge_key": "HYD->PWR"
+      },
+      "parents": [
+        {
+          "id": "DRN-09",
+          "lag_h": 5,
+          "weight": 0.68,
+          "edge_key": "HYD->PWR"
+        },
+        {
+          "id": "SUB-01",
+          "lag_h": 1.5,
+          "weight": 0.71,
+          "edge_key": "PWR->PWR"
+        }
+      ],
+      "children": [
+        {
+          "id": "SUB-03",
+          "lag_h": 1.5,
+          "weight": 0.71,
+          "edge_key": "PWR->PWR"
+        },
+        {
+          "id": "FAC-HOS-01",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->HOS"
+        },
+        {
+          "id": "FAC-SHL-02",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->EMS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "SUB-03": {
+      "asset_id": "SUB-03",
+      "name": "BKC 220kV GIS Substation",
+      "layer": "PWR",
+      "zone_code": "Z09",
+      "coords": [
+        72.8665,
+        19.0608
+      ],
+      "onset_h": 62.5,
+      "onset_q10": 59,
+      "onset_q90": 67,
+      "recommended_onset_h": 77,
+      "primary_parent": {
+        "parent_id": "DRN-06",
+        "lag_h": 5,
+        "weight": 0.68,
+        "edge_key": "HYD->PWR"
+      },
+      "parents": [
+        {
+          "id": "DRN-06",
+          "lag_h": 5,
+          "weight": 0.68,
+          "edge_key": "HYD->PWR"
+        },
+        {
+          "id": "SUB-02",
+          "lag_h": 1.5,
+          "weight": 0.71,
+          "edge_key": "PWR->PWR"
+        }
+      ],
+      "children": [
+        {
+          "id": "SUB-04",
+          "lag_h": 1.5,
+          "weight": 0.71,
+          "edge_key": "PWR->PWR"
+        },
+        {
+          "id": "FAC-HOS-03",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->HOS"
+        },
+        {
+          "id": "FAC-EMS-01",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->EMS"
+        },
+        {
+          "id": "FAC-COM-01",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->COM"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "SUB-04": {
+      "asset_id": "SUB-04",
+      "name": "Kurla-LBS 110kV Distribution Hub",
+      "layer": "PWR",
+      "zone_code": "Z14",
+      "coords": [
+        72.8768,
+        19.0665
+      ],
+      "onset_h": 60,
+      "onset_q10": 56.5,
+      "onset_q90": 64.5,
+      "recommended_onset_h": 74.5,
+      "primary_parent": {
+        "parent_id": "DRN-03",
+        "lag_h": 5,
+        "weight": 0.68,
+        "edge_key": "HYD->PWR"
+      },
+      "parents": [
+        {
+          "id": "DRN-03",
+          "lag_h": 5,
+          "weight": 0.68,
+          "edge_key": "HYD->PWR"
+        },
+        {
+          "id": "DRN-07",
+          "lag_h": 5,
+          "weight": 0.68,
+          "edge_key": "HYD->PWR"
+        },
+        {
+          "id": "SUB-03",
+          "lag_h": 1.5,
+          "weight": 0.71,
+          "edge_key": "PWR->PWR"
+        }
+      ],
+      "children": [
+        {
+          "id": "SUB-05",
+          "lag_h": 1.5,
+          "weight": 0.71,
+          "edge_key": "PWR->PWR"
+        },
+        {
+          "id": "FAC-HOS-02",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->HOS"
+        },
+        {
+          "id": "FAC-EMS-03",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->EMS"
+        },
+        {
+          "id": "FAC-SHL-03",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->EMS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "SUB-05": {
+      "asset_id": "SUB-05",
+      "name": "Kalina-Vakola 110kV Substation",
+      "layer": "PWR",
+      "zone_code": "Z12",
+      "coords": [
+        72.8602,
+        19.0725
+      ],
+      "onset_h": 62,
+      "onset_q10": 58.5,
+      "onset_q90": 66.5,
+      "recommended_onset_h": 76.5,
+      "primary_parent": {
+        "parent_id": "SUB-04",
+        "lag_h": 1.5,
+        "weight": 0.71,
+        "edge_key": "PWR->PWR"
+      },
+      "parents": [
+        {
+          "id": "DRN-04",
+          "lag_h": 5,
+          "weight": 0.68,
+          "edge_key": "HYD->PWR"
+        },
+        {
+          "id": "DRN-05",
+          "lag_h": 5,
+          "weight": 0.68,
+          "edge_key": "HYD->PWR"
+        },
+        {
+          "id": "SUB-04",
+          "lag_h": 1.5,
+          "weight": 0.71,
+          "edge_key": "PWR->PWR"
+        }
+      ],
+      "children": [
+        {
+          "id": "SUB-06",
+          "lag_h": 1.5,
+          "weight": 0.71,
+          "edge_key": "PWR->PWR"
+        },
+        {
+          "id": "FAC-HOS-04",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->HOS"
+        },
+        {
+          "id": "FAC-SHL-01",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->EMS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "SUB-06": {
+      "asset_id": "SUB-06",
+      "name": "Saki Naka 220kV Industrial Grid",
+      "layer": "PWR",
+      "zone_code": "Z19",
+      "coords": [
+        72.8788,
+        19.0792
+      ],
+      "onset_h": 57.5,
+      "onset_q10": 54,
+      "onset_q90": 62,
+      "recommended_onset_h": 72,
+      "primary_parent": {
+        "parent_id": "DRN-01",
+        "lag_h": 5,
+        "weight": 0.68,
+        "edge_key": "HYD->PWR"
+      },
+      "parents": [
+        {
+          "id": "DRN-01",
+          "lag_h": 5,
+          "weight": 0.68,
+          "edge_key": "HYD->PWR"
+        },
+        {
+          "id": "DRN-02",
+          "lag_h": 5,
+          "weight": 0.68,
+          "edge_key": "HYD->PWR"
+        },
+        {
+          "id": "SUB-05",
+          "lag_h": 1.5,
+          "weight": 0.71,
+          "edge_key": "PWR->PWR"
+        }
+      ],
+      "children": [
+        {
+          "id": "FAC-HOS-05",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->HOS"
+        },
+        {
+          "id": "FAC-EMS-04",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->EMS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "FAC-HOS-01": {
+      "asset_id": "FAC-HOS-01",
+      "name": "LTMMC Sion General Hospital",
+      "layer": "HOS",
+      "zone_code": "Z03",
+      "coords": [
+        72.8612,
+        19.0432
+      ],
+      "onset_h": 64.3,
+      "onset_q10": 60.8,
+      "onset_q90": 68.8,
+      "recommended_onset_h": 78.8,
+      "primary_parent": {
+        "parent_id": "FAC-EMS-03",
+        "lag_h": 3.5,
+        "weight": 0.77,
+        "edge_key": "EMS->HOS"
+      },
+      "parents": [
+        {
+          "id": "RD-03",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        },
+        {
+          "id": "RD-06",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        },
+        {
+          "id": "RD-07",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        },
+        {
+          "id": "SUB-02",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->HOS"
+        }
+      ],
+      "children": [],
+      "provenance": "SIMULATED"
+    },
+    "FAC-HOS-02": {
+      "asset_id": "FAC-HOS-02",
+      "name": "Bhabha Municipal Hospital Kurla",
+      "layer": "HOS",
+      "zone_code": "Z10",
+      "coords": [
+        72.8798,
+        19.0632
+      ],
+      "onset_h": 62.4,
+      "onset_q10": 58.9,
+      "onset_q90": 66.9,
+      "recommended_onset_h": 76.9,
+      "primary_parent": {
+        "parent_id": "RD-21",
+        "lag_h": 3,
+        "weight": 0.79,
+        "edge_key": "TRF->HOS"
+      },
+      "parents": [
+        {
+          "id": "RD-14",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        },
+        {
+          "id": "RD-15",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        },
+        {
+          "id": "RD-16",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        },
+        {
+          "id": "RD-21",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        }
+      ],
+      "children": [],
+      "provenance": "SIMULATED"
+    },
+    "FAC-HOS-03": {
+      "asset_id": "FAC-HOS-03",
+      "name": "Asian Heart Institute BKC",
+      "layer": "HOS",
+      "zone_code": "Z07",
+      "coords": [
+        72.8558,
+        19.0612
+      ],
+      "onset_h": 64.3,
+      "onset_q10": 60.8,
+      "onset_q90": 68.8,
+      "recommended_onset_h": 78.8,
+      "primary_parent": {
+        "parent_id": "FAC-EMS-03",
+        "lag_h": 3.5,
+        "weight": 0.77,
+        "edge_key": "EMS->HOS"
+      },
+      "parents": [
+        {
+          "id": "RD-09",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        },
+        {
+          "id": "RD-10",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        },
+        {
+          "id": "RD-11",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        },
+        {
+          "id": "RD-17",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        }
+      ],
+      "children": [],
+      "provenance": "SIMULATED"
+    },
+    "FAC-HOS-04": {
+      "asset_id": "FAC-HOS-04",
+      "name": "V.N. Desai Hospital Santacruz",
+      "layer": "HOS",
+      "zone_code": "Z16",
+      "coords": [
+        72.855,
+        19.0755
+      ],
+      "onset_h": 61.5,
+      "onset_q10": 58,
+      "onset_q90": 66,
+      "recommended_onset_h": 76,
+      "primary_parent": {
+        "parent_id": "RD-26",
+        "lag_h": 3,
+        "weight": 0.79,
+        "edge_key": "TRF->HOS"
+      },
+      "parents": [
+        {
+          "id": "RD-25",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        },
+        {
+          "id": "RD-26",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        },
+        {
+          "id": "SUB-05",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->HOS"
+        },
+        {
+          "id": "FAC-EMS-01",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        }
+      ],
+      "children": [],
+      "provenance": "SIMULATED"
+    },
+    "FAC-HOS-05": {
+      "asset_id": "FAC-HOS-05",
+      "name": "SevenHills / Marol Trauma Center",
+      "layer": "HOS",
+      "zone_code": "Z20",
+      "coords": [
+        72.8782,
+        19.0842
+      ],
+      "onset_h": 61.5,
+      "onset_q10": 58,
+      "onset_q90": 66,
+      "recommended_onset_h": 76,
+      "primary_parent": {
+        "parent_id": "SUB-06",
+        "lag_h": 4,
+        "weight": 0.85,
+        "edge_key": "PWR->HOS"
+      },
+      "parents": [
+        {
+          "id": "RD-32",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        },
+        {
+          "id": "RD-33",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        },
+        {
+          "id": "SUB-06",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->HOS"
+        },
+        {
+          "id": "FAC-EMS-01",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        }
+      ],
+      "children": [],
+      "provenance": "SIMULATED"
+    },
+    "FAC-HOS-06": {
+      "asset_id": "FAC-HOS-06",
+      "name": "Dharavi Urban Health Center",
+      "layer": "HOS",
+      "zone_code": "Z04",
+      "coords": [
+        72.8548,
+        19.0488
+      ],
+      "onset_h": 64.3,
+      "onset_q10": 60.8,
+      "onset_q90": 68.8,
+      "recommended_onset_h": 78.8,
+      "primary_parent": {
+        "parent_id": "FAC-EMS-03",
+        "lag_h": 3.5,
+        "weight": 0.77,
+        "edge_key": "EMS->HOS"
+      },
+      "parents": [
+        {
+          "id": "RD-01",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        },
+        {
+          "id": "RD-04",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        },
+        {
+          "id": "RD-05",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        },
+        {
+          "id": "RD-10",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->HOS"
+        }
+      ],
+      "children": [],
+      "provenance": "SIMULATED"
+    },
+    "FAC-EMS-01": {
+      "asset_id": "FAC-EMS-01",
+      "name": "BKC Regional Fire & EMS Command",
+      "layer": "EMS",
+      "zone_code": "Z08",
+      "coords": [
+        72.8635,
+        19.0618
+      ],
+      "onset_h": 65.3,
+      "onset_q10": 61.8,
+      "onset_q90": 69.8,
+      "recommended_onset_h": 79.8,
+      "primary_parent": {
+        "parent_id": "RD-13",
+        "lag_h": 3,
+        "weight": 0.79,
+        "edge_key": "TRF->EMS"
+      },
+      "parents": [
+        {
+          "id": "RD-11",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        },
+        {
+          "id": "RD-12",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        },
+        {
+          "id": "RD-13",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        },
+        {
+          "id": "RD-18",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        }
+      ],
+      "children": [
+        {
+          "id": "FAC-HOS-01",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-02",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-03",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-04",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-05",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "FAC-EMS-02": {
+      "asset_id": "FAC-EMS-02",
+      "name": "Dharavi Fire & Rescue Station",
+      "layer": "EMS",
+      "zone_code": "Z04",
+      "coords": [
+        72.8572,
+        19.0518
+      ],
+      "onset_h": 69,
+      "onset_q10": 65.5,
+      "onset_q90": 73.5,
+      "recommended_onset_h": 83.5,
+      "primary_parent": {
+        "parent_id": "RD-04",
+        "lag_h": 3,
+        "weight": 0.79,
+        "edge_key": "TRF->EMS"
+      },
+      "parents": [
+        {
+          "id": "RD-01",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        },
+        {
+          "id": "RD-04",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        },
+        {
+          "id": "RD-05",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        },
+        {
+          "id": "RD-10",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        }
+      ],
+      "children": [
+        {
+          "id": "FAC-HOS-01",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-02",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-03",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-04",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-05",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "FAC-EMS-03": {
+      "asset_id": "FAC-EMS-03",
+      "name": "Kurla LBS Rapid EMS Depot",
+      "layer": "EMS",
+      "zone_code": "Z14",
+      "coords": [
+        72.8762,
+        19.0692
+      ],
+      "onset_h": 60.3,
+      "onset_q10": 56.8,
+      "onset_q90": 64.8,
+      "recommended_onset_h": 74.8,
+      "primary_parent": {
+        "parent_id": "RD-28",
+        "lag_h": 3,
+        "weight": 0.79,
+        "edge_key": "TRF->EMS"
+      },
+      "parents": [
+        {
+          "id": "RD-21",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        },
+        {
+          "id": "RD-22",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        },
+        {
+          "id": "RD-24",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        },
+        {
+          "id": "RD-28",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        }
+      ],
+      "children": [
+        {
+          "id": "FAC-HOS-01",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-02",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-03",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-04",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-05",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "FAC-EMS-04": {
+      "asset_id": "FAC-EMS-04",
+      "name": "Saki Naka Emergency Response Hub",
+      "layer": "EMS",
+      "zone_code": "Z19",
+      "coords": [
+        72.8802,
+        19.0798
+      ],
+      "onset_h": 61.4,
+      "onset_q10": 57.9,
+      "onset_q90": 65.9,
+      "recommended_onset_h": 75.9,
+      "primary_parent": {
+        "parent_id": "RD-30",
+        "lag_h": 3,
+        "weight": 0.79,
+        "edge_key": "TRF->EMS"
+      },
+      "parents": [
+        {
+          "id": "RD-30",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        },
+        {
+          "id": "RD-31",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        },
+        {
+          "id": "RD-33",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        },
+        {
+          "id": "SUB-06",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->EMS"
+        }
+      ],
+      "children": [
+        {
+          "id": "FAC-HOS-01",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-02",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-03",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-04",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-05",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "FAC-SHL-01": {
+      "asset_id": "FAC-SHL-01",
+      "name": "Kalina University Relief Shelter",
+      "layer": "EMS",
+      "zone_code": "Z13",
+      "coords": [
+        72.8658,
+        19.0708
+      ],
+      "onset_h": 62.8,
+      "onset_q10": 59.3,
+      "onset_q90": 67.3,
+      "recommended_onset_h": 77.3,
+      "primary_parent": {
+        "parent_id": "RD-27",
+        "lag_h": 3,
+        "weight": 0.79,
+        "edge_key": "TRF->EMS"
+      },
+      "parents": [
+        {
+          "id": "RD-19",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        },
+        {
+          "id": "RD-20",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        },
+        {
+          "id": "RD-22",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        },
+        {
+          "id": "RD-27",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        }
+      ],
+      "children": [
+        {
+          "id": "FAC-HOS-01",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-02",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-03",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-04",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-05",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "FAC-SHL-02": {
+      "asset_id": "FAC-SHL-02",
+      "name": "Sion High Ground Municipal School",
+      "layer": "EMS",
+      "zone_code": "Z03",
+      "coords": [
+        72.8628,
+        19.0452
+      ],
+      "onset_h": 68.6,
+      "onset_q10": 65.1,
+      "onset_q90": 73.1,
+      "recommended_onset_h": 83.1,
+      "primary_parent": {
+        "parent_id": "RD-07",
+        "lag_h": 3,
+        "weight": 0.79,
+        "edge_key": "TRF->EMS"
+      },
+      "parents": [
+        {
+          "id": "RD-03",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        },
+        {
+          "id": "RD-06",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        },
+        {
+          "id": "RD-07",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        },
+        {
+          "id": "SUB-02",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->EMS"
+        }
+      ],
+      "children": [
+        {
+          "id": "FAC-HOS-01",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-02",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-03",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-04",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-05",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "FAC-SHL-03": {
+      "asset_id": "FAC-SHL-03",
+      "name": "Nehru Nagar Community Shelter",
+      "layer": "EMS",
+      "zone_code": "Z11",
+      "coords": [
+        72.8828,
+        19.0658
+      ],
+      "onset_h": 64.5,
+      "onset_q10": 61,
+      "onset_q90": 69,
+      "recommended_onset_h": 79,
+      "primary_parent": {
+        "parent_id": "SUB-04",
+        "lag_h": 4,
+        "weight": 0.85,
+        "edge_key": "PWR->EMS"
+      },
+      "parents": [
+        {
+          "id": "RD-16",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        },
+        {
+          "id": "RD-23",
+          "lag_h": 3,
+          "weight": 0.79,
+          "edge_key": "TRF->EMS"
+        },
+        {
+          "id": "SUB-04",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->EMS"
+        }
+      ],
+      "children": [
+        {
+          "id": "FAC-HOS-01",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-02",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-03",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-04",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        },
+        {
+          "id": "FAC-HOS-05",
+          "lag_h": 3.5,
+          "weight": 0.77,
+          "edge_key": "EMS->HOS"
+        }
+      ],
+      "provenance": "SIMULATED"
+    },
+    "FAC-COM-01": {
+      "asset_id": "FAC-COM-01",
+      "name": "MTNL/BKC Core Telecom Exchange",
+      "layer": "COM",
+      "zone_code": "Z09",
+      "coords": [
+        72.8685,
+        19.0625
+      ],
+      "onset_h": 66.5,
+      "onset_q10": 63,
+      "onset_q90": 71,
+      "recommended_onset_h": 81,
+      "primary_parent": {
+        "parent_id": "SUB-03",
+        "lag_h": 4,
+        "weight": 0.85,
+        "edge_key": "PWR->COM"
+      },
+      "parents": [
+        {
+          "id": "SUB-03",
+          "lag_h": 4,
+          "weight": 0.85,
+          "edge_key": "PWR->COM"
+        }
+      ],
+      "children": [],
+      "provenance": "SIMULATED"
+    }
+  }
+}

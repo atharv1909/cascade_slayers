@@ -1,0 +1,15 @@
+{
+  "city_name": "Mumbai Mithi River Corridor",
+  "bbox": {
+    "south": 19.030,
+    "north": 19.090,
+    "west": 72.840,
+    "east": 72.888
+  },
+  "center": {
+    "lat": 19.065,
+    "lon": 72.865
+  },
+  "h3_resolution": 8,
+  "attribution": "Map data © OpenStreetMap contributors under ODbL"
+}

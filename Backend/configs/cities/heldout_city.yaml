@@ -1,0 +1,190 @@
+name: "Held-out Validation City (Pune Mutha Basin)"
+city_id: "heldout_city"
+tag: "never tuned on"
+bbox:
+  min_lat: 18.48
+  max_lat: 18.55
+  min_lon: 73.81
+  max_lon: 73.89
+center:
+  lat: 18.52
+  lon: 73.85
+h3_resolution: 8
+total_zones: 16
+zones:
+  - id: "hz01_shivajinagar"
+    h3_index: "8860155943fffff"
+    name: "Shivajinagar Station"
+    lat: 18.531
+    lon: 73.852
+    elevation_m: 560.0
+    elevation_percentile: 0.50
+    population: 65000
+    assets: ["HOS_H01_Sassoon_North", "SUB_H01_Shivaji_Grid"]
+    upstream_zones: ["hz02_deccan"]
+    downstream_zones: ["hz05_sangamwadi"]
+  - id: "hz02_deccan"
+    h3_index: "8860155947fffff"
+    name: "Deccan Gymkhana"
+    lat: 18.516
+    lon: 73.841
+    elevation_m: 558.0
+    elevation_percentile: 0.45
+    population: 52000
+    assets: ["CLINIC_H01_Deccan"]
+    upstream_zones: ["hz04_erandwane"]
+    downstream_zones: ["hz01_shivajinagar"]
+  - id: "hz03_kothrud"
+    h3_index: "8860155945fffff"
+    name: "Kothrud Depot"
+    lat: 18.507
+    lon: 73.808
+    elevation_m: 585.0
+    elevation_percentile: 0.85
+    population: 120000
+    assets: ["EMS_H01_Kothrud_Depot", "SUB_H02_Kothrud_Sub"]
+    upstream_zones: []
+    downstream_zones: ["hz04_erandwane"]
+  - id: "hz04_erandwane"
+    h3_index: "8860155953fffff"
+    name: "Erandwane Riverbank"
+    lat: 18.510
+    lon: 73.832
+    elevation_m: 552.0
+    elevation_percentile: 0.20
+    population: 78000
+    assets: ["HOS_H02_Deenanath_Mangeshkar"]
+    upstream_zones: ["hz03_kothrud"]
+    downstream_zones: ["hz02_deccan"]
+  - id: "hz05_sangamwadi"
+    h3_index: "8860155957fffff"
+    name: "Sangamwadi Confluence"
+    lat: 18.537
+    lon: 73.871
+    elevation_m: 546.0
+    elevation_percentile: 0.05
+    population: 48000
+    assets: ["PUMP_H01_Sangam_Canal"]
+    upstream_zones: ["hz01_shivajinagar", "hz06_yerwada_w"]
+    downstream_zones: ["hz07_yerwada_e"]
+  - id: "hz06_yerwada_w"
+    h3_index: "8860155951fffff"
+    name: "Yerwada Bridge"
+    lat: 18.545
+    lon: 73.882
+    elevation_m: 549.0
+    elevation_percentile: 0.12
+    population: 92000
+    assets: ["SUB_H03_Yerwada_Sub"]
+    upstream_zones: []
+    downstream_zones: ["hz05_sangamwadi"]
+  - id: "hz07_yerwada_e"
+    h3_index: "8860155963fffff"
+    name: "Yerwada Jail Road"
+    lat: 18.552
+    lon: 73.891
+    elevation_m: 554.0
+    elevation_percentile: 0.30
+    population: 85000
+    assets: ["HOS_H03_Mental_Hosp"]
+    upstream_zones: ["hz05_sangamwadi"]
+    downstream_zones: []
+  - id: "hz08_camp_cantonment"
+    h3_index: "8860155967fffff"
+    name: "Pune Camp Cantonment"
+    lat: 18.518
+    lon: 73.879
+    elevation_m: 565.0
+    elevation_percentile: 0.60
+    population: 58000
+    assets: ["HOS_H04_Command_Hospital", "EMS_H02_Cantonment"]
+    upstream_zones: []
+    downstream_zones: ["hz09_swargate"]
+  - id: "hz09_swargate"
+    h3_index: "8860155965fffff"
+    name: "Swargate Terminal"
+    lat: 18.501
+    lon: 73.858
+    elevation_m: 557.0
+    elevation_percentile: 0.40
+    population: 95000
+    assets: ["SUB_H04_Swargate_Grid"]
+    upstream_zones: ["hz08_camp_cantonment"]
+    downstream_zones: ["hz10_parvati"]
+  - id: "hz10_parvati"
+    h3_index: "8860155903fffff"
+    name: "Parvati Foothills"
+    lat: 18.495
+    lon: 73.848
+    elevation_m: 575.0
+    elevation_percentile: 0.75
+    population: 62000
+    assets: ["PUMP_H02_Parvati_Waterworks"]
+    upstream_zones: []
+    downstream_zones: ["hz09_swargate"]
+  - id: "hz11_hadapsar_w"
+    h3_index: "8860155907fffff"
+    name: "Hadapsar Industrial"
+    lat: 18.502
+    lon: 73.918
+    elevation_m: 562.0
+    elevation_percentile: 0.55
+    population: 110000
+    assets: ["CHEM_H01_Serum_BioPlant"]
+    upstream_zones: []
+    downstream_zones: ["hz08_camp_cantonment"]
+  - id: "hz12_bibwewadi"
+    h3_index: "8860155905fffff"
+    name: "Bibwewadi Upper"
+    lat: 18.478
+    lon: 73.864
+    elevation_m: 590.0
+    elevation_percentile: 0.90
+    population: 75000
+    assets: ["SHELTER_H01_Bibwewadi"]
+    upstream_zones: []
+    downstream_zones: ["hz09_swargate"]
+  - id: "hz13_katraj_basin"
+    h3_index: "8860155913fffff"
+    name: "Katraj Lake Basin"
+    lat: 18.455
+    lon: 73.858
+    elevation_m: 605.0
+    elevation_percentile: 0.98
+    population: 68000
+    assets: ["PUMP_H03_Katraj_Spillway"]
+    upstream_zones: []
+    downstream_zones: ["hz12_bibwewadi"]
+  - id: "hz14_aundh_chest"
+    h3_index: "8860155917fffff"
+    name: "Aundh Chest Hospital Zone"
+    lat: 18.558
+    lon: 73.805
+    elevation_m: 568.0
+    elevation_percentile: 0.65
+    population: 80000
+    assets: ["HOS_H05_Aundh_Hospital"]
+    upstream_zones: []
+    downstream_zones: ["hz01_shivajinagar"]
+  - id: "hz15_viman_nagar"
+    h3_index: "8860155915fffff"
+    name: "Viman Nagar Airport"
+    lat: 18.567
+    lon: 73.915
+    elevation_m: 572.0
+    elevation_percentile: 0.70
+    population: 70000
+    assets: ["SUB_H05_Airport_Grid"]
+    upstream_zones: []
+    downstream_zones: ["hz07_yerwada_e"]
+  - id: "hz16_bopodi"
+    h3_index: "8860155973fffff"
+    name: "Bopodi River Bank"
+    lat: 18.562
+    lon: 73.834
+    elevation_m: 548.0
+    elevation_percentile: 0.08
+    population: 55000
+    assets: ["EMS_H03_Bopodi_Station"]
+    upstream_zones: ["hz14_aundh_chest"]
+    downstream_zones: ["hz05_sangamwadi"]

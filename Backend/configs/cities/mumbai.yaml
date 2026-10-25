@@ -1,0 +1,233 @@
+name: "Mumbai Mithi Corridor"
+city_id: "mumbai"
+bbox:
+  min_lat: 19.03
+  max_lat: 19.09
+  min_lon: 72.84
+  max_lon: 72.89
+center:
+  lat: 19.065
+  lon: 72.865
+h3_resolution: 8
+total_zones: 20
+zones:
+  - id: "z01_bandra_e"
+    h3_index: "8860144943fffff"
+    name: "Bandra East (BKC Edge)"
+    lat: 19.058
+    lon: 72.852
+    elevation_m: 4.2
+    elevation_percentile: 0.15
+    population: 85000
+    assets: ["HOS_01_BKC_Specialty", "SUB_01_Bandra_110kV"]
+    upstream_zones: []
+    downstream_zones: ["z04_kurla_w"]
+  - id: "z02_dharavi_nw"
+    h3_index: "8860144947fffff"
+    name: "Dharavi Sector 1"
+    lat: 19.045
+    lon: 72.855
+    elevation_m: 2.8
+    elevation_percentile: 0.05
+    population: 140000
+    assets: ["EMS_01_Dharavi_Depot", "PUMP_01_Mithi_South"]
+    upstream_zones: []
+    downstream_zones: ["z03_dharavi_ne", "z04_kurla_w"]
+  - id: "z03_dharavi_ne"
+    h3_index: "8860144945fffff"
+    name: "Dharavi Transit Camp"
+    lat: 19.048
+    lon: 72.863
+    elevation_m: 3.1
+    elevation_percentile: 0.08
+    population: 125000
+    assets: ["CLINIC_01_Dharavi"]
+    upstream_zones: ["z02_dharavi_nw"]
+    downstream_zones: ["z04_kurla_w"]
+  - id: "z04_kurla_w"
+    h3_index: "8860144953fffff"
+    name: "Kurla West (Bail Bazar)"
+    lat: 19.062
+    lon: 72.871
+    elevation_m: 2.2
+    elevation_percentile: 0.02
+    population: 160000
+    assets: ["HOS_02_Bhabha_Kurla", "SUB_02_Kurla_Central", "PUMP_02_Kranti_Nagar"]
+    upstream_zones: ["z01_bandra_e", "z02_dharavi_nw", "z03_dharavi_ne"]
+    downstream_zones: ["z07_bkc_central"]
+  - id: "z05_kurla_e"
+    h3_index: "8860144957fffff"
+    name: "Kurla East (Nehru Nagar)"
+    lat: 19.063
+    lon: 72.883
+    elevation_m: 6.5
+    elevation_percentile: 0.45
+    population: 95000
+    assets: ["EMS_02_Kurla_Depot", "SHELTER_01_Nehru_Ground"]
+    upstream_zones: []
+    downstream_zones: ["z04_kurla_w"]
+  - id: "z06_chunabhatti"
+    h3_index: "8860144951fffff"
+    name: "Chunabhatti / Sion North"
+    lat: 19.051
+    lon: 72.874
+    elevation_m: 4.8
+    elevation_percentile: 0.22
+    population: 78000
+    assets: ["SUB_03_Sion_Chuna"]
+    upstream_zones: ["z03_dharavi_ne"]
+    downstream_zones: ["z04_kurla_w"]
+  - id: "z07_bkc_central"
+    h3_index: "8860144963fffff"
+    name: "BKC Financial Core"
+    lat: 19.069
+    lon: 72.862
+    elevation_m: 5.5
+    elevation_percentile: 0.35
+    population: 45000
+    assets: ["HOS_03_Asian_Heart", "SUB_04_BKC_GIS", "COM_01_Fiber_Hub"]
+    upstream_zones: ["z04_kurla_w"]
+    downstream_zones: ["z08_kalina_s"]
+  - id: "z08_kalina_s"
+    h3_index: "8860144967fffff"
+    name: "Kalina CST Road"
+    lat: 19.074
+    lon: 72.859
+    elevation_m: 5.0
+    elevation_percentile: 0.28
+    population: 72000
+    assets: ["EMS_03_Kalina_Ambulance", "PUMP_03_Vakola_Drain"]
+    upstream_zones: ["z07_bkc_central"]
+    downstream_zones: ["z10_vakola"]
+  - id: "z09_kalina_campus"
+    h3_index: "8860144965fffff"
+    name: "Kalina University Campus"
+    lat: 19.076
+    lon: 72.868
+    elevation_m: 7.2
+    elevation_percentile: 0.55
+    population: 35000
+    assets: ["SHELTER_02_Uni_Gymnasium", "CLINIC_02_Campus"]
+    upstream_zones: []
+    downstream_zones: ["z08_kalina_s"]
+  - id: "z10_vakola"
+    h3_index: "8860144903fffff"
+    name: "Vakola Junction"
+    lat: 19.082
+    lon: 72.854
+    elevation_m: 6.0
+    elevation_percentile: 0.40
+    population: 88000
+    assets: ["SUB_05_Vakola_Feeder"]
+    upstream_zones: ["z08_kalina_s"]
+    downstream_zones: ["z12_santacruz_e"]
+  - id: "z11_airside_mithi"
+    h3_index: "8860144907fffff"
+    name: "Mithi River CSIA Boundary"
+    lat: 19.088
+    lon: 72.866
+    elevation_m: 3.5
+    elevation_percentile: 0.10
+    population: 15000
+    assets: ["PUMP_04_Airside_North", "CHEM_01_Fuel_Storage"]
+    upstream_zones: ["z09_kalina_campus", "z14_marol_s"]
+    downstream_zones: ["z08_kalina_s"]
+  - id: "z12_santacruz_e"
+    h3_index: "8860144905fffff"
+    name: "Santacruz East (Golibar)"
+    lat: 19.085
+    lon: 72.847
+    elevation_m: 6.8
+    elevation_percentile: 0.50
+    population: 110000
+    assets: ["HOS_04_VN_Desai_Santacruz", "EMS_04_Vakola_Depot"]
+    upstream_zones: ["z10_vakola"]
+    downstream_zones: []
+  - id: "z13_saki_naka"
+    h3_index: "8860144913fffff"
+    name: "Saki Naka Junction"
+    lat: 19.092
+    lon: 72.882
+    elevation_m: 8.5
+    elevation_percentile: 0.70
+    population: 130000
+    assets: ["SUB_06_Sakinaka_Grid", "HOS_05_Apex_Hospital"]
+    upstream_zones: ["z15_powai_lake_s"]
+    downstream_zones: ["z11_airside_mithi", "z04_kurla_w"]
+  - id: "z14_marol_s"
+    h3_index: "8860144917fffff"
+    name: "Marol Military Road"
+    lat: 19.096
+    lon: 72.871
+    elevation_m: 9.2
+    elevation_percentile: 0.78
+    population: 90000
+    assets: ["CLINIC_03_Marol"]
+    upstream_zones: ["z15_powai_lake_s"]
+    downstream_zones: ["z11_airside_mithi"]
+  - id: "z15_powai_lake_s"
+    h3_index: "8860144915fffff"
+    name: "Powai Lake Catchment South"
+    lat: 19.102
+    lon: 72.885
+    elevation_m: 14.5
+    elevation_percentile: 0.95
+    population: 60000
+    assets: ["PUMP_05_Powai_Spillway"]
+    upstream_zones: []
+    downstream_zones: ["z13_saki_naka", "z14_marol_s"]
+  - id: "z16_vidyanagari"
+    h3_index: "8860144973fffff"
+    name: "Vidyanagari Industrial Area"
+    lat: 19.071
+    lon: 72.875
+    elevation_m: 5.8
+    elevation_percentile: 0.38
+    population: 42000
+    assets: ["CHEM_02_Industrial_Gas"]
+    upstream_zones: []
+    downstream_zones: ["z04_kurla_w"]
+  - id: "z17_sion_west"
+    h3_index: "8860144977fffff"
+    name: "Sion West / LBS Marg"
+    lat: 19.043
+    lon: 72.861
+    elevation_m: 3.9
+    elevation_percentile: 0.12
+    population: 82000
+    assets: ["HOS_06_Lokmanya_Tilak_Sion", "EMS_05_Sion_Station"]
+    upstream_zones: ["z03_dharavi_ne"]
+    downstream_zones: ["z06_chunabhatti"]
+  - id: "z18_mahim_nature_park"
+    h3_index: "8860144975fffff"
+    name: "Mahim Nature Park / Estuary"
+    lat: 19.047
+    lon: 72.848
+    elevation_m: 2.0
+    elevation_percentile: 0.01
+    population: 20000
+    assets: ["PUMP_06_Estuary_Gate"]
+    upstream_zones: ["z02_dharavi_nw"]
+    downstream_zones: []
+  - id: "z19_kurla_kamani"
+    h3_index: "8860144923fffff"
+    name: "Kurla Kamani / Phoenix"
+    lat: 19.079
+    lon: 72.887
+    elevation_m: 8.0
+    elevation_percentile: 0.65
+    population: 98000
+    assets: ["SUB_07_Kamani_110kV"]
+    upstream_zones: []
+    downstream_zones: ["z05_kurla_e"]
+  - id: "z20_asalpha"
+    h3_index: "8860144927fffff"
+    name: "Asalpha Slopes"
+    lat: 19.098
+    lon: 72.894
+    elevation_m: 18.0
+    elevation_percentile: 0.99
+    population: 115000
+    assets: ["SHELTER_03_Asalpha_School"]
+    upstream_zones: []
+    downstream_zones: ["z13_saki_naka"]

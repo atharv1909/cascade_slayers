@@ -1,0 +1,79 @@
+# Sensor and data stream fault profiles (F0 to F5)
+profiles:
+  F0:
+    name: "Clean Baseline"
+    description: "Nominal sensor operation without artificial corruption"
+    dropout_rate: 0.0
+    blackout_hours: 0
+    latency_mean_h: 0.05
+    latency_sigma: 0.1
+    stuck_at_fraction: 0.0
+    bias_fraction: 0.0
+    adversarial_reports: false
+    spoofed_sources: 0
+
+  F1:
+    name: "Sensor Dropout"
+    description: "20-40% random packet drops and a 6-hour critical source blackout"
+    dropout_rate: 0.30
+    blackout_hours: 6
+    latency_mean_h: 0.1
+    latency_sigma: 0.2
+    stuck_at_fraction: 0.0
+    bias_fraction: 0.0
+    adversarial_reports: false
+    spoofed_sources: 0
+
+  F2:
+    name: "Latency & Out-of-Order"
+    description: "Network latency spikes up to 8 hours with lognormal delay"
+    dropout_rate: 0.05
+    blackout_hours: 0
+    latency_mean_h: 2.5
+    latency_sigma: 1.1
+    stuck_at_fraction: 0.0
+    bias_fraction: 0.0
+    adversarial_reports: false
+    spoofed_sources: 0
+
+  F3:
+    name: "Sensor Drift & Bias"
+    description: "5-10% sensors stuck or drifting, asserting erroneous calm or extreme values"
+    dropout_rate: 0.05
+    blackout_hours: 0
+    latency_mean_h: 0.1
+    latency_sigma: 0.2
+    stuck_at_fraction: 0.06
+    bias_fraction: 0.08
+    bias_magnitude_sigma: 2.5
+    adversarial_reports: false
+    spoofed_sources: 0
+
+  F4:
+    name: "Adversarial Spoofing"
+    description: "Coordinated bot burst of false citizen reports + single spoofed stream"
+    dropout_rate: 0.05
+    blackout_hours: 0
+    latency_mean_h: 0.1
+    latency_sigma: 0.2
+    stuck_at_fraction: 0.0
+    bias_fraction: 0.0
+    adversarial_reports: true
+    adversarial_burst_size: 45
+    adversarial_target_zone: "z09_kalina_campus"
+    spoofed_sources: 1
+
+  F5:
+    name: "All Combined Adversity"
+    description: "Dropouts, delayed packets, drifting sensors, and adversarial reports concurrently"
+    dropout_rate: 0.25
+    blackout_hours: 6
+    latency_mean_h: 2.0
+    latency_sigma: 1.0
+    stuck_at_fraction: 0.08
+    bias_fraction: 0.08
+    bias_magnitude_sigma: 2.0
+    adversarial_reports: true
+    adversarial_burst_size: 60
+    adversarial_target_zone: "z09_kalina_campus"
+    spoofed_sources: 2

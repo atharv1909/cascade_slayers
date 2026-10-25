@@ -1,0 +1,20 @@
+id: "heat"
+name: "Extreme Humid Heat-Dome & Grid Stress"
+lead_semantics: "Real lead: 3–5 days from temperature/humidity forecast; load and hospital effects lag"
+honest_statement: "Atmospheric weather models provide high-confidence thermal anomaly predictions 3 to 5 days ahead. The system forecasts the delayed surge in electrical substation overload and lagging heatstroke hospital admissions."
+primary_layers: ["WX", "PWR", "HLT", "HOS", "COM"]
+trigger_generator:
+  event_type: "humid_heat_dome"
+  onset_hour: 48
+  duration_h: 96
+  peak_temp_c: 44.5
+  peak_wbgt_c: 34.2
+critical_event:
+  condition: "wbgt_c >= 32.0 for >= 3 h AND ed_arrivals_per_h >= 28.0"
+expected_chain:
+  - { from: "WX", to: "PWR", lag_h: 3, mechanism: "physical", description: "Extreme AC cooling load pushes substations beyond thermal rating" }
+  - { from: "PWR", to: "COM", lag_h: 6, mechanism: "physical", description: "Substation brownouts degrade cellular base transceiver stations" }
+  - { from: "PWR", to: "HLT", lag_h: 8, mechanism: "physical", description: "Domestic power loss removes indoor fan/cooling relief" }
+  - { from: "WX", to: "HOS", lag_h: 18, mechanism: "logical", description: "Delayed severe dehydration and heat hyperthermia hospital admissions" }
+  - { from: "HOS", to: "EMS", lag_h: 6, mechanism: "logical", description: "Emergency department bed saturation diverts heat distress calls" }
+seed_zones: ["z03_dharavi_ne", "z05_kurla_e", "z10_vakola"]

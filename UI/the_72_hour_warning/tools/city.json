@@ -1,0 +1,18 @@
+{
+  "name": "Mithi River Corridor, Mumbai",
+  "city_id": "mumbai_mithi",
+  "bbox": {
+    "south": 19.035,
+    "west": 72.845,
+    "north": 19.088,
+    "east": 72.885
+  },
+  "center": [72.865, 19.062],
+  "held_out_city": {
+    "name": "Adyar Basin Corridor, Chennai (Held-Out)",
+    "city_id": "chennai_adyar",
+    "center": [80.245, 13.012],
+    "never_tuned_on": true
+  },
+  "attribution": "Map data © OpenStreetMap contributors (ODbL) · Weather schema Open-Meteo (CC BY 4.0) · Simulator-calibrated prototype"
+}

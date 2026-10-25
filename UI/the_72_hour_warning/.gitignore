@@ -1,0 +1,5 @@
+ui/config.local.js
+node_modules/
+.DS_Store
+*.pyc
+__pycache__/

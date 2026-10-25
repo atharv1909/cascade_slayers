@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Testing & Caches
+.pytest_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# Environments
+.env
+venv/
+env/
+.venv/
+.dist/
+
+# Heavy raw simulation episode logs (>50MB uncompressed)
+# Compressed events.json.gz and models remain tracked!
+runs/*/*/events.json
+runs/*/*/events.csv
+Backend/runs/*/*/events.json
+Backend/runs/*/*/events.csv
+
+# Temporary test scripts
+tools/patch_*.py
+
+# OS specific
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.tmp
